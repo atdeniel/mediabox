@@ -1,0 +1,5 @@
+1) Comenta ruby-oci8 en Gemfile
+2) Abre consola, ponte adentro de la carpeta del proyecto y escribir "bundle update"
+3) Descomenta ruby-oci8 en Gemfile
+4) Abre consola, ponte adentro de la carpeta del proyecto y escribir "rake db:migrate"
+5) Rails s!
