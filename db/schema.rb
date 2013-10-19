@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20131018031139) do
   create_table "amigos", force: true do |t|
     t.integer  "fk_usuario1", precision: 38, scale: 0
     t.integer  "fk_usuario2", precision: 38, scale: 0
+    t.string   "status"
+    t.datetime "fecha"
+    t.string   "leido"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
