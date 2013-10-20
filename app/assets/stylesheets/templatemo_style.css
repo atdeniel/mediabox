@@ -1,11 +1,9 @@
-body{ 
-	margin: 0;
-	padding: 0;
-	color: #ddd;
-	font-size: 12px;
-	line-height: 1.6em; 
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+body
+{ 
 	background-color: #0066FF;
+	color: #ddd;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 12px;
 }
 
 a, a:link, a:visited { color: #9CF; font-weight: normal; text-decoration: none }
@@ -79,6 +77,14 @@ img { margin: 0; padding: 0; border: none }
 	text-align: right
 }
 
+#templatemo_left {
+	padding-left:50%;
+}
+
+#templatemo_right {
+	padding-right:50%;
+}
+
 #site_title { display: block }
 #site_title a { color: #fff; font-weight: 700; letter-spacing: 10px; line-height: 30px }
 
@@ -103,7 +109,15 @@ img { margin: 0; padding: 0; border: none }
 .section a.next_btn { right: 0px; background-position: 50px 0 }
 
 .box { float: left; margin: 0 10px 10px 0 }
-#home_about { width: 314px; height: 314px }
+#home_about { width: 314px; height: 314px  }
+
+#home_perfil { 
+	float: left;
+    width: 152px;
+    height: 152px; 
+    position:relative;
+}
+
 #home_gallery { width: 476px; height: 314px }
 .home_box1 { width: 152px; height: 152px }
 .home_box2 { width: 314px; height: 152px }
@@ -168,3 +182,123 @@ img { margin: 0; padding: 0; border: none }
 #contact_form form .submit_btn { font-size: 12px; background: #333; color: #CCC; cursor:pointer; border: 1px solid #666; padding: 5px 10px; }
 
 .no_mr { margin-right: 0 }
+
+#panel 
+{
+  background-color: #FFFFFF    ;
+  position: relative;
+  top: 30px;
+  left: 200px;
+  width: 200px; 
+  height: 450px; 
+}
+
+.panel-title
+{
+	color: #0066FF;
+	font-weight: bold;
+}
+
+.panel a img 
+{
+	position: absolute;
+	top: 45px;
+	left: 5%;
+	height: 145px;
+    width: 180px;
+
+}
+
+.list-group
+{
+	color: #0066FF;
+	position: absolute;
+	top: 210px; 
+	width: 180px;
+	left: 5%;
+}
+
+.list-group a
+{
+	color: #0066FF;
+}
+
+#account
+{
+  position: relative;
+  top: -420px; 
+  left: 31%;
+  background-color: #FFFFFF    ;
+  width: 800px; 
+  height: 450px; 
+}
+
+
+.panel-heading
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.accountTable a 
+{
+	color: #0066FF;
+}
+.accountTable 
+{
+	position: absolute;
+	width:96%;
+	top: 45px;
+	left: 15px;
+}.accountTable table{
+	width:100%;
+	height:100%;
+	color: #484848  ;
+}.accountTable td:first-child{
+	-moz-border-radius-bottomleft: 30px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 0px;
+	font-weight: bold;
+	color: #484848  ;
+}.accountTable tr, td {
+  padding: 0.6em; 
+}
+.accountTable tr:nth-child(odd)    { background-color:#F8F8F8  ; }
+.accountTable tr:nth-child(even)   { background-color:#ffffff; }
+
+#account hr 
+{
+	position: absolute;
+	left: 0px;
+	width:100%;
+	height: 1px; 
+	top: 215px;
+	background-color: #C8C8C8 ;
+
+}
+
+.app
+{
+	position: absolute;
+	left: 22px; 
+	top: 245px;
+	color: #484848    ;
+}
+
+.app a 
+{
+	padding: 120px;
+}
+
+
+.appf
+{
+	position: absolute;
+	left: 22px; 
+	top: 340px;
+	color: #484848    ;
+}
+
+.appf a 
+{
+	padding: 120px;
+}
