@@ -15,22 +15,23 @@
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
 
-
 </head> 
 <body> 
 <nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">mediabox</a>
+    <a class="navbar-brand">mediabox</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#profile">Profile</a></li>
+<% if current_user %>
+      <li class="active"><a href="../sessions/index">Home</a></li>
+      <li><a href="../sessions/profile">Profile</a></li>
       <li><a href="#">Friends</a></li>
       <li><a href="#">Message</a></li>
+
     </ul>
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
@@ -38,9 +39,10 @@
       </div>
       <button type="submit" class="btn btn-default">Go!</button>
     </form>
+
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Link</a></li>
-      
+<%end%>       
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -65,11 +67,13 @@
             </div>
             
             <div class="box home_box1 color1">
-                    <a href="#services"> <%= image_tag "templatemo_services.jpg"%></a>
+                    <a href="/auth/facebook"> <%= image_tag "facebook.jpg"%></a>
+
+
             </div>
             
             <div class="box home_box1 color2">
-                    <a href="#testimonial"><%= image_tag "testimonial.jpg"%></a>
+                    <a href="/auth/google_oauth2"><%= image_tag "google.png"%></a>
             </div>
             
             <div class="box home_box2 color3">
@@ -202,6 +206,9 @@
 <div id="templatemo_footer">
     Copyright © 2072 <a href="#">Your Company Name</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
 </div>
+
+
+
 
 </body> 
 </html>

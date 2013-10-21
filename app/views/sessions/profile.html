@@ -14,8 +14,12 @@
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
-</head> 
+
+<% a = "no" %>
+</head>
+
 <body> 
+
 <nav class="navbar navbar-inverse" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -25,7 +29,7 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a href="../sessions/index">Home</a></li>
       <li><a href="#profile">Profile</a></li>
       <li><a href="#">Friends</a></li>
       <li><a href="#">Message</a></li>
@@ -48,7 +52,7 @@
   <div class="panel2">
     <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Vianny Molero</h3>
+    <h3 class="panel-title"><%= current_user.name %></h3>
   </div>
   
   <div class="panel-body">
@@ -56,7 +60,7 @@
    <p> &nbsp;</p>
    <p> &nbsp;</p>
     <p> &nbsp;</p>
-    <a href="images/gallery/01-l.jpg"><img><%= image_tag "gallery/01.jpg"%></a></img>
+    <a href="images/gallery/01-l.jpg"><img><%= image_tag current_user.image %></a></img>
     <ul class="list-group">
       <a href= "#" ><li class="list-group-item">About</li></a>
       <a href= "#" ><li class="list-group-item">Albums</li></a>
@@ -75,21 +79,31 @@
   <div class="panel-heading">Account</div>
 
   <!-- Table -->
+<% if a == "no"%>
+<%= a %>
+<%else%>
+<%= a %>
+<% end %>
+
   <div class="accountTable" >
     <table >
       <tr>
-          <td> Name              </td>
-          <td> Vianny Molero     </td>
-          <td><a href="#">  Modify      </a>      </td>
-      </tr>
+          <td> Name  </td>
+          <td> <%= current_user.name %></td>
+          <td><a href="#"> Modify 
+          <% if a == "no" %>
+          <% a="si" %> 
+          <%end%>
+           </a> </td>
+          </tr>
       <tr>
-          <td> Username          </td>
+          <td>Username </td>
           <td> ohvianny          </td>
           <td><a href="#">  Modify       </a>     </td>
       </tr>
       <tr>
           <td>  Email                </td>
-          <td>  vianny.mo@gmail.com  </td>
+          <td> <%= current_user.email %> </td>
           <td> <a href="#">  Modify         </a>      </td>
       </tr>
       <tr>
@@ -99,12 +113,12 @@
       </tr>
       <tr>
           <td>  Phone                </td>
-          <td>  0424-8299773         </td>
+          <td> <%= current_user.phone %></td>
           <td ><a href="#">  Modify           </a>    </td>
       </tr>
       <tr>
-          <td>  Ubication                             </td>
-          <td>  Montalban III, Caracas, Venezuela     </td>
+          <td>  Location                             </td>
+          <td> <%= current_user.location %> </td>
           <td ><a href="#">  Modify           </a>    </td>
       </tr>
     </table>
@@ -124,5 +138,4 @@
 </section>
 
 
-</body>
 </html>
