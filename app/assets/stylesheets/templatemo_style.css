@@ -121,10 +121,10 @@ img { margin: 0; padding: 0; border: none }
 #home_gallery { width: 476px; height: 314px }
 .home_box1 { width: 152px; height: 152px }
 .home_box2 { width: 314px; height: 152px }
-.color1 { background: #d0b500 }
-.color2 { background: #c75000 }
-.color3 { background: #00afce }
-.color4 { background: #a4c700 }
+.color1 { background: #C0392B }
+.color2 { background: #34495E  }
+.color3 { background: #77CC00 }
+.color4 { background: #FFFFFF }
 #home_gallery a { display: block; float: left; width: 152px; height: 152px; margin: 0 10px 10px 0 }
 #home_gallery a.no_mr { margin-right: 0 }
 
@@ -139,6 +139,35 @@ img { margin: 0; padding: 0; border: none }
 	height: 48px;
 	margin-left: 12px
 }
+
+#youtube {
+	text-align: center;
+	padding: 40px 0 0 0
+}
+#youtube img{
+	position: relative;
+	top: -1.8em;
+	height: 80%;
+    width: 70%;
+}
+
+#soundcloud img{
+	position: relative;
+	top: -0.5em;
+	left: 4em;
+	height: 80%;
+    width: 70%;
+}
+
+#instagram img{
+	position: relative;
+	top: 1em;
+	left: 2.5em;
+	height: 90%;
+    width: 80%;
+}
+
+
 
 #gallery {
 
@@ -281,13 +310,8 @@ img { margin: 0; padding: 0; border: none }
 	position: absolute;
 	left: 22px; 
 	top: 245px;
-	color: #484848    ;
-}
-
-.app a 
-{
-	padding: 120px;
-}
+	color: #484848;
+}.app a { padding: 120px;}
 
 
 .appf
@@ -295,10 +319,41 @@ img { margin: 0; padding: 0; border: none }
 	position: absolute;
 	left: 22px; 
 	top: 340px;
-	color: #484848    ;
+	color: #484848;
+}.appf a {	padding: 120px; }
+
+.pagination
+{
+	position: absolute;
+	left: 35%; 
+	top: 401px;
+}
+.pagination a {color: #0066FF; font-weight: bold;}
+
+#box
+{
+	position: absolute;
+	top: 25%;
+	left: 30%;
+	height: 25em;
+    width: 25em;
+	background-color: #FFFFFF;
+} #box h3,h4 { color: #0066FF }
+
+
+.eg img 
+{
+	position: absolute;
+	top: -4px;
+	left: -70px;
+	height: 55px;
+    width: 60px;
+    background-color: #202020 ;
 }
 
-.appf a 
-{
-	padding: 120px;
+.navbar 
+{ 	
+	overflow: hidden;
+	width: 100%;
+	height: 4.5em;
 }
