@@ -15,7 +15,25 @@
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
 
-<% a = "no" %>
+<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
+<script type='text/javascript'>
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+<!--     -->
+
 </head>
 
 <body> 
@@ -38,7 +56,7 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for people">
       </div>
-      <button type="submit" class="btn btn-default">Go!</button>
+     <button type="submit" class="btn btn-default">Go!</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Link</a></li>
@@ -63,8 +81,8 @@
     <a href="images/gallery/01-l.jpg"><img><%= image_tag current_user.image %></a></img>
     <ul class="list-group">
       <a href= "#" ><li class="list-group-item">About</li></a>
-      <a href= "#" ><li class="list-group-item">Albums</li></a>
-      <a href= "#" ><li class="list-group-item">Friends</li></a>
+      <a href= "/sessions/albums" ><li class="list-group-item">Albums</li></a>
+      <a href= "/sessions/friends" ><li class="list-group-item">Friends</li></a>
       <a href= "#" ><li class="list-group-item">Private Settings</li></a>
     </ul>
   </div>
@@ -79,47 +97,35 @@
   <div class="panel-heading">Account</div>
 
   <!-- Table -->
-<% if a == "no"%>
-<%= a %>
-<%else%>
-<%= a %>
-<% end %>
+<%= form_tag('guardarDatos', method: 'get') do %>
 
   <div class="accountTable" >
     <table >
       <tr>
           <td> Name  </td>
-          <td> <%= current_user.name %></td>
-          <td><a href="#"> Modify 
-          <% if a == "no" %>
-          <% a="si" %> 
-          <%end%>
-           </a> </td>
+          <td> <%= text_field_tag(:names, current_user.name) %> </td>
+          <td><a href="#"> </a> </td>
           </tr>
-      <tr>
-          <td>Username </td>
-          <td> ohvianny          </td>
-          <td><a href="#">  Modify       </a>     </td>
-      </tr>
+
       <tr>
           <td>  Email                </td>
-          <td> <%= current_user.email %> </td>
-          <td> <a href="#">  Modify         </a>      </td>
+          <td><%= text_field_tag(:email, current_user.email) %> </td>
+          <td> <a href="#">          </a>      </td>
       </tr>
       <tr>
-          <td>  Password             </td>
-          <td>  ********             </td>
-          <td> <a href="#">  Modify           </a>    </td>
+          <td>  Phone             </td>
+          <td> <%= text_field_tag(:phone, current_user.phone) %>  </td>
+          <td> <a href="#"> </a></td>
       </tr>
       <tr>
-          <td>  Phone                </td>
-          <td> <%= current_user.phone %></td>
-          <td ><a href="#">  Modify           </a>    </td>
+          <td>  Location                </td>
+          <td> <%= text_field_tag(:location , current_user.location) %> </td>
+          <td ><a href="#">           </a>    </td>
       </tr>
       <tr>
-          <td>  Location                             </td>
-          <td> <%= current_user.location %> </td>
-          <td ><a href="#">  Modify           </a>    </td>
+          <td>  Description                  </td>
+          <td> <%= text_field_tag(:description , current_user.description) %> </td>
+          <td ><a href="#">            </a>    </td>
       </tr>
     </table>
   </div>
@@ -133,6 +139,10 @@
   <div class="appf"> 
     <img><%= image_tag "facebook.png"%></img>
     <a>ohvianny</a>
+    <br/>
+    <br/>
+       <p style='text-indent: 25em'> <button type="submit" class="btn btn-default">Apply Changes</button>
+    <%end%>
   </div>
 
 </section>

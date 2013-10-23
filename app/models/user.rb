@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def modificarNombreApellido(nuevoNombreApellido,idUsuario)
+		usuario = User.find(idUsuario)
+		usuario.name = nuevoNombreApellido
+		usuario.save
+	end
+
 	def modificarNombreUsuario(nuevoNombre,nuevoApellido,idUsuario)
 		usuario = User.find(idUsuario)
 		usuario.first_name=nuevoNombre
@@ -27,7 +33,7 @@ class User < ActiveRecord::Base
 
 	def modificarLugar(nuevoLugar,idUsuario)
 		usuario = User.find(idUsuario)
-		usuario.lugar = nuevoLugar
+		usuario.location = nuevoLugar
 		usuario.save
 	end
 

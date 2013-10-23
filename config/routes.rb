@@ -7,6 +7,12 @@ Project::Application.routes.draw do
   get "sessions/profile"
   get "sessions/index"
 
+  get "sessions/albums"
+  get "sessions/entrar"
+  get "sessions/perfil_privado"
+  get "sessions/perfil_publico"
+  get "sessions/friends"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -59,5 +65,7 @@ Project::Application.routes.draw do
 match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
+match '/sessions/guardarDatos', to: 'guardardatos#guardarDatosUsuario', via: [:get,:post]
   
 end
