@@ -58,9 +58,9 @@ img { margin: 0; padding: 0; border: none }
 .right { float: right }
 
 #templatemo_header {
-	width: 800px;
+	width: 1400px;
 	margin: 0 auto;
-	padding: 30px 0;
+	overflow: hidden;
 }
 
 #templatemo_main {
@@ -71,10 +71,11 @@ img { margin: 0; padding: 0; border: none }
 }
 
 #templatemo_footer {
+
 	width: 800px;
 	margin: 0 auto;
 	padding: 20px 0;
-	text-align: right
+	text-align: right;
 }
 
 #templatemo_left {
@@ -90,7 +91,7 @@ img { margin: 0; padding: 0; border: none }
 
 #content{
 	overflow:hidden;
-	width: 7000px;
+	width: 700px;
 	position:relative;
 	height: 487px;
 }
@@ -124,7 +125,12 @@ img { margin: 0; padding: 0; border: none }
 .color1 { background: #C0392B }
 .color2 { background: #34495E  }
 .color3 { background: #77CC00 }
-.color4 { background: #FFFFFF }
+.color4 { background: #00D8CC }
+.color5 { background: #7200AC }
+.color6 { background: #00C13F }
+.color7 { background: #E1B700 }
+.color8 { background: #FFFFFF }
+
 #home_gallery a { display: block; float: left; width: 152px; height: 152px; margin: 0 10px 10px 0 }
 #home_gallery a.no_mr { margin-right: 0 }
 
@@ -356,4 +362,65 @@ img { margin: 0; padding: 0; border: none }
 	overflow: hidden;
 	width: 100%;
 	height: 4.5em;
+}
+
+#basic h3{
+	position: relative;
+	top: 10px;
+	left: 14px;
+	height: 24%;
+	width: 90%;
+}
+#basic p 
+{
+	position: relative;
+	top: -4px;
+	font-size: 13px;
+	left: 19px;
+	height: 80%;
+	width: 90%;
+	color: #F8F8F8   ;
+}
+
+#basic_number p
+{
+	position: relative;
+	top: -5px;
+	font-size: 40px;
+	left: 25%;
+	height: 20%;
+	width: 20%;
+	font-weight: bold;
+	color: #ffffff  ;
+}
+
+#basic img 
+{
+	position: relative;
+	left: 35%;
+}
+
+.imagen_tamano img  
+{
+	height: 152px;
+	width: 152px;
+}
+
+#basic_down
+{
+	position: relative;
+	top: -8.5em;
+	left: 46%;
+}
+
+#basic_down2
+{
+	position: relative;
+	top: -2.5em;
+	left: 27%;
+}
+
+.breadcrumb
+{
+	background-color: #0066FF ;
 }
