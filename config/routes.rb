@@ -3,15 +3,16 @@ Project::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#index'
-  get "sessions/profile"
+  root 'sessions#entrar'
+  get "sessions/perfil_usuario"
   get "sessions/index"
 
   get "sessions/albums"
   get "sessions/entrar"
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
-  get "sessions/friends"
+    get "sessions/perfil_modificar"
+  get "sessions/amigos"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

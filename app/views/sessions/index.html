@@ -8,13 +8,11 @@
 
 <%= stylesheet_link_tag "templatemo_style.css" %>
 <%= stylesheet_link_tag "slimbox2.css" %>
-
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.scrollTo-min.js" %>
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
-
 </head> 
 <body> 
 <nav class="navbar navbar-inverse" role="navigation">
@@ -31,19 +29,26 @@
       <li><a href="../sessions/profile">Profile</a></li>
       <li><a href="#">Friends</a></li>
       <li><a href="#">Message</a></li>
-
     </ul>
+<%end%> 
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for people">
       </div>
       <button type="submit" class="btn btn-default">Go!</button>
     </form>
+  <ul class="nav navbar-nav navbar-right">
+     
+      <li>
+       <% if current_user %>
+        Welcome <strong><%= current_user.name %></strong>!
+          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <a href="/auth/google_oauth2">Login</a>
+      </li>
+      <% end %>
+  </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
-<%end%>       
-    </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
 

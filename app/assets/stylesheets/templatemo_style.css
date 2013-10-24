@@ -58,24 +58,23 @@ img { margin: 0; padding: 0; border: none }
 .right { float: right }
 
 #templatemo_header {
-	width: 1400px;
-	margin: 0 auto;
-	overflow: hidden;
+	width: 100%;
+	margin-left: 0;
+	margin-right:auto;
 }
 
 #templatemo_main {
-	width: 800px;
+	width: 640px;
 	height: 487px;
 	overflow: hidden;
 	margin: 0 auto;
 }
 
 #templatemo_footer {
-
-	width: 800px;
+	width: 640px;
 	margin: 0 auto;
 	padding: 20px 0;
-	text-align: right;
+	text-align: center;
 }
 
 #templatemo_left {
@@ -91,10 +90,11 @@ img { margin: 0; padding: 0; border: none }
 
 #content{
 	overflow:hidden;
-	width: 700px;
+	width: 640px;
 	position:relative;
 	height: 487px;
 }
+
 
 .section {
 	position:relative;
@@ -129,7 +129,8 @@ img { margin: 0; padding: 0; border: none }
 .color5 { background: #7200AC }
 .color6 { background: #00C13F }
 .color7 { background: #E1B700 }
-.color8 { background: #FFFFFF }
+.color8 { background: #E064B7 }
+.color9 { background: #FFFFFF }
 
 #home_gallery a { display: block; float: left; width: 152px; height: 152px; margin: 0 10px 10px 0 }
 #home_gallery a.no_mr { margin-right: 0 }
@@ -317,7 +318,7 @@ img { margin: 0; padding: 0; border: none }
 	left: 22px; 
 	top: 245px;
 	color: #484848;
-}.app a { padding: 120px;}
+}.app a { padding: 60px;}
 
 
 .appf

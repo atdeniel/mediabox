@@ -1,19 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE html">
 <html>
 <head>
-
-<meta  charset="utf-8" />
-<title>Proyecto de Desarrollo del Software</title>
-
+<meta charset="utf-8" />
 <%= stylesheet_link_tag "templatemo_style.css" %>
-<%= stylesheet_link_tag "slimbox2.css" %>
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.scrollTo-min.js" %>
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
 </head> 
-
 <body> 
 <div id="templatemo_header">
   <div> 
@@ -23,8 +18,8 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../sessions/entrar">Home</a></li>
-      <li><a href="../sessions/perfil_usuario">Profile</a></li>
+      <li><a href="../sessions/entrar">Home</a></li>
+      <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
       <li><a href="#">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
@@ -50,34 +45,49 @@
   </div>
 </div>
 
-<div id="templatemo_main">
+<div id="templatemo_main" class="pos">
   <div id="content"> 
     <div id="home" class="section">
-      <div id="home_about" class="box">
-        <h2>mediabox</h2>
-        <p>Mediabox is a fun way to share your favorite music, photos and videos with your friends. </p>
-       </div>
-            
-      <div class="box home_box2 color3">
-        <div id="youtube">
-          <a href="#"><img><%= image_tag "youtube-logo.png"%></a></img>
-        </div>        
-       </div>
-      <div class="box home_box2 color2 no_mr">
-        <div id="soundcloud">
-          <a href="#"> <img><%= image_tag "soundcloud-logo.png"%></a></img>
-        </div>        
+      <div class="box home_box1">
+        <h2>Profile</h2> 
       </div>
-      <div class="box home_box2 color9">
-        <div id="instagram">
-          <a href="#"> <img><%= image_tag "instagram-logo.png"%></a></img>
-        </div>        
+      <div class="box home_box1">
+        <a class="imagen_tamano"><%= image_tag "vianny.jpg"%></a>          
       </div>
-      <div id="basic" class="box home_box1 color5 ">
-          <h3> Contact </h3>
-          <%= image_tag "white/mail.png"%>
-        </div>               
-    </div> 
+      <div id="basic" class="box home_box2 color5 ">
+       <h3> Vianny Molero </h3>                   
+       <p> Estudiante de Ingenieria Informatica. You only live once. </p>
+      </div>
+      <div class="box home_box1">
+        <a href="#"></a> 
+      </div>
+      <div id="basic" class="box home_box1 color6">
+        <h3> Likes </h3>
+        <%= image_tag "white/check.png"%>
+      </div>
+      <div id="basic" class="box home_box1 color4 ">
+        <h3> Albums </h3>
+        <%= image_tag "white/share.png"%>
+      </div>
+      <div id="basic"class="box home_box1 color7 ">
+        <h3> Friends </h3>
+       <div id="basic_number"> <p> 543 </p></div>
+      </div>
+      <div id="basic" class="box home_box1 color8 ">
+        <a href="../sessions/perfil_modificar">
+          <h3> Settings </h3>
+          <%= image_tag "white/settings.png"%>
+        </a>     
+      </div>
+      <div id="basic" class="box home_box1 color2 ">
+        <h3> Dislikes </h3>
+        <%= image_tag "white/cancel.png"%>     
+      </div>
+      <div id="basic" class="box home_box2 color1">
+       <h3> Favorite stuff </h3>
+       <p>Colores, tatuajes, paisajes, playa, gente. </p>
+      </div>
+     </div>
   </div>
 </div>
 
@@ -85,6 +95,6 @@
   Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>
 
-</body> 
 
+</body>
 </html>

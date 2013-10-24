@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/rsim/oracle-enhanced.git
-  revision: a83586caf69cd4fd1e74f02602b79d7829b0bdee
+  revision: f15de843c572f1d73a52907cb47f8a4b884c5ec5
   branch: rails4
   specs:
-    activerecord-oracle_enhanced-adapter (1.4.2)
+    activerecord-oracle_enhanced-adapter (1.4.3)
 
 GEM
   remote: https://rubygems.org/
