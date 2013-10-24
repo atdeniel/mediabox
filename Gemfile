@@ -47,3 +47,4 @@ gem 'activerecord-oracle_enhanced-adapter', github: 'rsim/oracle-enhanced', bran
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-google-oauth2'
+gem 'certified','~>0.1.1'
