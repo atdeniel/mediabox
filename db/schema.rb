@@ -77,6 +77,8 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.string   "image"
     t.string   "phone"
     t.string   "email"
+    t.string   "privacity"
+    t.string   "favorite"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
   end

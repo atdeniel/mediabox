@@ -45,11 +45,11 @@
           <h2>Profile</h2>
         </div>
         <div class="box home_box1 color1">
-          <a class="imagen_tamano"><%= image_tag "vianny.jpg"%></a>          
+          <a class="imagen_tamano"><%= image_tag current_user.imagenUsuario(params[:id]), :size => "250x250"%></a>          
         </div>
         <div id="basic" class="box home_box2 color5 ">
-          <h3> Vianny Molero </h3>                   
-          <p> Estudiante de Ingenieria Informatica. You only live once. </p>
+          <h3> <%= current_user.nombreUsuario(params[:id]) %></h3>                   
+          <p> <%= current_user.verDescripcion(params[:id]) %></p>
          </div>
         <div class="box home_box2">
           <a href="#"></a> 

@@ -11,11 +11,14 @@ Project::Application.routes.draw do
   get "sessions/entrar"
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
-    get "sessions/perfil_modificar"
+  get "sessions/perfil_modificar"
   get "sessions/amigos"
+  get "sessions/notificador"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get 'sessions/perfil_privado/:id' => 'irperfilusuario#irPerfilPrivado'
+  get 'sessions/perfil_publico/:id' => 'irperfilusuario#irPerfilPublico'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

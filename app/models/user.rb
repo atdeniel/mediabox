@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 			user.email = auth.info.email
 			user.oauth_token = auth.credentials.token
 			user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+			user.privacity = 'privado'
 			user.save!
 		end
 	end
@@ -66,5 +67,42 @@ class User < ActiveRecord::Base
 		usuario.destroy
 	end
 
+	def cantidadNotificacion
+	    cantidad = Amigo.count
+	return cantidad
+	end
 
+	def idUsuarioQueMeNotifica (numeroNotificacion, idUsuario)
+		amigo = Amigo.find_by(id: numeroNotificacion, fk_usuario2: idUsuario, status: 'pendiente')	
+    	return amigo.fk_usuario1
+	end	
+
+	def nombreUsuario (idUsuario)
+	    usuario = User.find(idUsuario)
+   	    return usuario.name
+	end
+
+	def imagenUsuario (idUsuario)
+		usuario = User.find(idUsuario)
+		return usuario.image
+	end
+
+	def verPrivacidad (idUsuario)
+		usuario = User.find(idUsuario)
+		return usuario.privacity
+	end
+
+	def verDescripcion (idUsuario)
+		usuario = User.find(idUsuario)
+		return usuario.description
+	end
+
+  /  def verFavorito (idUsuario)
+		usuario = User.find(idUsuario)
+		return usuario.favorite
+	end
+
+/
+
+	
 end

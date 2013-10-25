@@ -52,11 +52,11 @@
         <h2>Profile</h2> 
       </div>
       <div class="box home_box1">
-        <a class="imagen_tamano"><%= image_tag "vianny.jpg"%></a>          
+        <a class="imagen_tamano"> <a><img src="<%= current_user.image%>" width="152" height="152"></a></img></a>          
       </div>
       <div id="basic" class="box home_box2 color5 ">
-       <h3> Vianny Molero </h3>                   
-       <p> Estudiante de Ingenieria Informatica. You only live once. </p>
+       <h3> <%= current_user.name %> </h3>                   
+       <p> <%= current_user.description %></p>
       </div>
       <div class="box home_box1">
         <a href="#"></a> 
@@ -85,7 +85,7 @@
       </div>
       <div id="basic" class="box home_box2 color1">
        <h3> Favorite stuff </h3>
-       <p>Colores, tatuajes, paisajes, playa, gente. </p>
+       <p><%= current_user.favorite %> </p>
       </div>
      </div>
   </div>
