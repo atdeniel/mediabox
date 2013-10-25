@@ -74,7 +74,11 @@ class User < ActiveRecord::Base
 
 	def idUsuarioQueMeNotifica (numeroNotificacion, idUsuario)
 		amigo = Amigo.find_by(id: numeroNotificacion, fk_usuario2: idUsuario, status: 'pendiente')	
+		if (amigo)
     	return amigo.fk_usuario1
+    else
+    	return "no"
+    end
 	end	
 
 	def nombreUsuario (idUsuario)
@@ -97,12 +101,12 @@ class User < ActiveRecord::Base
 		return usuario.description
 	end
 
-  /  def verFavorito (idUsuario)
+    def verFavorito (idUsuario)
 		usuario = User.find(idUsuario)
 		return usuario.favorite
 	end
 
-/
+
 
 	
 end

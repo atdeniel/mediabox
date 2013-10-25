@@ -20,6 +20,11 @@ Project::Application.routes.draw do
   get 'sessions/perfil_privado/:id' => 'irperfilusuario#irPerfilPrivado'
   get 'sessions/perfil_publico/:id' => 'irperfilusuario#irPerfilPublico'
 
+  ##
+  get 'sessions/notificador/:id' => 'manejoamigo#confirmarSolicitudAmistad'
+  get 'sessions/perfil_privado/:id/mandarSerAmigo' => 'manejoamigo#mandarOconfirmarSolicitudAmistad'
+  ##
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -71,5 +76,5 @@ match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 match '/sessions/guardarDatos', to: 'guardardatos#guardarDatosUsuario', via: [:get,:post]
-  
+
 end

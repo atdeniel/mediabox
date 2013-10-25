@@ -16,7 +16,10 @@ class Amigo < ActiveRecord::Base
 
 	def cambiarStatusParaAmigo(usuarioSolicitaPeticion,usuarioRecibePeticion)
 		amistad = Amigo.find_by(fk_usuario1: usuarioSolicitaPeticion, fk_usuario2: usuarioRecibePeticion)
+		if (amistad)
 		amistad.status = "amigo"
+		amistad.save
+	end
 	end
 
 	def cambiarLeido(usuarioSolicitaPeticion,usuarioRecibePeticion)

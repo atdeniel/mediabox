@@ -9,4 +9,6 @@ render '/sessions/perfil_publico'
 end
 
 
+
+
 end
