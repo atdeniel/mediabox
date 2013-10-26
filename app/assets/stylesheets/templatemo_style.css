@@ -4,6 +4,7 @@ body
 	color: #ddd;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 12px;
+	width: 1366px;
 }
 
 a, a:link, a:visited { color: #9CF; font-weight: normal; text-decoration: none }
@@ -57,10 +58,15 @@ img { margin: 0; padding: 0; border: none }
 .left { float: left }
 .right { float: right }
 
+#container
+{
+	position: relative;
+	height: 80px;
+	top: 0;
+}
+
+
 #templatemo_header {
-	width: 100%;
-	margin-left: 0;
-	margin-right:auto;
 }
 
 #templatemo_main {
@@ -219,11 +225,28 @@ img { margin: 0; padding: 0; border: none }
 
 .no_mr { margin-right: 0 }
 
+#panel_container
+{
+	height: 15em;
+	background: #FFFFFF;
+	position: absolute;
+}
+
+
+#box3
+{
+	position: relative;
+	top: 0;
+	left: 30%;
+    width: 25em;
+	background-color: #333;
+} 
+
 #panel 
 {
   background-color: #FFFFFF    ;
   position: relative;
-  top: 30px;
+  top: 0px;
   left: 200px;
   width: 200px; 
   height: 450px; 
@@ -259,12 +282,31 @@ img { margin: 0; padding: 0; border: none }
 	color: #0066FF;
 }
 
+#general
+{
+	position: relative;
+	top:0;
+	height: 500px;
+
+}
+
+#edit
+{
+	position: absolute;
+	top: 80%;
+	left: 75%;
+	width: 640px;
+	margin: 0 auto;
+	padding: 20px 0;
+
+}
+
 #account
 {
-  position: relative;
-  top: -420px; 
+  position: absolute;
+  top: 0;
   left: 31%;
-  background-color: #FFFFFF    ;
+  background-color: #FFFFFF;
   width: 800px; 
   height: 450px; 
 }
@@ -309,7 +351,6 @@ img { margin: 0; padding: 0; border: none }
 	height: 1px; 
 	top: 215px;
 	background-color: #C8C8C8 ;
-
 }
 
 .app
@@ -318,16 +359,9 @@ img { margin: 0; padding: 0; border: none }
 	left: 22px; 
 	top: 245px;
 	color: #484848;
-}.app a { padding: 60px;}
 
+}.app img { width: 50px }
 
-.appf
-{
-	position: absolute;
-	left: 22px; 
-	top: 340px;
-	color: #484848;
-}.appf a {	padding: 120px; }
 
 .pagination
 {

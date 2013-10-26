@@ -7,32 +7,11 @@
 
 <%= stylesheet_link_tag "templatemo_style.css" %>
 <%= stylesheet_link_tag "slimbox2.css" %>
-
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.scrollTo-min.js" %>
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
-
-<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
-<script type='text/javascript'>
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
-
-</script>
-<!--     -->
-
 </head>
 
 <body> 
@@ -45,8 +24,8 @@
 <% if current_user %>
     <ul class="nav navbar-nav">
       <li><a href="../sessions/entrar">Home</a></li>
-      <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
-      <li><a href="#">Friends</a></li>
+      <li><a href="../sessions/perfil_usuario">Profile</a></li>
+      <li class="active" ><a href="../sessions/amigos_usuario">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
 <%end%>
@@ -71,6 +50,7 @@
   </div>
 </div>
 
+
 <div id="general">
   <div id= "panel">
     <div class="panel2">
@@ -85,9 +65,9 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item active">About</a>
+            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
             <a href= "../sessions/albums_usuario" class="list-group-item">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item">Friends</a>
+            <a href= "../sessions/amigos_usuario" class="list-group-item active">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
         </div>
@@ -95,58 +75,21 @@
     </div>
   </div>
 
-
   <div id="account">
     <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">Account</div>
+    <!-- Default panel contents -->
+    <div class="panel-heading">Your friends</div>
 
-      <!-- Table -->
-      <%= form_tag('guardarDatos', method: 'get') do %>
-
-      <div class="accountTable" >
-        <table >
-          <tr>
-            <td> Name  </td>
-            <td> <%= text_field_tag(:names, current_user.name) %> </td>
-            <td><a href="#"> </a> </td>
-            </tr>
-          <tr>
-            <td>  Email                </td>
-            <td><%= text_field_tag(:email, current_user.email) %> </td>
-            <td> <a href="#">          </a>      </td>
-          </tr>
-          <tr>
-            <td>  Phone             </td>
-            <td> <%= text_field_tag(:phone, current_user.phone) %>  </td>
-            <td> <a href="#"> </a></td>
-          </tr>
-          <tr>
-            <td>  Location                </td>
-            <td> <%= text_field_tag(:location , current_user.location) %> </td>
-            <td ><a href="#">           </a>    </td>
-          </tr>
-          <tr>
-            <td>  Description                  </td>
-            <td> <%= text_field_tag(:description , current_user.description) %> </td>
-            <td ><a href="#">            </a>    </td>
-          </tr>
-        </table>
-      </div>
-
-      <hr> </hr>
-
-      <div class="app"> 
-        <p> Accounts associated </p>
-        <img><%= image_tag "google.png"%></img>
-
-      </div>
+      <ul class="pagination pagination-sm">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
     </div>
-
-    <div id="edit">
-      <button type="submit" class="btn btn-default">Apply Changes</button>
-    </div>
-    <%end%>
   </div>
 </div>
 
@@ -154,4 +97,5 @@
   Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>
 
+</body>
 </html>

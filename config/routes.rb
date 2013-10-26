@@ -7,12 +7,12 @@ Project::Application.routes.draw do
   get "sessions/perfil_usuario"
   get "sessions/index"
 
-  get "sessions/albums"
+  get "sessions/albums_usuario"
   get "sessions/entrar"
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
   get "sessions/perfil_modificar"
-  get "sessions/amigos"
+  get "sessions/amigos_usuario"
   get "sessions/notificador"
 
   # Example of regular route:

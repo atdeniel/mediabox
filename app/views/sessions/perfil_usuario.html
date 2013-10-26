@@ -10,8 +10,8 @@
 <%= javascript_include_tag "slimbox2.js" %>
 </head> 
 <body> 
-<div id="templatemo_header">
-  <div> 
+<div id="container">
+  <div id="templatemo_header"> 
     <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">   
       <a class="navbar-brand" href="../sessions/entrar">mediabox</a>
@@ -20,7 +20,7 @@
     <ul class="nav navbar-nav">
       <li><a href="../sessions/entrar">Home</a></li>
       <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
-      <li><a href="#">Friends</a></li>
+      <li><a href="../sessions/amigos_usuario">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
 <%end%>
@@ -66,14 +66,16 @@
         <%= image_tag "white/check.png"%>
       </div>
       <div id="basic" class="box home_box1 color4 ">
-        <a href="../sessions/albums">
+        <a href="../sessions/albums_usuario">
           <h3> Albums </h3>
           <%= image_tag "white/share.png"%>
         </a>
       </div>
       <div id="basic"class="box home_box1 color7 ">
-        <h3> Friends </h3>
-       <div id="basic_number"> <p> 543 </p></div>
+        <a href="../sessions/amigos_usuario">
+          <h3> Friends </h3>
+          <div id="basic_number"> <p> 543 </p></div>
+        </a>
       </div>
       <div id="basic" class="box home_box1 color8 ">
         <a href="../sessions/perfil_modificar">
