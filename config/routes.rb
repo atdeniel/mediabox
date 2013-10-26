@@ -4,16 +4,26 @@ Project::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'sessions#entrar'
-  get "sessions/perfil_usuario"
+  
   get "sessions/index"
 
-  get "sessions/albums_usuario"
   get "sessions/entrar"
+
+  get "sessions/crear_album"
+  
+  get "sessions/albums_usuario"
+  get "sessions/perfil_usuario"
+  
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
-  get "sessions/perfil_modificar"
+  
   get "sessions/amigos_usuario"
   get "sessions/notificador"
+
+  get "sessions/modificar_album"
+  get "sessions/perfil_modificar"
+
+  get "sessions/ver_album"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

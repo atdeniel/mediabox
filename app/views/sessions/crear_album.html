@@ -7,32 +7,11 @@
 
 <%= stylesheet_link_tag "templatemo_style.css" %>
 <%= stylesheet_link_tag "slimbox2.css" %>
-
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.scrollTo-min.js" %>
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
-
-<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
-<script type='text/javascript'>
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
-
-</script>
-<!--     -->
-
 </head>
 
 <body> 
@@ -46,7 +25,7 @@
     <ul class="nav navbar-nav">
       <li><a href="../sessions/entrar">Home</a></li>
       <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
-      <li><a href="#">Friends</a></li>
+      <li><a href="../sessions/amigos_usuario">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
 <%end%>
@@ -71,6 +50,7 @@
   </div>
 </div>
 
+
 <div id="general">
   <div id= "panel">
     <div class="panel2">
@@ -85,8 +65,8 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item active">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item">Albums</a>
+            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
+            <a href= "../sessions/albums_usuario" class="list-group-item active">Albums</a>
             <a href= "../sessions/amigos_usuario" class="list-group-item">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
@@ -95,54 +75,40 @@
     </div>
   </div>
 
-
   <div id="account">
     <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading">Account</div>
-
-      <!-- Table -->
-    <%= form_tag('guardarDatos', method: 'get') do %>
+      <div class="panel-heading">Create album</div>
 
       <div class="accountTable" >
+
         <table >
           <tr>
-            <td> Name  </td>
-            <td> <%= text_field_tag(:names, current_user.name) %> </td>
-            </tr>
-          <tr>
-            <td>  Email                </td>
-            <td><%= text_field_tag(:email, current_user.email) %> </td>
+            <td>Name</td>
+            <td> <input></input> </td>
           </tr>
           <tr>
-            <td>  Phone             </td>
-            <td> <%= text_field_tag(:phone, current_user.phone) %>  </td>
+            <td>Description</td>
+            <td><textarea></textarea></td>
           </tr>
           <tr>
-            <td>  Location                </td>
-            <td> <%= text_area_tag(:location , current_user.location) %> </td>
+            <td>Location</td>
+            <td><input></input></td>
           </tr>
           <tr>
-            <td>  Description                  </td>
-            <td> <%= text_area_tag(:description , current_user.description) %> </td>
-          </tr>
-          <tr>
-            <td>Favorite stuff</td>
-            <td><%= text_area_tag(:favorite , current_user.favorite) %> </td>
-          </tr>
         </table>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <p> &nbsp;</p>
+        <div id="edit">
+          <button type="submit" class="btn btn-default">Create</button>
+        </div>
       </div>
-
-      <div class="app"> 
-        <p> Accounts associated </p>
-        <img><%= image_tag "google.png"%></img>
-      </div>
-    </div>
-
-    <div id="edit">
-      <button type="submit" class="btn btn-default">Apply Changes</button>
-    </div>
-    <%end%>
+    </div>    
   </div>
 </div>
 
@@ -150,4 +116,6 @@
   Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>
 
+
+</body>
 </html>

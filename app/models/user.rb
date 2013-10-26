@@ -62,6 +62,12 @@ class User < ActiveRecord::Base
 		usuario.save
 	end
 
+	def modificarFavorito (nuevoFavorito, idUsuario)
+		usuario = User.find(idUsuario)
+		usuario.favorite = nuevoFavorito
+		usuario.save
+	end
+
 	def eliminarUsuario (idUsuario)
 		usuario = Usuario.find(idUsuario)
 		usuario.destroy
