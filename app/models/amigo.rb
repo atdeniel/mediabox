@@ -1,3 +1,31 @@
+# = amigo_rdoc.rb
+#
+# Autor::    	Luz Eljuri, Vianny Molero y Daniel Moros
+# WEB:    		https://github.com/Skeitho/mediabox
+#
+#  == Amigo
+#
+#  A traves de este modelo se maneja:
+#  - Crear un nuevo objeto para solicitar una amistad
+#  - Eliminar una amistad de mi usuario
+#  - Update de mi lista de solicitud pendiente a amigo o cancelar
+#  - Si un usuario ha leido la peticion
+#  - Cambiar estado a eliminado ese amigo
+#  - Metodo para verificar que fue enviada una solicitud
+#
+#  === Clase Amigo
+# 
+#  Definicion de clase _amigo_ compuesta por 
+#  * metodo nuevaAmistad
+#  * metodo eliminarAmistad
+#  * metodo cambiarStatusParaAmigo
+#  * metodo cambiarLeido
+#  * metodo eliminarAmigo
+#  * metodo verSiMandeSolicitud
+#
+
+
+
 class Amigo < ActiveRecord::Base
 
 	/attr_reader :usuarioSolicitaPeticion , :usuarioRecibePeticion/
