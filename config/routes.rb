@@ -95,5 +95,6 @@ match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 match '/sessions/guardarDatos', to: 'guardardatos#guardarDatosUsuario', via: [:get,:post]
 match '/sessions/guardarDatosAlbum', to: 'guardardatos#crearAlbumUsuario', via: [:get, :post]
 match '/sessions/guardarModificacionAlbum', to: 'guardardatos#modificarAlbum', via: [:get, :post]
+match '/buscaramigo/privadoauxiliar' , to:  'buscaramigo#buscarAmigo', via: [:get,:post]
 
 end

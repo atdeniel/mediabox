@@ -112,7 +112,13 @@ class User < ActiveRecord::Base
 		return usuario.favorite
 	end
 
-
-
+	def buscarIdPorCorreo (email)
+		usuario = User.find_by(email: email)
+		if (usuario)
+			return usuario.id
+		else 
+			return "no"
+		end
+	end
 	
 end

@@ -2,8 +2,8 @@
 
 Falta:
 
-- Crear, eliminar, buscar, mostrar de album
-- Crear, buscar, eliminar, mostrar de amigo
+
+- buscar, eliminar, ruta (mostrar) amigo
 - inactividad de usuario
 - mostrar newsfeed
 - documentacion
@@ -11,7 +11,12 @@ Falta:
 
 
 
-
 #yasi : )
 
 vaaaamos equipo si se puede 
+
+
+#nota
+
+en el controlador de ver perfil privado debo crear un objeto amigo porque le metere un metodo para ver si son amigos o no 
+crear una condificion 

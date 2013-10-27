@@ -2,11 +2,54 @@
 <html>
 <head>
   <title>Project</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="container">
+  <div id="templatemo_header"> 
+    <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">   
+      <a class="navbar-brand" href="../sessions/entrar">mediabox</a>
+    </div>
+<% if current_user %>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="../sessions/entrar">Home</a></li>
+      <li><a href="../sessions/perfil_usuario">Profile</a></li>
+      <li><a href="../sessions/amigos_usuario">Friends</a></li>
+      <li><a href="#">Message</a></li>
+    </ul>
+<%end%>
+    
+
+<%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+         <%= text_field_tag(:email, "Search for people") %>
+      </div>
+      <button type="submit" class="btn btn-default">Go!</button>
+    </form>
+    
+
+<%end%>
+
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
+            <li><a href="/auth/google_oauth2">Login</a></li>
+          <% end%>
+      </ul>
+     </div>
+   </nav>
+  </div>
+</div>
 
 
 <%= yield %>
