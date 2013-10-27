@@ -15,7 +15,7 @@ class Amigo < ActiveRecord::Base
     end
 
 	def cambiarStatusParaAmigo(usuarioSolicitaPeticion,usuarioRecibePeticion)
-		amistad = Amigo.find_by(fk_usuario1: usuarioSolicitaPeticion, fk_usuario2: usuarioRecibePeticion)
+		amistad = Amigo.find_by(fk_usuario1: usuarioSolicitaPeticion, fk_usuario2: usuarioRecibePeticion, status: "pendiente")
 		if (amistad)
 		amistad.status = "amigo"
 		amistad.save
@@ -33,15 +33,27 @@ class Amigo < ActiveRecord::Base
 		if (amistad) && !(amistad1)
 			if (amistad.status = "amigo")
 				amistad.status = "eliminado"
+				amistad.fk_usuario1 = "0"
 				amistad.save
 			end
 		else	
 			if (amistad1) && !(amistad)
 				if (amistad1.status = "amigo")
 					amistad1.status = "eliminado"
+					amistad1.fk_usuario1 = "0"
 					amistad1.save
 				end
 			end
+		end
+	end
+
+	def verSiMandeSolicitud (usuarioSolicitaPeticion,usuarioRecibePeticion)
+		amistad = Amigo.find_by(fk_usuario1: usuarioSolicitaPeticion, fk_usuario2: usuarioRecibePeticion, status: "pendiente")
+		
+		if (amistad)
+			return "Friend Request Send"
+		else 
+			return "Add me"
 		end
 	end
 

@@ -11,11 +11,12 @@
 <%= javascript_include_tag "slimbox2.js" %>
 </head> 
 <body> 
- 
+
+
 <div id="templatemo_main" class="pos">
   <div id="content"> 
       <div id="home" class="section">
-      
+      <% amigo = Amigo.new() %>
         <div class="box home_box1">
           <h2>Profile</h2>
         </div>
@@ -29,12 +30,20 @@
         <div class="box home_box2">
           <a href="#"></a> 
         </div>
+
         <div id="basic" class="box home_box1 color4 ">
+        <% if (amigo.verSiMandeSolicitud(current_user.id,params[:id]) == "Add me") %>
           <a href="/sessions/perfil_privado/<%= params[:id]%>/mandarSerAmigo">
           <h3> Add me </h3>
+          <%= image_tag "white/add.png" %>
+          </a>
+        <%else%>
+          <h3> <%= amigo.verSiMandeSolicitud(current_user.id,params[:id]) %> </h3>
           <%= image_tag "white/add.png"%>
-        </a>
+        <%end%>
         </div>
+
+
         <div id="basic"class="box home_box1 color3 ">
           <h3> Friends </h3>
           <div id="basic_number"> <p> <%= current_user.cantidadMisAmigos(params[:id]) %> </p></div>
