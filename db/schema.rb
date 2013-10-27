@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.string   "imagen"
     t.string   "privacidad"
     t.integer  "fk_usuario",  precision: 38, scale: 0
+    t.string   "activo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -86,42 +86,35 @@
     <div class="panel panel-default">
     <!-- Default panel contents -->
       <div class="panel-heading">Your albums</div>
-      <div id="cuadro_up">
-        <a href="../sessions/ver_album">
-          <div class="cuadro1 home_box1 color4">
+<!------------------- -->
+    <% album = Album.new() %>
+    <% totalAlbums = album.cantidadAlbumsTotal() %>
+    <% c=1 %>
+
+  <div id="cuadro_up">
+  <% for i in(1..totalAlbums) %> 
+    <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
+      <% if (albumUsuario != "no") %>  
+         <a href="/sessions/ver_album/<%= albumUsuario.id %>">
+          <div class="cuadro<%=c%> home_box1 color4">
+          <% c=c+1 %>
           </div>
         </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro2 home_box1 color4">
-          </div>
-        </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro3 home_box1 color4">
-          </div>
-        </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro4 home_box1 color4">
-          </div>
-        </a>
+      <% end %>
+  
+  <% end %>
       </div>
+
       <div id="cuadro_down">
-        <a href="../sessions/ver_album">
-          <div class="cuadro1 home_box1 color4">
+  <% for i in(5..totalAlbums) %>
+        <a href="/sessions/ver_album">
+          <div class="cuadro<%=i%> home_box1 color4">
           </div>
         </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro2 home_box1 color4">
-          </div>
-        </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro3 home_box1 color4">
-          </div>
-        </a>
-        <a href="../sessions/ver_album">
-          <div class="cuadro4 home_box1 color4">
-          </div>
-        </a>
+  <% end %> 
       </div>   
+
+<!------------------- -->
     </div>
   </div>
 

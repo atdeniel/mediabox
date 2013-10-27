@@ -4,7 +4,7 @@ class Album < ActiveRecord::Base
 
 	def crearNuevoAlbum (nombreAlbum,fechaCreacionAlbum,descripcionAlbum,lugarAlbum,imagenAlbum,privacidadAlbum,idUsuario)
 		nuevoAlbum = Album.new nombre:nombreAlbum, fecha:fechaCreacionAlbum, descripcion:descripcionAlbum, lugar:lugarAlbum, 
-		             imagen:imagenAlbum, privacidad:privacidadAlbum, fk_usuario:idUsuario
+		             imagen:imagenAlbum, privacidad:privacidadAlbum, fk_usuario:idUsuario, activo: "si"
 		nuevoAlbum.new_record?
 		nuevoAlbum.save
 	end
@@ -13,9 +13,10 @@ class Album < ActiveRecord::Base
 		@idAlbum, @idUsuario = idAlbum, idUsuario
 	end
 
-	def eliminarAlbum
+	def eliminarAlbum(idAlbum)
 		album = Album.find(idAlbum)
-		album.destroy
+		album.activo = "no"
+		album.save
 	end
 
 	def nombreAlbum
@@ -48,29 +49,53 @@ class Album < ActiveRecord::Base
 		return usuario
 	end	
 
-	def modificarNombreAlbum (nuevoNombreAlbum)
+	def privacidadAlbum
+		privacidad = Album.find(idAlbum).privacidad
+		return privacidad
+	end
+
+	def modificarNombreAlbum (nuevoNombreAlbum,idAlbum)
 		album = Album.find(idAlbum)
 		album.nombre = nuevoNombreAlbum
 		album.save
 	end
 
-	def modificarDescripcionAlbum (nuevaDescripcionAlbum)
+	def modificarDescripcionAlbum (nuevaDescripcionAlbum,idAlbum)
 		album = Album.find(idAlbum)
 		album.descripcion = nuevaDescripcionAlbum
 		album.save
 	end
 
-	def modificarLugarAlbum (nuevolugarAlbum)
+	def modificarLugarAlbum (nuevolugarAlbum,idAlbum)
 		album = Album.find(idAlbum)
 		album.lugar = nuevolugarAlbum
 		album.save
 	end
 
-	def modificarPrivacidadAlbum (nuevaPrivacidadAlbum)
+	def modificarPrivacidadAlbum (nuevaPrivacidadAlbum,idAlbum)
 		album = Album.find(idAlbum)
 		album.privacidad = nuevaPrivacidadAlbum
 		album.save
 	end
+
+	def cantidadAlbumsTotal
+		album = Album.count
+		if (album)
+		return album
+	else
+		return 0
+	end
+	end
+
+	def regresarAlbumUsuario(idUsuario,idAlbum)
+		album = Album.find_by(fk_usuario: idUsuario,id: idAlbum)
+		if (album and album.activo == 'si')
+		return album
+		else
+		return "no"
+		end
+	end
+
 
 
 end

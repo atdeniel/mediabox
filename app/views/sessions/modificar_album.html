@@ -23,9 +23,9 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li><a href="../sessions/entrar">Home</a></li>
-      <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
-      <li><a href="../sessions/amigos_usuario">Friends</a></li>
+      <li><a href="/sessions/entrar">Home</a></li>
+      <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
 <%end%>
@@ -65,9 +65,9 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item active">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item">Friends</a>
+            <a href= "/sessions/perfil_modificar" class="list-group-item">About</a>
+            <a href= "/sessions/albums_usuario" class="list-group-item active">Albums</a>
+            <a href= "/sessions/amigos_usuario" class="list-group-item">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
         </div>
@@ -81,22 +81,32 @@
       <div class="panel-heading">Edit your album</div>
 
       <div class="accountTable" >
-
+      
+      <%= form_tag('../guardarModificacionAlbum', method: 'get') do %>
+      <% albumEditar = Album.new()
+        albumEditar.iniciarAlbum(current_user.id ,params[:id]) %>
         <table >
           <tr>
             <td>Name</td>
-            <td> <input></input> </td>
+            <td> <%= text_field_tag(:nombre, albumEditar.nombreAlbum) %>  </td>
+            <% id =albumEditar.idAlbum %> 
           </tr>
           <tr>
             <td>Description</td>
-            <td><textarea></textarea></td>
+            <td><%= text_area_tag(:descripcion, albumEditar.descripcionAlbum ) %> </td>
           </tr>
           <tr>
             <td>Location</td>
-            <td><input></input></td>
+            <td><%= text_area_tag(:lugar, albumEditar.lugarAlbum ) %> </td>
           </tr>
           <tr>
+            <td>Privacity</td>
+            <td><%= text_field_tag(:privacidad, albumEditar.privacidadAlbum) %> </td>
+          </tr>
+          <%= hidden_field_tag(:id, albumEditar.idAlbum) %>
+          <tr>
         </table>
+        
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
@@ -106,6 +116,7 @@
         <p> &nbsp;</p>
         <div id="edit">
           <button type="submit" class="btn btn-default">Edit</button>
+          <%end%>
         </div>
       </div>
     </div>    
@@ -113,7 +124,7 @@
 </div>
 
 <div id="templatemo_footer">
-  Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
+  Copyright © 2013 <a href="/sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>
 
 

@@ -24,6 +24,8 @@ Project::Application.routes.draw do
   get "sessions/perfil_modificar"
 
   get "sessions/ver_album"
+  #get "manejoalbum/desactivarAlbum"
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -35,9 +37,14 @@ Project::Application.routes.draw do
   get 'sessions/perfil_privado/:id/mandarSerAmigo' => 'manejoamigo#mandarOconfirmarSolicitudAmistad'
   ##
 
+  get '/sessions/ver_album/:id' => 'manejoalbum#irAlbum'
+  get '/sessions/modificar_album/:id' => 'manejoalbum#irEditarAlbum'
+  get '/manejoalbum/desactivarAlbum/:id' => 'manejoalbum#desactivarAlbum'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+ 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -86,5 +93,7 @@ match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
 match '/sessions/guardarDatos', to: 'guardardatos#guardarDatosUsuario', via: [:get,:post]
+match '/sessions/guardarDatosAlbum', to: 'guardardatos#crearAlbumUsuario', via: [:get, :post]
+match '/sessions/guardarModificacionAlbum', to: 'guardardatos#modificarAlbum', via: [:get, :post]
 
 end

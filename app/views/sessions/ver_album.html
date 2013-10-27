@@ -23,9 +23,9 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li><a href="../sessions/entrar">Home</a></li>
-      <li class="active"><a href="../sessions/perfil_usuario">Profile</a></li>
-      <li><a href="../sessions/amigos_usuario">Friends</a></li>
+      <li><a href="/sessions/entrar">Home</a></li>
+      <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li><a href="#">Message</a></li>
     </ul>
 <%end%>
@@ -65,9 +65,9 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item active">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item">Friends</a>
+            <a href= "/sessions/perfil_modificar" class="list-group-item">About</a>
+            <a href= "/sessions/albums_usuario" class="list-group-item active">Albums</a>
+            <a href= "/sessions/amigos_usuario" class="list-group-item">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
         </div>
@@ -76,14 +76,13 @@
   </div>
 
   <div id="account">
-    
     <div class="panel_box1">
-      <a href="">
+      <a href="/manejoalbum/desactivarAlbum/<%= params[:id] %>">
         <%= image_tag "black/delete.png"%>
       </a>
     </div>
     <div class="panel_box2">
-      <a href="../sessions/modificar_album">
+      <a href="/sessions/modificar_album/<%= params[:id] %>">
         <%= image_tag "black/edit.png"%>
       </a>
     </div>
