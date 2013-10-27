@@ -54,6 +54,8 @@ class Album < ActiveRecord::Base
 		return privacidad
 	end
 
+
+
 	def modificarNombreAlbum (nuevoNombreAlbum,idAlbum)
 		album = Album.find(idAlbum)
 		album.nombre = nuevoNombreAlbum

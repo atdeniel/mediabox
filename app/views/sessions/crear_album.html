@@ -15,6 +15,42 @@
 </head>
 
 <body> 
+<div id="container">
+  <div id="templatemo_header"> 
+    <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">   
+      <a class="navbar-brand" href="/sessions/entrar">mediabox</a>
+    </div>
+<% if current_user %>
+    <ul class="nav navbar-nav">
+      <li><a href="/sessions/entrar">Home</a></li>
+      <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/amigos_usuario">Friends</a></li>
+      <li><a href="/sessions/notificador">News feed</a></li>
+    </ul>
+<%end%> 
+    <div id="search">
+      <%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
+   
+         <%= text_field_tag(:email, "Search for people") %>
+      <button type="submit" >Go!</button>
+    <%end%>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
+            <li><a href="/auth/google_oauth2">Login</a></li>
+          <% end%>
+      </ul>
+     </div>
+   </nav>
+  </div>
+</div>
 
 <div id="general">
   <div id= "panel">
@@ -59,6 +95,11 @@
           <tr>
             <td>Location</td>
             <td><%= text_area_tag(:lugar, "") %> </td>
+          </tr>
+          <tr>
+          <tr>
+            <td>URL(imagen)</td>
+            <td><%= text_field_tag(:imagen, "") %> </td>
           </tr>
           <tr>
         </table>

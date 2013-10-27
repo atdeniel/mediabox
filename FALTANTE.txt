@@ -3,7 +3,7 @@
 Falta:
 
 
-- buscar, eliminar, ruta (mostrar) amigo
+- eliminar, ruta (mostrar) amigo
 - inactividad de usuario
 - mostrar newsfeed
 - documentacion

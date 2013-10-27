@@ -19,22 +19,24 @@
   <div id="templatemo_header"> 
     <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">   
-      <a class="navbar-brand" href="../sessions/entrar">mediabox</a>
+      <a class="navbar-brand" href="/sessions/entrar">mediabox</a>
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
       <li><a href="/sessions/entrar">Home</a></li>
       <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
       <li><a href="/sessions/amigos_usuario">Friends</a></li>
-      <li><a href="#">Message</a></li>
+      <li><a href="/sessions/notificador">News feed</a></li>
     </ul>
-<%end%>
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search for people">
-      </div>
-      <button type="submit" class="btn btn-default">Go!</button>
-    </form>
+<%end%> 
+    <div id="search">
+      <%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
+   
+         <%= text_field_tag(:email, "Search for people") %>
+      <button type="submit" >Go!</button>
+    <%end%>
+    </div>
+
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
@@ -49,6 +51,7 @@
    </nav>
   </div>
 </div>
+
 
 
 <div id="general">

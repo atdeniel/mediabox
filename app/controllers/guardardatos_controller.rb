@@ -17,13 +17,14 @@ class GuardardatosController < ApplicationController
         current_user.modificarTelefono(telefonoNuevo,current_user.id)
         current_user.modificarFavorito(favoritoNuevo,current_user.id)
 
+
         redirect_to '/sessions/perfil_modificar'
 
   end
 
   def crearAlbumUsuario
 
-        nuevoAlbum = Album.new.crearNuevoAlbum(params[:nombre],"12-12-12",params[:descripcion],params[:lugar],"si","si",current_user.id)
+        nuevoAlbum = Album.new.crearNuevoAlbum(params[:nombre],"12-12-12",params[:descripcion],params[:lugar],params[:imagen],"si",current_user.id)
 
         redirect_to '/sessions/albums_usuario'
   end
@@ -35,6 +36,7 @@ class GuardardatosController < ApplicationController
       albumEditar.modificarDescripcionAlbum(params[:descripcion],params[:id])
       albumEditar.modificarLugarAlbum(params[:lugar],params[:id])
       albumEditar.modificarPrivacidadAlbum(params[:privacidad],params[:id])
+
 
       redirect_to '/sessions/albums_usuario/'
     
