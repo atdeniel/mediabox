@@ -45,16 +45,45 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Your friends</div>
 
-      <ul class="pagination pagination-sm">
-        <li><a href="#">&laquo;</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-      </ul>
-    </div>
+<!------------------- -->
+
+<% c=1 %>
+  <div id="cuadro_up">
+  <% for i in(1..current_user.cantidadAmigos) %>
+  <% if i == 5 %>
+  <% break %>
+  <% end %>
+  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
+      <% if ( esAmigo != "no") %>  
+         <a href="/sessions/perfil_publico/<%=esAmigo%>">
+          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.imagenUsuario(esAmigo)%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
+          <% c=c+1 %>
+          </div>
+        </a>
+      <% end %>
+      <% end %>
+  
+      </div>
+<% c=1 %>
+      <div id="cuadro_down">
+  <% for i in(5..current_user.cantidadAmigos) %>
+    <% if i == 9 %>
+  <% break %>
+  <% end %>
+  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
+    <% if ( esAmigo != "no") %>  
+         <a href="/sessions/perfil_publico/<%=esAmigo%>">
+            <a href="/sessions/perfil_publico/<%=esAmigo%>">
+          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.image%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
+          <% c=c+1 %>
+          </div>
+        </a>
+      <% end %>
+       <% end %>
+      </div>   
+
+<!------------------- -->
+
   </div>
 </div>
 

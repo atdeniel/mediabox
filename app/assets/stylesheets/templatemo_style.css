@@ -487,3 +487,14 @@ img { margin: 0; padding: 0; border: none }
 	top: 1.2em;
 	left: 34em;	
 }
+
+#amigofoto
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 152px;
+	height: 152px;
+
+
+}

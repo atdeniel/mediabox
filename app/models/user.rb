@@ -151,5 +151,44 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	def cantidadAmigos
+		cantidadAmigo = Amigo.count
+		return cantidadAmigo
+	end
+
+	def verSiEsAmigo (idAmigo,idUsuario)
+		
+		amigo1 = Amigo.find_by(id: idAmigo,fk_usuario1: idUsuario, status: "amigo")
+		amigo2 = Amigo.find_by(id: idAmigo,fk_usuario2: idUsuario, status: "amigo")
+
+		if (amigo1)
+		return amigo1.fk_usuario2
+		end
+		
+		if (amigo2)
+		return amigo2.fk_usuario1
+		end
+
+		return "no"
+
+	end
+
+	def cantidadMisAmigos(idUsuario)
+		amigo1 = Amigo.where(fk_usuario1: idUsuario, status: "amigo").count
+		amigo2 = Amigo.where(fk_usuario2: idUsuario, status: "amigo").count
+
+		if (amigo1) && !(amigo2)
+		return amigo1
+		end
+		
+		if (amigo2)&& !(amigo1)
+		return amigo2
+		end
+
+		return amigo1+amigo2
+
+	end
+
+
 
 end

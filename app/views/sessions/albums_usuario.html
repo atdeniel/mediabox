@@ -30,9 +30,9 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item active">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item">Friends</a>
+            <a href= "/sessions/perfil_modificar" class="list-group-item">About</a>
+            <a href= "/sessions/albums_usuario" class="list-group-item active">Albums</a>
+            <a href= "/sessions/amigos_usuario" class="list-group-item">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
         </div>
@@ -58,10 +58,13 @@
 
   <div id="cuadro_up">
   <% for i in(1..totalAlbums) %> 
+    <% if i == 5 %>
+  <% break %>
+  <% end %>
     <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
-          <div class="cuadro<%=c%> home_box1 color4">
+          <div class="cuadro<%=c%> home_box1 color4"> <%= albumUsuario.nombre %>
           <% c=c+1 %>
           </div>
         </a>
@@ -69,13 +72,20 @@
   
   <% end %>
       </div>
-
+<% c=1 %>
       <div id="cuadro_down">
   <% for i in(5..totalAlbums) %>
-        <a href="/sessions/ver_album">
-          <div class="cuadro<%=i%> home_box1 color4">
+    <% if i == 5 %>
+  <% break %>
+  <% end %>
+  <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
+      <% if (albumUsuario != "no") %>  
+         <a href="/sessions/ver_album/<%= albumUsuario.id %>">
+          <div class="cuadro<%=c%> home_box1 color4">
+          <% c=c+1 %>
           </div>
         </a>
+      <% end %>
   <% end %> 
       </div>   
 
