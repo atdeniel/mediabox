@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class User - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/user.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-from_omniauth">::from_omniauth</a>
+    
+    <li><a href="#method-i-buscarIdPorCorreo">#buscarIdPorCorreo</a>
+    
+    <li><a href="#method-i-cantidadAmigos">#cantidadAmigos</a>
+    
+    <li><a href="#method-i-cantidadMisAmigos">#cantidadMisAmigos</a>
+    
+    <li><a href="#method-i-cantidadNotificacion">#cantidadNotificacion</a>
+    
+    <li><a href="#method-i-eliminarUsuario">#eliminarUsuario</a>
+    
+    <li><a href="#method-i-idUsuarioQueMeNotifica">#idUsuarioQueMeNotifica</a>
+    
+    <li><a href="#method-i-imagenUsuario">#imagenUsuario</a>
+    
+    <li><a href="#method-i-modificarDescripcion">#modificarDescripcion</a>
+    
+    <li><a href="#method-i-modificarEmail">#modificarEmail</a>
+    
+    <li><a href="#method-i-modificarFavorito">#modificarFavorito</a>
+    
+    <li><a href="#method-i-modificarFoto">#modificarFoto</a>
+    
+    <li><a href="#method-i-modificarLugar">#modificarLugar</a>
+    
+    <li><a href="#method-i-modificarNombreApellido">#modificarNombreApellido</a>
+    
+    <li><a href="#method-i-modificarNombreUsuario">#modificarNombreUsuario</a>
+    
+    <li><a href="#method-i-modificarTelefono">#modificarTelefono</a>
+    
+    <li><a href="#method-i-nombreUsuario">#nombreUsuario</a>
+    
+    <li><a href="#method-i-verDescripcion">#verDescripcion</a>
+    
+    <li><a href="#method-i-verFavorito">#verFavorito</a>
+    
+    <li><a href="#method-i-verPrivacidad">#verPrivacidad</a>
+    
+    <li><a href="#method-i-verSiEsAmigo">#verSiEsAmigo</a>
+    
+    <li><a href="#method-i-verificarAmistad">#verificarAmistad</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Album.html">Album</a>
+  
+    <li><a href="./Amigo.html">Amigo</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./BuscaramigoController.html">BuscaramigoController</a>
+  
+    <li><a href="./BuscaramigoHelper.html">BuscaramigoHelper</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./EliminaramigoController.html">EliminaramigoController</a>
+  
+    <li><a href="./EliminaramigoHelper.html">EliminaramigoHelper</a>
+  
+    <li><a href="./GuardardatosController.html">GuardardatosController</a>
+  
+    <li><a href="./IrperfilusuarioController.html">IrperfilusuarioController</a>
+  
+    <li><a href="./IrperfilusuarioHelper.html">IrperfilusuarioHelper</a>
+  
+    <li><a href="./ManejoalbumController.html">ManejoalbumController</a>
+  
+    <li><a href="./ManejoalbumHelper.html">ManejoalbumHelper</a>
+  
+    <li><a href="./ManejoamigoController.html">ManejoamigoController</a>
+  
+    <li><a href="./ManejoamigoHelper.html">ManejoamigoHelper</a>
+  
+    <li><a href="./Megusta.html">Megusta</a>
+  
+    <li><a href="./Multimedia.html">Multimedia</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class User</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-user_rdoc.rb">user_rdoc.rb</h1>
+<dl class="rdoc-list note-list"><dt>Autor
+<dd>
+<p>Luz Eljuri, Vianny Molero, Jose Moros</p>
+</dd><dt>Web
+<dd>
+<p><a
+href="https://github.com/Skeitho/mediabox">github.com/Skeitho/mediabox</a></p>
+</dd></dl>
+
+<h2 id="label-User"><a href="User.html">User</a></h2>
+
+<p>Con este modelo pretendemos: -Crear el usuario, y guardarlo en la BD
+-Getters y Setters del usuario -Cantidad de amigos que tiene un usuario
+-Cantidad de albums que tiene un usuario -Buscar usuarios por parametros
+-Vereficar amistad entre usuarios</p>
+
+<h3 id="label-Clase+User">Clase <a href="User.html">User</a></h3>
+
+<p>Definicion de la clase <em><a href="User.html">User</a></em> compuesta por
+*metodo self.from_omniauth *metodo modificarNombreApellido *metodo
+modificarNombreUsuario *metodo modificarLugar *metodo modificarDescripcion
+*metodo modificarFoto *metodo modificarEmail *metodo modificarTelefono 
+*metodo modificarFavorito *metodo eliminarUsuario *metodo
+cantidadNotificacion *metodo idUsuarioQueMeNotifica *metodo nombreUsuario
+*metodo imagenUsuario *metodo verPrivacidad *metodo verDescripcion *metodo
+verFavorito *metodo buscarIdPorCorreo *metodo verificarAmistad *metodo
+cantidadAmigos *metodo verSiEsAmigo *metodo cantidadMisAmigos</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-from_omniauth" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_omniauth</span><span
+            class="method-args">(auth)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_omniauth-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">from_omniauth</span>(<span class="ruby-identifier">auth</span>)
+        <span class="ruby-identifier">where</span>(<span class="ruby-identifier">auth</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">:provider</span>, <span class="ruby-value">:uid</span>)).<span class="ruby-identifier">first_or_initialize</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span>
+
+                <span class="ruby-identifier">validacionUsuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">uid</span><span class="ruby-value">:auth</span>.<span class="ruby-identifier">uid</span>)
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">validacionUsuario</span>)
+
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">provider</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">provider</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">uid</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">uid</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">name</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">first_name</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">first_name</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">last_name</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">last_name</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">location</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">location</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">description</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">description</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">image</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">image</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">phone</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">phone</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">email</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">info</span>.<span class="ruby-identifier">email</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">oauth_token</span> = <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">credentials</span>.<span class="ruby-identifier">token</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">oauth_expires_at</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">auth</span>.<span class="ruby-identifier">credentials</span>.<span class="ruby-identifier">expires_at</span>)
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">privacity</span> = <span class="ruby-string">&#39;privado&#39;</span>
+                <span class="ruby-identifier">user</span>.<span class="ruby-identifier">save!</span>
+
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- from_omniauth-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- from_omniauth-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-buscarIdPorCorreo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">buscarIdPorCorreo</span><span
+            class="method-args">(email)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="buscarIdPorCorreo-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">buscarIdPorCorreo</span> (<span class="ruby-identifier">email</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">email</span><span class="ruby-operator">:</span> <span class="ruby-identifier">email</span>)
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">usuario</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">id</span>
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- buscarIdPorCorreo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- buscarIdPorCorreo-method -->
+
+    
+      <div id="method-i-cantidadAmigos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cantidadAmigos</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cantidadAmigos-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cantidadAmigos</span>
+        <span class="ruby-identifier">cantidadAmigo</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">count</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">cantidadAmigo</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cantidadAmigos-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cantidadAmigos-method -->
+
+    
+      <div id="method-i-cantidadMisAmigos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cantidadMisAmigos</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cantidadMisAmigos-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cantidadMisAmigos</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">amigo1</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;amigo&quot;</span>).<span class="ruby-identifier">count</span>
+        <span class="ruby-identifier">amigo2</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;amigo&quot;</span>).<span class="ruby-identifier">count</span>
+
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amigo1</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amigo2</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo1</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amigo2</span>)<span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amigo1</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo2</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo1</span><span class="ruby-operator">+</span><span class="ruby-identifier">amigo2</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cantidadMisAmigos-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cantidadMisAmigos-method -->
+
+    
+      <div id="method-i-cantidadNotificacion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cantidadNotificacion</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cantidadNotificacion-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cantidadNotificacion</span>
+    <span class="ruby-identifier">cantidad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">return</span> <span class="ruby-identifier">cantidad</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cantidadNotificacion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cantidadNotificacion-method -->
+
+    
+      <div id="method-i-eliminarUsuario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminarUsuario</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eliminarUsuario-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminarUsuario</span> (<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">Usuario</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">destroy</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminarUsuario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminarUsuario-method -->
+
+    
+      <div id="method-i-idUsuarioQueMeNotifica" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">idUsuarioQueMeNotifica</span><span
+            class="method-args">(numeroNotificacion, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="idUsuarioQueMeNotifica-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 129</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">idUsuarioQueMeNotifica</span> (<span class="ruby-identifier">numeroNotificacion</span>, <span class="ruby-identifier">idUsuario</span>)
+            <span class="ruby-identifier">amigo</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">numeroNotificacion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;pendiente&#39;</span>)    
+            <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amigo</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo</span>.<span class="ruby-identifier">fk_usuario1</span>
+<span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+<span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- idUsuarioQueMeNotifica-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- idUsuarioQueMeNotifica-method -->
+
+    
+      <div id="method-i-imagenUsuario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">imagenUsuario</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="imagenUsuario-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">imagenUsuario</span> (<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">image</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- imagenUsuario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- imagenUsuario-method -->
+
+    
+      <div id="method-i-modificarDescripcion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarDescripcion</span><span
+            class="method-args">(nuevaDescripcion, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarDescripcion-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarDescripcion</span> (<span class="ruby-identifier">nuevaDescripcion</span>, <span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">description</span> = <span class="ruby-identifier">nuevaDescripcion</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarDescripcion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarDescripcion-method -->
+
+    
+      <div id="method-i-modificarEmail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarEmail</span><span
+            class="method-args">(nuevoEmail, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarEmail-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarEmail</span> (<span class="ruby-identifier">nuevoEmail</span>, <span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">email</span> = <span class="ruby-identifier">nuevoEmail</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarEmail-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarEmail-method -->
+
+    
+      <div id="method-i-modificarFavorito" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarFavorito</span><span
+            class="method-args">(nuevoFavorito, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarFavorito-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarFavorito</span> (<span class="ruby-identifier">nuevoFavorito</span>, <span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">favorite</span> = <span class="ruby-identifier">nuevoFavorito</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarFavorito-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarFavorito-method -->
+
+    
+      <div id="method-i-modificarFoto" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarFoto</span><span
+            class="method-args">(nuevaFoto, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarFoto-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarFoto</span> (<span class="ruby-identifier">nuevaFoto</span>, <span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">image</span> = <span class="ruby-identifier">nuevaFoto</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarFoto-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarFoto-method -->
+
+    
+      <div id="method-i-modificarLugar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarLugar</span><span
+            class="method-args">(nuevoLugar,idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarLugar-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarLugar</span>(<span class="ruby-identifier">nuevoLugar</span>,<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">location</span> = <span class="ruby-identifier">nuevoLugar</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarLugar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarLugar-method -->
+
+    
+      <div id="method-i-modificarNombreApellido" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarNombreApellido</span><span
+            class="method-args">(nuevoNombreApellido,idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarNombreApellido-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarNombreApellido</span>(<span class="ruby-identifier">nuevoNombreApellido</span>,<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">nuevoNombreApellido</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarNombreApellido-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarNombreApellido-method -->
+
+    
+      <div id="method-i-modificarNombreUsuario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarNombreUsuario</span><span
+            class="method-args">(nuevoNombre,nuevoApellido,idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarNombreUsuario-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarNombreUsuario</span>(<span class="ruby-identifier">nuevoNombre</span>,<span class="ruby-identifier">nuevoApellido</span>,<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">first_name</span>=<span class="ruby-identifier">nuevoNombre</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">last_name</span>=<span class="ruby-identifier">nuevoApellido</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarNombreUsuario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarNombreUsuario-method -->
+
+    
+      <div id="method-i-modificarTelefono" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarTelefono</span><span
+            class="method-args">(nuevoTelefono, idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarTelefono-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarTelefono</span> (<span class="ruby-identifier">nuevoTelefono</span>, <span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">phone</span> = <span class="ruby-identifier">nuevoTelefono</span>
+        <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarTelefono-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarTelefono-method -->
+
+    
+      <div id="method-i-nombreUsuario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nombreUsuario</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nombreUsuario-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nombreUsuario</span> (<span class="ruby-identifier">idUsuario</span>)
+    <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nombreUsuario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nombreUsuario-method -->
+
+    
+      <div id="method-i-verDescripcion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verDescripcion</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verDescripcion-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verDescripcion</span> (<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">description</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verDescripcion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verDescripcion-method -->
+
+    
+      <div id="method-i-verFavorito" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verFavorito</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verFavorito-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verFavorito</span> (<span class="ruby-identifier">idUsuario</span>)
+            <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+            <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">favorite</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- verFavorito-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verFavorito-method -->
+
+    
+      <div id="method-i-verPrivacidad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verPrivacidad</span><span
+            class="method-args">(idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verPrivacidad-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verPrivacidad</span> (<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>.<span class="ruby-identifier">privacity</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verPrivacidad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verPrivacidad-method -->
+
+    
+      <div id="method-i-verSiEsAmigo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verSiEsAmigo</span><span
+            class="method-args">(idAmigo,idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verSiEsAmigo-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verSiEsAmigo</span> (<span class="ruby-identifier">idAmigo</span>,<span class="ruby-identifier">idUsuario</span>)
+        
+        <span class="ruby-identifier">amigo1</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idAmigo</span>,<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;amigo&quot;</span>)
+        <span class="ruby-identifier">amigo2</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idAmigo</span>,<span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;amigo&quot;</span>)
+
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amigo1</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo1</span>.<span class="ruby-identifier">fk_usuario2</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amigo2</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">amigo2</span>.<span class="ruby-identifier">fk_usuario1</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verSiEsAmigo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verSiEsAmigo-method -->
+
+    
+      <div id="method-i-verificarAmistad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verificarAmistad</span><span
+            class="method-args">(idUsuario,email)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verificarAmistad-source">
+            <pre><span class="ruby-comment"># File app/models/user.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verificarAmistad</span>(<span class="ruby-identifier">idUsuario</span>,<span class="ruby-identifier">email</span>)
+        <span class="ruby-identifier">idamigo</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">email</span><span class="ruby-operator">:</span> <span class="ruby-identifier">email</span>)
+
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">idamigo</span>)
+                <span class="ruby-identifier">amistad1</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idamigo</span>.<span class="ruby-identifier">id</span>)
+                <span class="ruby-identifier">amistad2</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idamigo</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>)
+                
+
+                <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad1</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amistad2</span>)
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad1</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;amigo&quot;</span>)
+                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;si&quot;</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+                        <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">else</span>
+                        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad2</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amistad1</span>)
+                                <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad2</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;amigo&quot;</span>)
+                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;si&quot;</span>
+                                <span class="ruby-keyword">else</span>
+                                        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+                                <span class="ruby-keyword">end</span>
+                        <span class="ruby-keyword">else</span>
+                                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no existe&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verificarAmistad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verificarAmistad-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

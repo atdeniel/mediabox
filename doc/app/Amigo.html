@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Amigo - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/amigo.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cambiarLeido">#cambiarLeido</a>
+    
+    <li><a href="#method-i-cambiarStatusParaAmigo">#cambiarStatusParaAmigo</a>
+    
+    <li><a href="#method-i-eliminarAmigo">#eliminarAmigo</a>
+    
+    <li><a href="#method-i-eliminarAmistad">#eliminarAmistad</a>
+    
+    <li><a href="#method-i-nuevaAmistad">#nuevaAmistad</a>
+    
+    <li><a href="#method-i-verSiMandeSolicitud">#verSiMandeSolicitud</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Album.html">Album</a>
+  
+    <li><a href="./Amigo.html">Amigo</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./BuscaramigoController.html">BuscaramigoController</a>
+  
+    <li><a href="./BuscaramigoHelper.html">BuscaramigoHelper</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./EliminaramigoController.html">EliminaramigoController</a>
+  
+    <li><a href="./EliminaramigoHelper.html">EliminaramigoHelper</a>
+  
+    <li><a href="./GuardardatosController.html">GuardardatosController</a>
+  
+    <li><a href="./IrperfilusuarioController.html">IrperfilusuarioController</a>
+  
+    <li><a href="./IrperfilusuarioHelper.html">IrperfilusuarioHelper</a>
+  
+    <li><a href="./ManejoalbumController.html">ManejoalbumController</a>
+  
+    <li><a href="./ManejoalbumHelper.html">ManejoalbumHelper</a>
+  
+    <li><a href="./ManejoamigoController.html">ManejoamigoController</a>
+  
+    <li><a href="./ManejoamigoHelper.html">ManejoamigoHelper</a>
+  
+    <li><a href="./Megusta.html">Megusta</a>
+  
+    <li><a href="./Multimedia.html">Multimedia</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Amigo</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-amigo_rdoc.rb">amigo_rdoc.rb</h1>
+<dl class="rdoc-list note-list"><dt>Autor
+<dd>
+<p>Luz Eljuri, Vianny Molero y Daniel Moros</p>
+</dd></dl>
+
+<p>WEB:                  <a
+href="https://github.com/Skeitho/mediabox">github.com/Skeitho/mediabox</a></p>
+
+<pre>== Amigo
+
+A traves de este modelo se maneja:
+- Crear un nuevo objeto para solicitar una amistad
+- Eliminar una amistad de mi usuario
+- Update de mi lista de solicitud pendiente a amigo o cancelar
+- Si un usuario ha leido la peticion
+- Cambiar estado a eliminado ese amigo
+- Metodo para verificar que fue enviada una solicitud
+
+=== Clase Amigo
+
+Definicion de clase _amigo_ compuesta por 
+* metodo nuevaAmistad
+* metodo eliminarAmistad
+* metodo cambiarStatusParaAmigo
+* metodo cambiarLeido
+* metodo eliminarAmigo
+* metodo verSiMandeSolicitud</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cambiarLeido" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cambiarLeido</span><span
+            class="method-args">(usuarioSolicitaPeticion,usuarioRecibePeticion)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cambiarLeido-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 53</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">cambiarLeido</span>(<span class="ruby-identifier">usuarioSolicitaPeticion</span>,<span class="ruby-identifier">usuarioRecibePeticion</span>)
+            <span class="ruby-identifier">amistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioSolicitaPeticion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioRecibePeticion</span>)
+            <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">leido</span>=<span class="ruby-string">&quot;si&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cambiarLeido-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cambiarLeido-method -->
+
+    
+      <div id="method-i-cambiarStatusParaAmigo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cambiarStatusParaAmigo</span><span
+            class="method-args">(usuarioSolicitaPeticion,usuarioRecibePeticion)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cambiarStatusParaAmigo-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cambiarStatusParaAmigo</span>(<span class="ruby-identifier">usuarioSolicitaPeticion</span>,<span class="ruby-identifier">usuarioRecibePeticion</span>)
+        <span class="ruby-identifier">amistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioSolicitaPeticion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioRecibePeticion</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;pendiente&quot;</span>)
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad</span>)
+        <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">status</span> = <span class="ruby-string">&quot;amigo&quot;</span>
+        <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cambiarStatusParaAmigo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cambiarStatusParaAmigo-method -->
+
+    
+      <div id="method-i-eliminarAmigo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminarAmigo</span><span
+            class="method-args">(idUsuario,idAmigo)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eliminarAmigo-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminarAmigo</span> (<span class="ruby-identifier">idUsuario</span>,<span class="ruby-identifier">idAmigo</span>)
+            <span class="ruby-identifier">amistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idAmigo</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>)
+            <span class="ruby-identifier">amistad1</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idAmigo</span>)
+            <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amistad1</span>)
+                    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">status</span> = <span class="ruby-string">&quot;amigo&quot;</span>)
+                            <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">status</span> = <span class="ruby-string">&quot;eliminado&quot;</span>
+                            <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">fk_usuario1</span> = <span class="ruby-string">&quot;0&quot;</span>
+                            <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">save</span>
+                    <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">else</span>  
+                    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad1</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">amistad</span>)
+                            <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad1</span>.<span class="ruby-identifier">status</span> = <span class="ruby-string">&quot;amigo&quot;</span>)
+                                    <span class="ruby-identifier">amistad1</span>.<span class="ruby-identifier">status</span> = <span class="ruby-string">&quot;eliminado&quot;</span>
+                                    <span class="ruby-identifier">amistad1</span>.<span class="ruby-identifier">fk_usuario1</span> = <span class="ruby-string">&quot;0&quot;</span>
+                                    <span class="ruby-identifier">amistad1</span>.<span class="ruby-identifier">save</span>
+                            <span class="ruby-keyword">end</span>
+                    <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminarAmigo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminarAmigo-method -->
+
+    
+      <div id="method-i-eliminarAmistad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminarAmistad</span><span
+            class="method-args">(usuarioSolicitaPeticion,usuarioRecibePeticion)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eliminarAmistad-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 40</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminarAmistad</span>(<span class="ruby-identifier">usuarioSolicitaPeticion</span>,<span class="ruby-identifier">usuarioRecibePeticion</span>)
+            <span class="ruby-identifier">amistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioSolicitaPeticion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioRecibePeticion</span>)
+    <span class="ruby-identifier">amistad</span>.<span class="ruby-identifier">destroy</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminarAmistad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminarAmistad-method -->
+
+    
+      <div id="method-i-nuevaAmistad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nuevaAmistad</span><span
+            class="method-args">(usuarioSolicitaPeticion,usuarioRecibePeticion,fechaPeticion)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nuevaAmistad-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nuevaAmistad</span>(<span class="ruby-identifier">usuarioSolicitaPeticion</span>,<span class="ruby-identifier">usuarioRecibePeticion</span>,<span class="ruby-identifier">fechaPeticion</span>)
+        <span class="ruby-identifier">nuevaAmistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">fk_usuario1</span><span class="ruby-value">:usuarioSolicitaPeticion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-value">:usuarioRecibePeticion</span>, <span class="ruby-identifier">status</span><span class="ruby-value">:&quot;pendiente&quot;</span>,
+                       <span class="ruby-identifier">fecha</span><span class="ruby-value">:fechaPeticion</span>, <span class="ruby-identifier">leido</span><span class="ruby-value">:&quot;no&quot;</span>
+<span class="ruby-identifier">nuevaAmistad</span>.<span class="ruby-identifier">new_record?</span>
+        <span class="ruby-identifier">nuevaAmistad</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nuevaAmistad-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nuevaAmistad-method -->
+
+    
+      <div id="method-i-verSiMandeSolicitud" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verSiMandeSolicitud</span><span
+            class="method-args">(usuarioSolicitaPeticion,usuarioRecibePeticion)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verSiMandeSolicitud-source">
+            <pre><span class="ruby-comment"># File app/models/amigo.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verSiMandeSolicitud</span> (<span class="ruby-identifier">usuarioSolicitaPeticion</span>,<span class="ruby-identifier">usuarioRecibePeticion</span>)
+        <span class="ruby-identifier">amistad</span> = <span class="ruby-constant">Amigo</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario1</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioSolicitaPeticion</span>, <span class="ruby-identifier">fk_usuario2</span><span class="ruby-operator">:</span> <span class="ruby-identifier">usuarioRecibePeticion</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;pendiente&quot;</span>)
+        
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">amistad</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Friend Request Send&quot;</span>
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Add me&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verSiMandeSolicitud-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verSiMandeSolicitud-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

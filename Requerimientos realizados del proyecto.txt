@@ -1,0 +1,19 @@
+Proyecto
+usuario
+Crear usuario
+modificar perfil usuario
+mostrar usuario
+
+albums
+crear album
+modificar album
+eliminar album
+mostrar album
+
+amigo
+aceptar amigos (modificar estatus(pendiente, amigo, eliminado))
+ver notificaciones
+aceptar notificaciones
+buscar amigo por correo
+mostrar amigos
+enviar de nuevo solicitud de amigos

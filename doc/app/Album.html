@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Album - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/album.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cantidadAlbumsTotal">#cantidadAlbumsTotal</a>
+    
+    <li><a href="#method-i-crearNuevoAlbum">#crearNuevoAlbum</a>
+    
+    <li><a href="#method-i-descripcionAlbum">#descripcionAlbum</a>
+    
+    <li><a href="#method-i-eliminarAlbum">#eliminarAlbum</a>
+    
+    <li><a href="#method-i-fechaCreacionAlbum">#fechaCreacionAlbum</a>
+    
+    <li><a href="#method-i-imagenAlbum">#imagenAlbum</a>
+    
+    <li><a href="#method-i-iniciarAlbum">#iniciarAlbum</a>
+    
+    <li><a href="#method-i-lugarAlbum">#lugarAlbum</a>
+    
+    <li><a href="#method-i-modificarDescripcionAlbum">#modificarDescripcionAlbum</a>
+    
+    <li><a href="#method-i-modificarLugarAlbum">#modificarLugarAlbum</a>
+    
+    <li><a href="#method-i-modificarNombreAlbum">#modificarNombreAlbum</a>
+    
+    <li><a href="#method-i-modificarPrivacidadAlbum">#modificarPrivacidadAlbum</a>
+    
+    <li><a href="#method-i-nombreAlbum">#nombreAlbum</a>
+    
+    <li><a href="#method-i-privacidadAlbum">#privacidadAlbum</a>
+    
+    <li><a href="#method-i-regresarAlbumUsuario">#regresarAlbumUsuario</a>
+    
+    <li><a href="#method-i-usuarioAlbum">#usuarioAlbum</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Album.html">Album</a>
+  
+    <li><a href="./Amigo.html">Amigo</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./BuscaramigoController.html">BuscaramigoController</a>
+  
+    <li><a href="./BuscaramigoHelper.html">BuscaramigoHelper</a>
+  
+    <li><a href="./Comentario.html">Comentario</a>
+  
+    <li><a href="./EliminaramigoController.html">EliminaramigoController</a>
+  
+    <li><a href="./EliminaramigoHelper.html">EliminaramigoHelper</a>
+  
+    <li><a href="./GuardardatosController.html">GuardardatosController</a>
+  
+    <li><a href="./IrperfilusuarioController.html">IrperfilusuarioController</a>
+  
+    <li><a href="./IrperfilusuarioHelper.html">IrperfilusuarioHelper</a>
+  
+    <li><a href="./ManejoalbumController.html">ManejoalbumController</a>
+  
+    <li><a href="./ManejoalbumHelper.html">ManejoalbumHelper</a>
+  
+    <li><a href="./ManejoamigoController.html">ManejoamigoController</a>
+  
+    <li><a href="./ManejoamigoHelper.html">ManejoamigoHelper</a>
+  
+    <li><a href="./Megusta.html">Megusta</a>
+  
+    <li><a href="./Multimedia.html">Multimedia</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Album</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-album_rdoc.rb">album_rdoc.rb</h1>
+<dl class="rdoc-list note-list"><dt>Autor
+<dd>
+<p>Luz Eljuri, Vianny Molero, Jose Moros</p>
+</dd><dt>Web
+<dd>
+<p><a
+href="https://github.com/Skeitho/mediabox">github.com/Skeitho/mediabox</a></p>
+</dd></dl>
+
+<h2 id="label-User"><a href="User.html">User</a></h2>
+
+<p>Con este modelo pretendemos: -Crear y eliminar <a
+href="Album.html">Album</a> de un usuario -Getters y Setters de los albums
+-Cantidad de albums de tiene un usuario -Dado un album, saber a que usuario
+le pertenece</p>
+
+<h3 id="label-Clase+Album">Clase <a href="Album.html">Album</a></h3>
+
+<p>Definicion de la clase <em><a href="Album.html">Album</a></em> compuesta
+por *metodo crearNuevoAlbum *metodo iniciar<a href="Album.html">Album</a>
+*metodo eliminar<a href="Album.html">Album</a> *metodo nombre<a
+href="Album.html">Album</a> *metodo fechaCreacionAlbum *metodo
+descripcion<a href="Album.html">Album</a> *metodo lugar<a
+href="Album.html">Album</a> *metodo imagen<a href="Album.html">Album</a>
+*metodo usuario<a href="Album.html">Album</a> *metodo privacidad<a
+href="Album.html">Album</a> *metodo modificarNombreAlbum *metodo
+modificarDescripcionAlbum *metodo modificarLugarAlbum *metodo
+modificarPrivacidadAlbum *metodo cantidadAlbumsTotal *metodo
+regresarAlbumUsuario</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-idAlbum" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">idAlbum</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-idUsuario" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">idUsuario</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cantidadAlbumsTotal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cantidadAlbumsTotal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cantidadAlbumsTotal-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cantidadAlbumsTotal</span>
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">count</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">album</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">album</span>
+<span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cantidadAlbumsTotal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cantidadAlbumsTotal-method -->
+
+    
+      <div id="method-i-crearNuevoAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">crearNuevoAlbum</span><span
+            class="method-args">(nombreAlbum,fechaCreacionAlbum,descripcionAlbum,lugarAlbum,imagenAlbum,privacidadAlbum,idUsuario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="crearNuevoAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">crearNuevoAlbum</span> (<span class="ruby-identifier">nombreAlbum</span>,<span class="ruby-identifier">fechaCreacionAlbum</span>,<span class="ruby-identifier">descripcionAlbum</span>,<span class="ruby-identifier">lugarAlbum</span>,<span class="ruby-identifier">imagenAlbum</span>,<span class="ruby-identifier">privacidadAlbum</span>,<span class="ruby-identifier">idUsuario</span>)
+        <span class="ruby-identifier">nuevoAlbum</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">nombre</span><span class="ruby-value">:nombreAlbum</span>, <span class="ruby-identifier">fecha</span><span class="ruby-value">:fechaCreacionAlbum</span>, <span class="ruby-identifier">descripcion</span><span class="ruby-value">:descripcionAlbum</span>, <span class="ruby-identifier">lugar</span><span class="ruby-value">:lugarAlbum</span>, 
+                     <span class="ruby-identifier">imagen</span><span class="ruby-value">:imagenAlbum</span>, <span class="ruby-identifier">privacidad</span><span class="ruby-value">:privacidadAlbum</span>, <span class="ruby-identifier">fk_usuario</span><span class="ruby-value">:idUsuario</span>, <span class="ruby-identifier">activo</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;si&quot;</span>
+        <span class="ruby-identifier">nuevoAlbum</span>.<span class="ruby-identifier">new_record?</span>
+        <span class="ruby-identifier">nuevoAlbum</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- crearNuevoAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- crearNuevoAlbum-method -->
+
+    
+      <div id="method-i-descripcionAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">descripcionAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="descripcionAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">descripcionAlbum</span>
+    <span class="ruby-identifier">descripcion</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">descripcion</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">descripcion</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- descripcionAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- descripcionAlbum-method -->
+
+    
+      <div id="method-i-eliminarAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eliminarAlbum</span><span
+            class="method-args">(idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="eliminarAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eliminarAlbum</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">activo</span> = <span class="ruby-string">&quot;no&quot;</span>
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eliminarAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eliminarAlbum-method -->
+
+    
+      <div id="method-i-fechaCreacionAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fechaCreacionAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fechaCreacionAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fechaCreacionAlbum</span>
+    <span class="ruby-identifier">fecha</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">fecha</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">fecha</span>       
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fechaCreacionAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fechaCreacionAlbum-method -->
+
+    
+      <div id="method-i-imagenAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">imagenAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="imagenAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">imagenAlbum</span>
+        <span class="ruby-identifier">imagen</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">imagen</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">imagen</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- imagenAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- imagenAlbum-method -->
+
+    
+      <div id="method-i-iniciarAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">iniciarAlbum</span><span
+            class="method-args">(idUsuario, idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="iniciarAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">iniciarAlbum</span> (<span class="ruby-identifier">idUsuario</span>, <span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-ivar">@idAlbum</span>, <span class="ruby-ivar">@idUsuario</span> = <span class="ruby-identifier">idAlbum</span>, <span class="ruby-identifier">idUsuario</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- iniciarAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- iniciarAlbum-method -->
+
+    
+      <div id="method-i-lugarAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lugarAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lugarAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lugarAlbum</span>
+    <span class="ruby-identifier">lugar</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">lugar</span>          
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">lugar</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lugarAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lugarAlbum-method -->
+
+    
+      <div id="method-i-modificarDescripcionAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarDescripcionAlbum</span><span
+            class="method-args">(nuevaDescripcionAlbum,idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarDescripcionAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarDescripcionAlbum</span> (<span class="ruby-identifier">nuevaDescripcionAlbum</span>,<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">descripcion</span> = <span class="ruby-identifier">nuevaDescripcionAlbum</span>
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarDescripcionAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarDescripcionAlbum-method -->
+
+    
+      <div id="method-i-modificarLugarAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarLugarAlbum</span><span
+            class="method-args">(nuevolugarAlbum,idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarLugarAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarLugarAlbum</span> (<span class="ruby-identifier">nuevolugarAlbum</span>,<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">lugar</span> = <span class="ruby-identifier">nuevolugarAlbum</span>
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarLugarAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarLugarAlbum-method -->
+
+    
+      <div id="method-i-modificarNombreAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarNombreAlbum</span><span
+            class="method-args">(nuevoNombreAlbum,idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarNombreAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarNombreAlbum</span> (<span class="ruby-identifier">nuevoNombreAlbum</span>,<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">nombre</span> = <span class="ruby-identifier">nuevoNombreAlbum</span>
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarNombreAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarNombreAlbum-method -->
+
+    
+      <div id="method-i-modificarPrivacidadAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modificarPrivacidadAlbum</span><span
+            class="method-args">(nuevaPrivacidadAlbum,idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modificarPrivacidadAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">modificarPrivacidadAlbum</span> (<span class="ruby-identifier">nuevaPrivacidadAlbum</span>,<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">privacidad</span> = <span class="ruby-identifier">nuevaPrivacidadAlbum</span>
+        <span class="ruby-identifier">album</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- modificarPrivacidadAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- modificarPrivacidadAlbum-method -->
+
+    
+      <div id="method-i-nombreAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nombreAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="nombreAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nombreAlbum</span>
+        <span class="ruby-identifier">nombre</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">nombre</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">nombre</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nombreAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nombreAlbum-method -->
+
+    
+      <div id="method-i-privacidadAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">privacidadAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="privacidadAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">privacidadAlbum</span>
+        <span class="ruby-identifier">privacidad</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">privacidad</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">privacidad</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- privacidadAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- privacidadAlbum-method -->
+
+    
+      <div id="method-i-regresarAlbumUsuario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">regresarAlbumUsuario</span><span
+            class="method-args">(idUsuario,idAlbum)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="regresarAlbumUsuario-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">regresarAlbumUsuario</span>(<span class="ruby-identifier">idUsuario</span>,<span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-identifier">album</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find_by</span>(<span class="ruby-identifier">fk_usuario</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idUsuario</span>,<span class="ruby-identifier">id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">idAlbum</span>)
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">album</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">album</span>.<span class="ruby-identifier">activo</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;si&#39;</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">album</span>
+        <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;no&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- regresarAlbumUsuario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- regresarAlbumUsuario-method -->
+
+    
+      <div id="method-i-usuarioAlbum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usuarioAlbum</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="usuarioAlbum-source">
+            <pre><span class="ruby-comment"># File app/models/album.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">usuarioAlbum</span>
+        <span class="ruby-identifier">usuario</span> = <span class="ruby-constant">Album</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">idAlbum</span>).<span class="ruby-identifier">fk_usuario</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">usuario</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- usuarioAlbum-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- usuarioAlbum-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
