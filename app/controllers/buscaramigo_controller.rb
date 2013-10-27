@@ -2,9 +2,18 @@ class BuscaramigoController < ApplicationController
 
 	def buscarAmigo
 
-		idUsuario = current_user.buscarIdPorCorreo(params[:email])
+		idAmigo = current_user.buscarIdPorCorreo(params[:email])
 
-		redirect_to '/sessions/perfil_privado/'+idUsuario.to_s
+		verificar = current_user.verificarAmistad(current_user.id, params[:email])
 
+		if (verificar == "no")
+			redirect_to '/sessions/perfil_privado/'+idAmigo.to_s
+		end
+		if (verificar == "si")
+			redirect_to '/sessions/perfil_publico/'+idAmigo.to_s
+		end
+		if (verificar == "no existe") 
+			redirect_to '/sessions/perfil_noexiste/'
+		end
 	end
 end

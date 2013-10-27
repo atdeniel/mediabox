@@ -121,4 +121,35 @@ class User < ActiveRecord::Base
 		end
 	end
 	
+	def verificarAmistad(idUsuario,email)
+		idamigo = User.find_by(email: email)
+
+		if (idamigo)
+			amistad1 = Amigo.find_by(fk_usuario1: idUsuario, fk_usuario2: idamigo.id)
+			amistad2 = Amigo.find_by(fk_usuario1: idamigo.id, fk_usuario2: idUsuario)
+			
+
+			if (amistad1) && !(amistad2)
+				if (amistad1.status == "amigo")
+					return "si"
+				else
+					return "no"
+				end
+		    else
+				if (amistad2) && !(amistad1)
+					if (amistad2.status == "amigo")
+						return "si"
+					else
+						return "no"
+					end
+				else
+					return "no"
+				end
+			end
+		else
+			return "no existe"
+		end
+	end
+
+
 end

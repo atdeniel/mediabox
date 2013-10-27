@@ -480,3 +480,10 @@ img { margin: 0; padding: 0; border: none }
 .cuadro4{position: absolute; top: 0; left: 45em;}
 
 #cuadro_down{position: relative; top: 17em; left: 3em;}
+
+#search
+{
+	position: absolute;
+	top: 1.2em;
+	left: 34em;	
+}

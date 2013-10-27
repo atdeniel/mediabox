@@ -23,10 +23,10 @@
       <div id="basic" class="box home_box2 color5 ">
        <h3> <%= current_user.nombreUsuario(params[:id]) %> </h3>                   
        <p> <%= current_user.verDescripcion(params[:id]) %></p>
-       <div id="basic_down"> <%= image_tag "white/next.png"%></div>
+       
       </div>
-      <div class="box home_box1">
-        <a href="#"></a> 
+      <div id="basic" class="box home_box1 ">
+
       </div>
       <div id="basic" class="box home_box1 color6">
         <h3> Likes </h3>
@@ -40,7 +40,11 @@
         <h3> Friends </h3>
        <div id="basic_number"> <p> 543 </p></div>
       </div>
-      <div  class="box home_box1 ">
+      <div id="basic" class="box home_box1 color8 ">
+        <a href="">
+          <h3> Unfriend </h3>
+          <%= image_tag "white/minus.png"%>
+        </a>
       </div>
       <div id="basic" class="box home_box1 color2 ">
         <h3> Dislikes </h3>
@@ -53,15 +57,10 @@
      </div>
   </div>
 </div>
-<div id="templatemo_footer">
-   <ul class="breadcrumb">
-      <li><a href="#" class="navbar-link">About </a></li>
-      <li><a href="#" class="navbar-link">Contact</a></li>
-      <li><a href="#">Developers</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-</div>
 
+<div id="templatemo_footer">
+  Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
+</div>
 
 </body>
 </html>

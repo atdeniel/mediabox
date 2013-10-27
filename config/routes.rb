@@ -16,6 +16,7 @@ Project::Application.routes.draw do
   
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
+  get "sessions/perfil_noexiste"
   
   get "sessions/amigos_usuario"
   get "sessions/notificador"
@@ -87,7 +88,8 @@ Project::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
+  
+#si quiero pasarle varios parametros utilizo match
 match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
