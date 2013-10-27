@@ -1,3 +1,37 @@
+# = album_rdoc.rb
+#
+# Autor:: Luz Eljuri, Vianny Molero, Jose Moros
+# Web::     https://github.com/Skeitho/mediabox
+#
+# == User
+#
+# Con este modelo pretendemos:
+# -Crear y eliminar Album de un usuario
+# -Getters y Setters de los albums
+# -Cantidad de albums de tiene un usuario
+# -Dado un album, saber a que usuario le pertenece
+#
+# === Clase Album
+# 
+# Definicion de la clase _Album_ compuesta por
+# *metodo crearNuevoAlbum
+# *metodo iniciarAlbum
+# *metodo eliminarAlbum
+# *metodo nombreAlbum
+# *metodo fechaCreacionAlbum
+# *metodo descripcionAlbum
+# *metodo lugarAlbum
+# *metodo imagenAlbum
+# *metodo usuarioAlbum
+# *metodo privacidadAlbum
+# *metodo modificarNombreAlbum
+# *metodo modificarDescripcionAlbum
+# *metodo modificarLugarAlbum
+# *metodo modificarPrivacidadAlbum
+# *metodo cantidadAlbumsTotal
+# *metodo regresarAlbumUsuario
+#
+
 class Album < ActiveRecord::Base
 
 	attr_reader :idAlbum, :idUsuario

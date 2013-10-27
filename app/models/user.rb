@@ -1,3 +1,45 @@
+# = user_rdoc.rb
+#
+# Autor:: Luz Eljuri, Vianny Molero, Jose Moros
+# Web::     https://github.com/Skeitho/mediabox
+#
+# == User
+#
+# Con este modelo pretendemos:
+# -Crear el usuario, y guardarlo en la BD
+# -Getters y Setters del usuario
+# -Cantidad de amigos que tiene un usuario
+# -Cantidad de albums que tiene un usuario
+# -Buscar usuarios por parametros
+# -Vereficar amistad entre usuarios
+#
+# === Clase User
+#
+# Definicion de la clase _User_ compuesta por
+# *metodo self.from_omniauth
+# *metodo modificarNombreApellido
+# *metodo modificarNombreUsuario
+# *metodo modificarLugar
+# *metodo modificarDescripcion
+# *metodo modificarFoto
+# *metodo modificarEmail
+# *metodo modificarTelefono 
+# *metodo modificarFavorito
+# *metodo eliminarUsuario
+# *metodo cantidadNotificacion
+# *metodo idUsuarioQueMeNotifica
+# *metodo nombreUsuario
+# *metodo imagenUsuario
+# *metodo verPrivacidad
+# *metodo verDescripcion
+# *metodo verFavorito
+# *metodo buscarIdPorCorreo
+# *metodo verificarAmistad
+# *metodo cantidadAmigos
+# *metodo verSiEsAmigo
+# *metodo cantidadMisAmigos
+#
+
 class User < ActiveRecord::Base
 
 	def self.from_omniauth(auth)
