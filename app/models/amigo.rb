@@ -27,4 +27,22 @@ class Amigo < ActiveRecord::Base
 		amistad.leido="si"
     end
 
+    def eliminarAmigo (idUsuario,idAmigo)
+		amistad = Amigo.find_by(fk_usuario1: idAmigo, fk_usuario2: idUsuario)
+		amistad1 = Amigo.find_by(fk_usuario1: idUsuario, fk_usuario2: idAmigo)
+		if (amistad) && !(amistad1)
+			if (amistad.status = "amigo")
+				amistad.status = "eliminado"
+				amistad.save
+			end
+		else	
+			if (amistad1) && !(amistad)
+				if (amistad1.status = "amigo")
+					amistad1.status = "eliminado"
+					amistad1.save
+				end
+			end
+		end
+	end
+
 end

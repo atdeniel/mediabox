@@ -495,6 +495,15 @@ img { margin: 0; padding: 0; border: none }
 	left: 0;
 	width: 152px;
 	height: 152px;
+}
 
-
+#eliminarAmigo
+{
+	background-color: #E064B7;
+	position: absolute;
+	top: 27em;
+	left: 0;
+	width: 153px;
+	height: 153px;
+	color: #000000;
 }
