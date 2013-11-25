@@ -25,8 +25,9 @@ Project::Application.routes.draw do
   get "sessions/perfil_modificar"
 
   get "sessions/ver_album"
+  get "sessions/seleccionarUsuario"
   #get "manejoalbum/desactivarAlbum"
-
+  get  "buscaramigo/buscarAmigo"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -99,5 +100,6 @@ match '/sessions/guardarDatosAlbum', to: 'guardardatos#crearAlbumUsuario', via: 
 match '/sessions/guardarModificacionAlbum', to: 'guardardatos#modificarAlbum', via: [:get, :post]
 match '/buscaramigo/privadoauxiliar' , to:  'buscaramigo#buscarAmigo', via: [:get,:post]
 match '/buscaramigo/eliminaramigo', to: 'eliminaramigo#eliminaramistad', via: [:get,:post]
+
 
 end

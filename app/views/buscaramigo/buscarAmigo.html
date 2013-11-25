@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Metro, free website template</title>
+<meta name="keywords" content="metro, free website template, beautiful grid, image grid menu, colorful theme" />
+<meta name="description" content="Metro is a free website template by templatemo.com and it features jQuery horizontal scrolling among pages." />
+
+<%= stylesheet_link_tag "templatemo_style.css" %>
+<%= stylesheet_link_tag "slimbox2.css" %>
+
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.scrollTo-min.js" %>
+<%= javascript_include_tag "jquery.localscroll-min.js" %>
+<%= javascript_include_tag "init.js" %>
+<%= javascript_include_tag "slimbox2.js" %>
+
+
+</head>
+
+<body> 
+<div id="container">
+  <div id="templatemo_header"> 
+    <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">   
+      <a class="navbar-brand" href="/sessions/entrar">mediabox</a>
+    </div>
+<% if current_user %>
+    <ul class="nav navbar-nav">
+      <li><a href="/sessions/entrar">Home</a></li>
+      <li><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/amigos_usuario">Friends</a></li>
+      <li class="active"><a href="/sessions/notificador">News feed</a></li>
+    </ul>
+<%end%> 
+    <div id="search">
+      <%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
+   
+         <%= text_field_tag(:email, "Search for people") %>
+      <button type="submit" >Go!</button>
+    <%end%>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
+            <li><a href="/auth/google_oauth2">Login</a></li>
+          <% end%>
+      </ul>
+     </div>
+   </nav>
+  </div>
+</div>
+
+
+<div id="templatemo_main" class="pos">
+  <div id="content"> 
+      <div id="home" class="section">
+
+<h2>Users</h2>  <!-- Table -->
+
+  <div class="accountTable" >
+    <table >
+      <tr>
+<!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm                      -->
+ <% usuarios = current_user.buscarNombre(@nombreUsuario) %>
+<% for i in(10000..current_user.cantidadUsuarios+9999)  %>
+
+          <% begin #TRY CATCH%>
+
+          <%  usuario = usuarios.find(i) %>
+
+          <td> <img src="<%= usuario.image %>" WIDTH=56 HEIGHT=56 ></img>&nbsp&nbsp&nbsp<a href="/sessions/perfil_publico/<%=usuario.id%>"><%= usuario.name %></a></td>
+          <td> <%= usuario.description %> </td> 
+          <td> Cantidad de Amigos: <%= current_user.cantidadMisAmigos(usuario.id)%> </td>
+          <td> </td>
+          <td> </td>
+          </tr>
+
+          <%rescue #TRY CATCH%>
+          <%end #TRY CATCH%>
+
+<%end %>
+      </tr>
+
+  
+        </div>        
+    </div> 
+</div>
+
+</section>
+
+</html>

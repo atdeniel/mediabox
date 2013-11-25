@@ -236,6 +236,21 @@ class User < ActiveRecord::Base
 		return amigo1+amigo2
 
 	end
+	
+	def cantidadUsuarios()
+	
+		cantidad = User.count
+	
+		return cantidad
+	end
+
+	def buscarNombre(nombre)
+
+		nombre = nombre.downcase
+		#usuarios=User.where("lower(name) like? OR lower(last_name) like?","%#{nombre}%","%#{nombre}%")
+		usuarios=User.where("lower(name) like?","%#{nombre}%")
+		return usuarios
+	end
 
 
 
