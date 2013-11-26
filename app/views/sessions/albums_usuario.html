@@ -91,10 +91,11 @@
     <% album = Album.new() %>
     <% totalAlbums = album.cantidadAlbumsTotal() %>
     <% c=1 %>
+    <% dondeQuede = 0 %>
 
   <div id="cuadro_up">
   <% for i in(1..totalAlbums) %> 
-    <% if i == 5 %>
+    <% if c == 5 %>
   <% break %>
   <% end %>
     <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
@@ -103,22 +104,23 @@
           <div class="cuadro<%=c%> home_box1 color2"><h3> <%= albumUsuario.nombre %>    </h3>
             
           <% c=c+1 %>
+          <% dondeQuede = i %>
           </div>
         </a>
       <% end %>
   
   <% end %>
       </div>
-<% c=1 %>
+<% c=1; dondeQuede = dondeQuede + 1 %>
       <div id="cuadro_down">
-  <% for i in(5..totalAlbums) %>
-    <% if i == 5 %>
+  <% for i in(dondeQuede..totalAlbums) %>
+    <% if c == 5 %>
   <% break %>
   <% end %>
   <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
-          <div class="cuadro<%=c%> home_box1 color4">
+          <div class="cuadro<%=c%> home_box1 color4"><h3> <%= albumUsuario.nombre %>    </h3>
           <% c=c+1 %>
           </div>
         </a>

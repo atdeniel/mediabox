@@ -18,4 +18,11 @@ class ManejoalbumController < ApplicationController
 
 	end
 
+	def mostrarAlbumAmigo
+
+		@idAmigo = params[:id]
+		render '/manejoalbum/albums_amigo'
+
+	end
+
 end

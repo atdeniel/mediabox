@@ -57,19 +57,19 @@
     <div class="panel2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= current_user.name %></h3>
+          <h3 class="panel-title"><%= current_user.nombreUsuario(@idAmigo) %></h3>
         </div>
         <div class="panel-body">
           <p>&nbsp;</p>
           <p> &nbsp;</p>
           <p> &nbsp;</p>
           <p> &nbsp;</p>
-          <a><img><%= image_tag current_user.image %></a></img>
+          <a><img><%= image_tag current_user.imagenUsuario(@idAmigo) %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item active">Friends</a>
-            <a href= "#"  class="list-group-item">Private Settings</a>
+            <!-- <a href= "/sessions/perfil_modificar" class="list-group-item">About</a> -->
+            <a class="list-group-item active">Albums</a>
+            <!-- <a href= "/sessions/amigos_usuario" class="list-group-item">Friends</a>
+            <a href= "#"  class="list-group-item">Private Settings</a> -->
           </div>
         </div>
       </div>
@@ -77,56 +77,61 @@
   </div>
 
   <div id="account">
+ 
     <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Your friends</div>
-
+      <div class="panel-heading"><%=current_user.nombreUsuario(@idAmigo) %> albums</div>
 <!------------------- -->
-<% dondeQuede = 0 %>
-<% c=1 %>
+    <% album = Album.new() %>
+    <% totalAlbums = album.cantidadAlbumsTotal() %>
+    <% c=1 %>
+    <% dondeQuede = 0 %>
+
   <div id="cuadro_up">
-  <% for i in(1..current_user.cantidadAmigos) %>
-  <% if c == 5 %>
+  <% for i in(1..totalAlbums) %> 
+    <% if c == 5 %>
   <% break %>
   <% end %>
-  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
-      <% if ( esAmigo != "no") %>  
-         <a href="/sessions/perfil_publico/<%=esAmigo%>">
-          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.imagenUsuario(esAmigo)%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
+    <% albumUsuario = album.regresarAlbumUsuario(@idAmigo,i+9999) %>
+      <% if (albumUsuario != "no" && albumUsuario.privacidad == "no") %>  
+         <a href="#">
+          <div class="cuadro<%=c%> home_box1 color2"><h3> <%= albumUsuario.nombre %>    </h3>
+            
           <% c=c+1 %>
           <% dondeQuede = i %>
           </div>
         </a>
       <% end %>
-      <% end %>
   
+  <% end %>
       </div>
 <% c=1; dondeQuede = dondeQuede + 1 %>
       <div id="cuadro_down">
-  <% for i in(dondeQuede..current_user.cantidadAmigos) %>
+  <% for i in(dondeQuede..totalAlbums) %>
     <% if c == 5 %>
   <% break %>
   <% end %>
-  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
-    <% if ( esAmigo != "no") %>  
-         <a href="/sessions/perfil_publico/<%=esAmigo%>">
-            <a href="/sessions/perfil_publico/<%=esAmigo%>">
-          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.image%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
+  <% albumUsuario = album.regresarAlbumUsuario(@idAmigo,i+9999) %>
+      <% if (albumUsuario != "no"  && albumUsuario.privacidad == "no") %>  
+         <a href="#">
+          <div class="cuadro<%=c%> home_box1 color4"><h3> <%= albumUsuario.nombre %>    </h3>
           <% c=c+1 %>
           </div>
         </a>
       <% end %>
-       <% end %>
+  <% end %> 
       </div>   
 
 <!------------------- -->
-
+    </div>
   </div>
+
 </div>
 
 <div id="templatemo_footer">
   Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>
+
 
 </body>
 </html>

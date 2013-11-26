@@ -65,7 +65,7 @@
   <div class="accountTable" >
     <table >
       <tr>
-<!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm                      -->
+<!--                          logica de la lista amigos                     -->
  <% usuarios = current_user.buscarNombre(@nombreUsuario) %>
 <% for i in(10000..current_user.cantidadUsuarios+9999)  %>
 
@@ -73,17 +73,31 @@
 
           <%  usuario = usuarios.find(i) %>
 
-          <td> <img src="<%= usuario.image %>" WIDTH=56 HEIGHT=56 ></img>&nbsp&nbsp&nbsp<a href="/sessions/perfil_publico/<%=usuario.id%>"><%= usuario.name %></a></td>
+<!-- si no es mi amigo -->
+          <% if current_user.verificarAmistad(current_user.id, usuario.email) == "no" %>
+
+          <td> <img src="<%= usuario.image %>" WIDTH=56 HEIGHT=56 ></img>&nbsp&nbsp&nbsp<a href="/sessions/perfil_privado/<%=usuario.id%>"><%= usuario.name %></a></td>
           <td> <%= usuario.description %> </td> 
-          <td> Cantidad de Amigos: <%= current_user.cantidadMisAmigos(usuario.id)%> </td>
+          <td> Friends: <%= current_user.cantidadMisAmigos(usuario.id)%> </td>
           <td> </td>
           <td> </td>
           </tr>
+          <%end%>
+ <!-- si es mi amigo -->     
+          <% if current_user.verificarAmistad(current_user.id, usuario.email) == "si" %>
+
+          <td> <img src="<%= usuario.image %>" WIDTH=56 HEIGHT=56 ></img>&nbsp&nbsp&nbsp<a href="/sessions/perfil_publico/<%=usuario.id%>"><%= usuario.name %></a></td>
+          <td> <%= usuario.description %> </td> 
+          <td> Friends: <%= current_user.cantidadMisAmigos(usuario.id)%> </td>
+          <td> It's your Friend!</td>
+          <td> </td>
+          </tr>
+          <%end%>
 
           <%rescue #TRY CATCH%>
           <%end #TRY CATCH%>
-
 <%end %>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -    -->
       </tr>
 
   
