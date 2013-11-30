@@ -94,7 +94,7 @@
   <% end %>
     <% albumUsuario = album.regresarAlbumUsuario(@idAmigo,i+9999) %>
       <% if (albumUsuario != "no" && albumUsuario.privacidad == "no") %>  
-         <a href="#">
+         <a href="/sessions/ver_album/<%= albumUsuario.id %>">
           <div class="cuadro<%=c%> home_box1 color2"><h3> <%= albumUsuario.nombre %>    </h3>
             
           <% c=c+1 %>

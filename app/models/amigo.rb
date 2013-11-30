@@ -77,7 +77,6 @@ class Amigo < ActiveRecord::Base
 
 	def verSiMandeSolicitud (usuarioSolicitaPeticion,usuarioRecibePeticion)
 		amistad = Amigo.find_by(fk_usuario1: usuarioSolicitaPeticion, fk_usuario2: usuarioRecibePeticion, status: "pendiente")
-		
 		if (amistad)
 			return "Friend Request Send"
 		else 

@@ -25,4 +25,14 @@ class ManejoalbumController < ApplicationController
 
 	end
 
+	def nuevoComentario
+
+		comentario = params[:comentario]
+		idAlbum = params[:idAlbum]
+		album = Album.new()
+		album.nuevoComentario(comentario,current_user.id,idAlbum,"1")
+		redirect_to '/sessions/ver_album/'+idAlbum;
+
+	end
+
 end

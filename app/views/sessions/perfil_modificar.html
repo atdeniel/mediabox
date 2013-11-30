@@ -7,7 +7,6 @@
 
 <%= stylesheet_link_tag "templatemo_style.css" %>
 <%= stylesheet_link_tag "slimbox2.css" %>
-
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "jquery.scrollTo-min.js" %>
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
@@ -135,16 +134,15 @@
           </tr>
         </table>
       </div>
-
+    <div id="edit">
+      <button type="submit" class="btn btn-default">Apply Changes</button>
+    </div>
       <div class="app"> 
         <p> Accounts associated </p>
         <img><%= image_tag "google.png"%></img>
       </div>
     </div>
 
-    <div id="edit">
-      <button type="submit" class="btn btn-default">Apply Changes</button>
-    </div>
     <%end%>
   </div>
 </div>

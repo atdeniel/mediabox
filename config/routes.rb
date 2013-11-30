@@ -104,6 +104,8 @@ match '/sessions/guardarModificacionAlbum', to: 'guardardatos#modificarAlbum', v
 match '/buscaramigo/privadoauxiliar' , to:  'buscaramigo#buscarAmigo', via: [:get,:post]
 match '/buscaramigo/eliminaramigo', to: 'eliminaramigo#eliminaramistad', via: [:get,:post]
 
+match '/manejoalbum/agregarComentario', to: 'manejoalbum#nuevoComentario', via: [:get]
+
 
 
 end

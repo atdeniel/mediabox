@@ -72,6 +72,7 @@
           <% begin #TRY CATCH%>
 
           <%  usuario = usuarios.find(i) %>
+          <% if (usuario.id != current_user.id) %>
 
 <!-- si no es mi amigo -->
           <% if current_user.verificarAmistad(current_user.id, usuario.email) == "no" %>
@@ -94,6 +95,7 @@
           </tr>
           <%end%>
 
+          <%end%>
           <%rescue #TRY CATCH%>
           <%end #TRY CATCH%>
 <%end %>

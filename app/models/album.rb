@@ -78,7 +78,7 @@ class Album < ActiveRecord::Base
 		return imagen
 	end
 
-	def usuarioAlbum
+	def usuarioAlbum(idAlbum)
 		usuario = Album.find(idAlbum).fk_usuario
 		return usuario
 	end	
@@ -133,5 +133,9 @@ class Album < ActiveRecord::Base
 	end
 
 
+	def nuevoComentario(comentario,idUsuario,idAlbum,nivel)
+		nuevoComentario = Comentario.new()
+		nuevoComentario.nuevo(comentario,idUsuario,idAlbum,nivel)
+	end
 
 end
