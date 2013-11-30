@@ -79,7 +79,7 @@ img { margin: 0; padding: 0; border: none }
 #templatemo_footer {
 	width: 640px;
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 3px 0;
 	text-align: center;
 }
 
@@ -508,4 +508,18 @@ img { margin: 0; padding: 0; border: none }
 	width: 153px;
 	height: 153px;
 	color: #000000;
+}
+
+#next{
+	position:relative;
+	width: 640px;
+	height: 48px;
+	overflow: hidden;
+	margin: 0 auto;
+	left: 0em;
+	top: 0em;
+}
+.backleft{
+	position:relative;
+	top: 0em;
 }

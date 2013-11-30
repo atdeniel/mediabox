@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta  charset="utf-8" />
+<title>Proyecto de Desarrollo del Software</title>
+
+<%= stylesheet_link_tag "templatemo_style.css" %>
+<%= stylesheet_link_tag "slimbox2.css" %>
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "jquery.scrollTo-min.js" %>
+<%= javascript_include_tag "jquery.localscroll-min.js" %>
+<%= javascript_include_tag "init.js" %>
+<%= javascript_include_tag "slimbox2.js" %>
+</head> 
+
+<body> 
+<div id="container">
+  <div id="templatemo_header"> 
+    <nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">   
+      <a class="navbar-brand" href="/sessions/entrar">mediabox</a>
+    </div>
+<% if current_user %>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/sessions/entrar">Home</a></li>
+      <li><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/amigos_usuario">Friends</a></li>
+      <li><a href="/sessions/notificador">News feed</a></li>
+    </ul>
+<%end%> 
+    <div id="search">
+      <%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
+   
+         <%= text_field_tag(:email, "Search for people") %>
+      <button type="submit" >Go!</button>
+    <%end%>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
+            <li><a href="/auth/google_oauth2">Login</a></li>
+          <% end%>
+      </ul>
+     </div>
+   </nav>
+  </div>
+</div>
+
+<div id="templatemo_main" class="pos">
+  <div id="content"> 
+    <div id="home" class="section">
+      <div id="basic" class="box home_box1 color1">     </div>
+      <div id="basic" class="box home_box1 color6">     </div>
+      <div id="basic" class="box home_box1 color4">     </div>
+      <div id="basic" class="box home_box1 color2">     </div> 
+      <div id="basic" class="box home_box1 color1">     </div>
+      <div id="basic" class="box home_box1 color6">     </div>
+      <div id="basic" class="box home_box1 color4">     </div>
+      <div id="basic" class="box home_box1 color2">     </div>  
+      <div id="basic" class="box home_box1 color1">     </div>
+      <div id="basic" class="box home_box1 color6">     </div>
+      <div id="basic" class="box home_box1 color4">     </div>
+      <div id="basic" class="box home_box1 color2">     </div>   
+    </div>
+  </div>
+ 
+</div>
+
+ <div id="next">
+   
+  <div class="backleft">
+    <%= image_tag "white/back.png"%>
+ 
+    <%= image_tag "white/next.png"%>
+  </div>
+</div>
+
+<div id="templatemo_footer">
+Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
+</div>
+
+</body> 
+
+</html>

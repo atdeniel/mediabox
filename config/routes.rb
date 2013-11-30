@@ -8,6 +8,7 @@ Project::Application.routes.draw do
   get "sessions/index"
 
   get "sessions/entrar"
+  get "sessions/home"
 
   get "sessions/crear_album"
   
@@ -45,6 +46,8 @@ Project::Application.routes.draw do
   get '/manejoalbum/desactivarAlbum/:id' => 'manejoalbum#desactivarAlbum'
 
   get '/manejoalbum/albums_amigo/:id' => 'manejoalbum#mostrarAlbumAmigo'
+
+  
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -93,7 +96,7 @@ Project::Application.routes.draw do
   #     resources :products
   #   end
   
-#si quiero pasarle varios parametros utilizo match
+#si quiero pasarle varios parametros utilizo match, es pra form!!!
 match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
 match 'auth/failure', to: redirect('/'), via: [:get, :post]
 match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
@@ -106,6 +109,7 @@ match '/buscaramigo/eliminaramigo', to: 'eliminaramigo#eliminaramistad', via: [:
 
 match '/manejoalbum/agregarComentario', to: 'manejoalbum#nuevoComentario', via: [:get]
 
-
+#INSTAGRAM
+match '/instagram/mostrarFotos', to: 'instagram#retornarFotos', via: [:get]
 
 end
