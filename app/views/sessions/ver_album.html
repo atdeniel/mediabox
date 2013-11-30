@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta  charset="utf-8" />
 <title>Proyecto de Desarrollo del Software</title>
 
 <%= stylesheet_link_tag "templatemo_style.css" %>
@@ -12,6 +10,10 @@
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
+
+<%= javascript_include_tag "AnalyticsCarousel.js" %>
+<%= javascript_include_tag "jQuery.js" %>
+<%= stylesheet_link_tag "style.css" %>
 </head>
 
 <body> 
@@ -137,7 +139,7 @@
       <a href="javascript:history.back()">
       <%= image_tag "black/back.png"%>
       </a>
-      
+      </div>
       <%end%>
       
   </div>
@@ -145,14 +147,25 @@
     <div class="panel panel-default">
     <!-- Default panel contents -->
       <div class="panel-heading">View album</div>
-      <div id="cuadro_up">
-        
-      </div>
-      <div id="cuadro_down">
-       
-      </div>   
+  
+     </div>
+      <br><br><br><br>
+
+          <div class="carrousel" data-pos="0">
+               <a href="#" class="carrousel_left"></a>
+                <div class="carrousel_inner">
+                    <ul>
+                        <li><a href="https://www.facebook.com/LuzM.R?ref=tn_tnmn"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/LuzM.R?ref=tn_tnmn"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/LuzM.R?ref=tn_tnmn"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/LuzM.R?ref=tn_tnmn"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/LuzM.R?ref=tn_tnmn"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                        <li><a href="https://www.facebook.com/"><img src="http://safe-img04.olx.com.mx/ui/12/65/47/1344989839_428575847_1-BOCINAS-PEQUEnAS-PARA-CELULARES-5-de-Mayo.jpg" /></a></li>
+                    </ul>
+               </div>
+                <a href="#" class="carrousel_right right_inactive"></a>
+          </div>
     </div>
-  </div>
 
 </div>
 

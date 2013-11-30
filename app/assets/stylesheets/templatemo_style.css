@@ -481,6 +481,8 @@ img { margin: 0; padding: 0; border: none }
 
 #cuadro_down{position: relative; top: 17em; left: 3em;}
 
+#cuadro_car{position: relative; top: 37em; left: 3em; bottom: 40em;}
+
 #search
 {
 	position: absolute;
