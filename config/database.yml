@@ -18,9 +18,11 @@
 #
 
 development:
-  adapter: oracle_enhanced
-  database: 127.0.0.1/xe
-  username: facebook
+  adapter: postgresql
+  encoding: utf8
+  database: facebook
+  pool: 5
+  username: postgres
   password: 1234
 
 # Warning: The database defined as "test" will be erased and

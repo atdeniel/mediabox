@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use oracle as the database for Active Record
-gem 'ruby-oci8'
+#gem 'ruby-oci8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -44,7 +44,8 @@ end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
-gem 'activerecord-oracle_enhanced-adapter', github: 'rsim/oracle-enhanced', branch: 'rails4'
+gem 'pg'
+#gem 'activerecord-oracle_enhanced-adapter', github: 'rsim/oracle-enhanced', branch: 'rails4'
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'omniauth-google-oauth2'

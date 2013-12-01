@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131018031139) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "albums", force: true do |t|
     t.string   "nombre"
     t.datetime "fecha"
@@ -20,15 +23,15 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.string   "lugar"
     t.string   "imagen"
     t.string   "privacidad"
-    t.integer  "fk_usuario",  precision: 38, scale: 0
+    t.integer  "fk_usuario"
     t.string   "activo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "amigos", force: true do |t|
-    t.integer  "fk_usuario1", precision: 38, scale: 0
-    t.integer  "fk_usuario2", precision: 38, scale: 0
+    t.integer  "fk_usuario1"
+    t.integer  "fk_usuario2"
     t.string   "status"
     t.datetime "fecha"
     t.string   "leido"
@@ -38,19 +41,19 @@ ActiveRecord::Schema.define(version: 20131018031139) do
 
   create_table "comentarios", force: true do |t|
     t.string   "coment"
-    t.integer  "nivel",         precision: 38, scale: 0
+    t.integer  "nivel"
     t.string   "notificacion"
-    t.integer  "fk_album",      precision: 38, scale: 0
-    t.integer  "fk_usuario",    precision: 38, scale: 0
-    t.integer  "fk_comentario", precision: 38, scale: 0
+    t.integer  "fk_album"
+    t.integer  "fk_usuario"
+    t.integer  "fk_comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "megusta", force: true do |t|
     t.string   "tipo"
-    t.integer  "fk_usuario",    precision: 38, scale: 0
-    t.integer  "fk_comentario", precision: 38, scale: 0
+    t.integer  "fk_usuario"
+    t.integer  "fk_comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.string   "lugar"
     t.string   "api"
     t.string   "tipo"
-    t.integer  "fk_album",    precision: 38, scale: 0
+    t.integer  "fk_album"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
