@@ -47,7 +47,9 @@ Project::Application.routes.draw do
 
   get '/manejoalbum/albums_amigo/:id' => 'manejoalbum#mostrarAlbumAmigo'
 
-  
+  #paginacion instagram
+
+  get '/instagram/mostrarFotos/:i' => 'instagram#paginacion'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
