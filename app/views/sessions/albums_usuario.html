@@ -98,7 +98,7 @@
     <% if c == 5 %>
   <% break %>
   <% end %>
-    <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
+    <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
           <div class="cuadro<%=c%> home_box1 color2"><h3> <%= albumUsuario.nombre %>    </h3>
@@ -117,7 +117,7 @@
     <% if c == 5 %>
   <% break %>
   <% end %>
-  <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i+9999) %>
+  <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
           <div class="cuadro<%=c%> home_box1 color4"><h3> <%= albumUsuario.nombre %>    </h3>

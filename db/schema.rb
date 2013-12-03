@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131018031139) do
 
   create_table "albums", force: true do |t|
     t.string   "nombre"
-    t.datetime "fecha"
+    t.date     "fecha"
     t.string   "descripcion"
     t.string   "lugar"
     t.string   "imagen"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.integer  "fk_usuario1"
     t.integer  "fk_usuario2"
     t.string   "status"
-    t.datetime "fecha"
+    t.date     "fecha"
     t.string   "leido"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,12 +60,13 @@ ActiveRecord::Schema.define(version: 20131018031139) do
 
   create_table "multimedia", force: true do |t|
     t.string   "nombre"
-    t.datetime "fecha"
+    t.date     "fecha"
     t.string   "descripcion"
     t.string   "lugar"
     t.string   "api"
     t.string   "tipo"
     t.integer  "fk_album"
+    t.string   "activo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

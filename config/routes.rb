@@ -51,6 +51,16 @@ Project::Application.routes.draw do
 
   get '/instagram/mostrarFotos/:i' => 'instagram#paginacion'
 
+  #ver standard foto instagram
+  get '/instagram/verFoto/:i' => 'instagram#verFoto'
+
+  #ver foto de un album
+  get '/manejoalbum/verMultimedia'
+  get '/manejoalbum/verMultimedia/:i' => 'manejoalbum#verUnMultimediaDelAlbum'
+
+  #eliminar un multimedia
+  get '/manejoalbum/desactivarMultimedia/:i' => 'manejoalbum#desactivarMultimedia'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -113,5 +123,9 @@ match '/manejoalbum/agregarComentario', to: 'manejoalbum#nuevoComentario', via: 
 
 #INSTAGRAM
 match '/instagram/mostrarFotos', to: 'instagram#retornarFotos', via: [:get]
+
+#Agregar al album
+match '/instagram/guardarDatos', to: 'instagram#guardarFoto', via: [:get]
+
 
 end

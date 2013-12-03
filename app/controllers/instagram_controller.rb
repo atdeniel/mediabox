@@ -20,4 +20,18 @@ class InstagramController < ApplicationController
 		@listaFotos = $lista
 		render "/instagram/mostrarFotos"
 	end
+
+	def verFoto
+		@idFoto = params[:i].to_i
+		@listaFotos = $lista
+		render "/instagram/verFoto"
+	end
+
+	def guardarFoto
+		id = params[:i]
+		debugger
+		ida = id
+
+	end
+
 end

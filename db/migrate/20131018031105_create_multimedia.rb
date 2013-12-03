@@ -8,6 +8,7 @@ class CreateMultimedia < ActiveRecord::Migration
 		t.string  :api
 		t.string  :tipo
 		t.integer :fk_album
+		t.string  :activo
       t.timestamps
     end
   end

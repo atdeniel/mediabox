@@ -88,107 +88,48 @@
     <div class="panel2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Comentarios</h3>
+          <h3 class="panel-title">Details</h3>
         </div>
- <% album = Album.new() %>
 
-         <% comentario = Comentario.new() %>
-         <% totalComentarios = comentario.cantidadComentarioTotal() %>
-         <% for i in(1..totalComentarios) %>
-         <% if ( comentario.obtenerComentario(i).id == i && comentario.obtenerComentario(i).fk_album == params[:id].to_i ) %>
-         <%= current_user.nombreUsuario(comentario.obtenerComentario(i).fk_usuario) + ":" %>
-         <%= comentario.obtenerComentario(i).coment %> 
-         <br>
-          <%end%>
-
-         <%end%> 
-     
       </div> <!-- la division rara -->
-      <!-- text box de agregar comentario -->
-           <%= form_tag('/manejoalbum/agregarComentario', method: 'get') do %>
-          <img src="<%= current_user.image %>" WIDTH=25 HEIGHT=25> </img> 
-          <%= text_field_tag(:comentario) %>  
-          <%= hidden_field_tag(:idAlbum,params[:id]) %>  
-          <button type="submit" class="btn btn-default" >Comment!</button>
-          <%end%>
+
+
     </div>
   </div>
 
 <!-- - - - - - - - - - -->
 
   <div id="account">
-    <div class="panel_box1">
-      <% if album.usuarioAlbum(params[:id])==current_user.id %>
 
-      <a href="/manejoalbum/desactivarAlbum/<%= params[:id] %>">
+    <% multimedia = Multimedia.new() %>
+    <% if current_user.id ==  multimedia.usuarioQuePertenece(@multimedia.id) %>
+<!-- Panel box de agregar, volver y eso -->
+    <div class="panel_box1">
+      <a href="/manejoalbum/desactivarMultimedia/<%= @multimedia.id %>">
         <%= image_tag "black/delete.png"%>
       </a>
     </div>
-
     <div class="panel_box2">
-      <a href="/sessions/modificar_album/<%= params[:id] %>">
-        <%= image_tag "black/edit.png"%>
+      <a href="/sessions/ver_album/<%= @idAlbum %>">
+      <%= image_tag "black/back.png"%>
+      </a>
+   </div>
+<!-- -->
+    <%else%>
+    <div class="panel_box1">
+      <a href="/sessions/ver_album/<%= @idAlbum %>">
+      <%= image_tag "black/back.png"%>
       </a>
     </div>
-
-    <div class="panel_box3">
-      <a href="#">
-        <%= image_tag "black/add.png"%>
-      </a>
-    </div>    
-
-    <div class="panel_box4">
-      <a href="#">
-        <%= image_tag "black/check.png"%>
-      </a>
-    </div> 
-
-    <div class="panel_box5">
-      <a href="javascript:history.back()">
-      <%= image_tag "black/back.png"%>
-      </a>
-
-    <%else%>
-
-    <div class="panel_box1">
-      <a href="javascript:history.back()">
-      <%= image_tag "black/back.png"%>
-      </a>
-      </div>
-
-    <div class="panel_box2">
-      <a href="#">
-      <%= image_tag "black/check.png"%>
-      </a>
-      </div>
-
-      <%end%>
-      
-  </div>
+    <%end%>
        
+ <!-- -->      
     <div class="panel panel-default">
     <!-- Default panel contents -->
-      <div class="panel-heading">View album</div>
+      <div class="panel-heading"><%= @multimedia.tipo %></div>
   
      </div>
-      <br><br><br><br> 
-
-      <% multimedia = Multimedia.new() %>
-
-          <div class="carrousel" data-pos="0">
-               <a href="#" class="carrousel_left"></a>
-                <div class="carrousel_inner">
-                    <ul>
-                        <% for i in 1..Multimedia.count %>
-                        <% if multimedia.albumQuePertenece(i) == params[:id].to_i %>
-                        <% if multimedia.verActivoMultimedia(i) != "no" %>
-                        <li><a href=/manejoalbum/verMultimedia/<%= i %>><img src="<%= multimedia.nombreMultimedia(i) %>" /></a></li>
-                        <%end;end;end%>
-                    </ul>
-               </div>
-                <a href="#" class="carrousel_right right_inactive"></a>
-          </div>
-
+      <%= image_tag @multimedia.nombre %>
     </div>
 
 </div>

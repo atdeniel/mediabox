@@ -67,7 +67,7 @@
       <tr>
 <!--                          logica de la lista amigos                     -->
  <% usuarios = current_user.buscarNombre(@nombreUsuario) %>
-<% for i in(10000..current_user.cantidadUsuarios+9999)  %>
+<% for i in(1..current_user.cantidadUsuarios)  %>
 
           <% begin #TRY CATCH%>
 

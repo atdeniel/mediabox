@@ -473,6 +473,21 @@ img { margin: 0; padding: 0; border: none }
 	top:3px;
 	width: 31px;  
 }
+.panel_box4 img
+{
+	position:absolute;
+	right: 150px;
+	top:3px;
+	width: 31px;
+}
+.panel_box5 img
+{
+	position:absolute;
+	right: 200px;
+	top:3px;
+	width: 31px;
+}
+
 #cuadro_up{position: relative; top: 2em; left: 3em;}
 .cuadro1{position: absolute; top: 0; left: 0;}
 .cuadro2{position: absolute; top: 0; left: 15em;}
@@ -523,3 +538,28 @@ img { margin: 0; padding: 0; border: none }
 	position:relative;
 	top: 0em;
 }
+
+.agregarFoto{
+	position:relative;
+	top: 4em;
+	left: 90em;
+	background-color: #E064B7;
+	width: 200px;
+	height: 250px;
+}
+
+.addFoto{
+	position:relative;
+	top: -12.5em;
+	right: -10.7em;
+}
+
+.addFoto img{
+	width: 20px;
+	height: 20px;
+}
+
+#basic select {
+	position: relative;
+	left: 3em;
+} 

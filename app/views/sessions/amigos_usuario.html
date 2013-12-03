@@ -89,7 +89,7 @@
   <% if c == 5 %>
   <% break %>
   <% end %>
-  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
+  <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
       <% if ( esAmigo != "no") %>  
          <a href="/sessions/perfil_publico/<%=esAmigo%>">
           <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.imagenUsuario(esAmigo)%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
@@ -107,7 +107,7 @@
     <% if c == 5 %>
   <% break %>
   <% end %>
-  <% esAmigo = current_user.verSiEsAmigo(i+9999, current_user.id)%> 
+  <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
     <% if ( esAmigo != "no") %>  
          <a href="/sessions/perfil_publico/<%=esAmigo%>">
             <a href="/sessions/perfil_publico/<%=esAmigo%>">

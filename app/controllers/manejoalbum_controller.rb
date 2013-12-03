@@ -35,4 +35,22 @@ class ManejoalbumController < ApplicationController
 
 	end
 
+	def verUnMultimediaDelAlbum
+
+		contenidos = Multimedia.new()
+        @idAlbum = contenidos. albumQuePertenece(params[:i]) 
+		@multimedia = contenidos.multimedia(params[:i])
+		render '/manejoalbum/verMultimedia'
+
+	end
+
+	def desactivarMultimedia
+
+		multimedia = Multimedia.new()
+		multimedia.desactivarMultimedia(params[:i])
+		idAlbum = multimedia.albumQuePertenece(params[:i])
+		redirect_to '/sessions/ver_album/'+idAlbum.to_s;
+	end
+
+
 end

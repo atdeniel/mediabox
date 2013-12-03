@@ -12,8 +12,16 @@
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
-</head> 
 
+<script>
+  function showOptions(s) {
+    alert ("hola");
+  alert (s[s.selectedIndex].value); // get value
+  alert (s.selectedIndex].id); // get id
+}
+</script>
+
+</head> 
 <body> 
 <div id="container">
   <div id="templatemo_header"> 
@@ -54,37 +62,39 @@
 
 <div id="templatemo_main" class="pos">
   <div id="content"> 
-    <div id="home" class="section">
-    <% numeroElemento = @siguientePagina %>
-    <%if !(numeroElemento); numeroElemento=0; end;%>
-    <%c=0%>
-    <% for i in numeroElemento.to_i..100 %> 
-    <%c=c+1%>
-    <%if c==13; break; end%>
-      <% if @listaFotos[i] %>
-      <div class="box home_box1">
-        <a class="imagen_tamano"><%= image_tag @listaFotos[i].images.low_resolution.url, :size => "250x250"%> </a>
-        <a href="/instagram/verFoto/<%=i%>" class="addFoto"> <%= image_tag "white/add.png" %> </a>
+    <div id="home" class="section ">
+     <div class="box home_box2">
+      <%= image_tag @listaFotos[@idFoto].images.standard_resolution.url, :size => "317x300"%>
       </div>
-      <%end%>
-    <%end%>    
+      <div id="basic" class="box home_box2 color5">
+      <h3>Agregar al album</h3>
+
+    <!-- <%= form_tag('../guardarDatos', method: 'get') do %>
+       <select name="thelist" onchange="showOptions(this)">
+          <% album = Album.new() %>
+          <% totalAlbums = album.cantidadAlbumsTotal() %>
+          <% for i in(1..totalAlbums) %> 
+           <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
+           <% i = albumUsuario.id %>
+           <option value="<%= :i %>"><%= albumUsuario.nombre %></option>            
+          <% end %>
+       </select>
+        <a href="../guardarDatos"> <%= image_tag "white/add.png" %> </a>
+        <%end%> -->
+       
+       <%= form_tag('../guardarDatos', method: 'get') do %>
+
+        <%= select("form_name","id_album",Album.all.collect { |g| [g.nombre,g.id]}, {:include_blank => true }) %>
+         
+         <button type="submit" class="btn btn-default">Apply Changes</button>
+         <%end%> 
+
+      </div>
     </div>
   </div>
+</div>
+
  
-</div>
-
- <div id="next">
-   
-  <div class="backleft">
-  <%if !((i-12)==0) %>
-    <a href="javascript:history.back()"><%= image_tag "white/back.png"%> </a>
-  <%end%>
-  <%if @listaFotos[i+1] %>
-    <a href="/instagram/mostrarFotos/<%=i%>"><%= image_tag "white/next.png"%> </a>
-  <%end%>  
-  </div>
-</div>
-
 <div id="templatemo_footer">
 Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>
 </div>

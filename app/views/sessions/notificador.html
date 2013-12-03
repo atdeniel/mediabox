@@ -86,10 +86,10 @@
 <!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm                      -->
 <% for i in(1..current_user.cantidadNotificacion())  %>
 
-<% if current_user.idUsuarioQueMeNotifica(i+9999,current_user.id) != "no" %>
+<% if current_user.idUsuarioQueMeNotifica(i,current_user.id) != "no" %>
 
-          <td><a href="perfil_<%=current_user.verPrivacidad(current_user.idUsuarioQueMeNotifica(i+9999,current_user.id))%>/<%= current_user.idUsuarioQueMeNotifica(i+9999,current_user.id) %>"> <%= current_user.nombreUsuario(current_user.idUsuarioQueMeNotifica(i+9999,current_user.id)) %></a> asked you to be your friend 
-          <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i+9999,current_user.id) %>"> Accept?</a></td>
+          <td><a href="perfil_<%=current_user.verPrivacidad(current_user.idUsuarioQueMeNotifica(i,current_user.id))%>/<%= current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> <%= current_user.nombreUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %></a> asked you to be your friend 
+          <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> Accept?</a></td>
           <td> </td>
           <td> </td>
           </tr>
