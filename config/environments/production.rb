@@ -50,6 +50,7 @@ Project::Application.configure do
 
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.logger = ActiveSupport::Logger.new('your_app.log')
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
