@@ -52,5 +52,15 @@ class ManejoalbumController < ApplicationController
 		redirect_to '/sessions/ver_album/'+idAlbum.to_s;
 	end
 
+	def ponerComoCover
+
+		multimedia = Multimedia.new()
+		idAlbum = multimedia.albumQuePertenece(params[:i])
+		url = multimedia.multimedia(params[:i]).nombre
+		album = Album.new()
+		album.ponerImagenAlbum(idAlbum,url)
+		redirect_to '/manejoalbum/verMultimedia/'+params[:i]
+
+	end
 
 end

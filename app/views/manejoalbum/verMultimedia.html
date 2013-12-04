@@ -93,6 +93,19 @@
 
       </div> <!-- la division rara -->
 
+      Descripcion:
+      </br>
+sfdgdsfgdfsgsdfg
+      </br>
+      API:
+      </br>
+sdfgsdfggd
+  <% multimedia = Multimedia.new() %>
+  <% if multimedia.usuarioQuePertenece(@multimedia.id) == current_user.id %>
+</br></br></br></br></br>
+ <a href="/manejoalbum/ponerComoCover/<%=@multimedia.id %>">
+   &nbsp&nbsp&nbsp Set as Defaul Album Cover </br>       <% for i in 1..8 %> &nbsp  <%end%><%= image_tag "black/favs.png"%>
+  <%end%>
 
     </div>
   </div>
@@ -122,14 +135,18 @@
       </a>
     </div>
     <%end%>
-       
  <!-- -->      
     <div class="panel panel-default">
     <!-- Default panel contents -->
       <div class="panel-heading"><%= @multimedia.tipo %></div>
-  
-     </div>
-      <%= image_tag @multimedia.nombre %>
+ 
+    </div>
+     </br>
+      </br>
+      <% for i in 1..28 %>
+    &nbsp 
+      <%end%>
+     <%= image_tag @multimedia.nombre %>
     </div>
 
 </div>

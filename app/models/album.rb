@@ -73,7 +73,7 @@ class Album < ActiveRecord::Base
 		return lugar
 	end
 
-	def imagenAlbum
+	def imagenAlbum(idAlbum)
 		imagen = Album.find(idAlbum).imagen
 		return imagen
 	end
@@ -136,6 +136,14 @@ class Album < ActiveRecord::Base
 	def nuevoComentario(comentario,idUsuario,idAlbum,nivel)
 		nuevoComentario = Comentario.new()
 		nuevoComentario.nuevo(comentario,idUsuario,idAlbum,nivel)
+	end
+
+	def ponerImagenAlbum(idAlbum,urlImagen)
+
+		album = Album.find_by(id: idAlbum)
+		album.imagen = urlImagen
+		album.save
+
 	end
 
 end

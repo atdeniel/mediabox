@@ -1,9 +1,9 @@
 class Multimedia < ActiveRecord::Base
 
 	
-	def agregarMultimedia(nombre,idAlbum, api)
+	def agregarMultimedia(nombre,idAlbum, api, tipo)
 
-		nuevoMultimedia = Multimedia.new nombre:nombre, api:api, fk_album:idAlbum
+		nuevoMultimedia = Multimedia.new nombre:nombre, api:api, fk_album:idAlbum, tipo:tipo
 		nuevoMultimedia.new_record?
 		nuevoMultimedia.save
 

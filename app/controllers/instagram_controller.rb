@@ -32,7 +32,7 @@ class InstagramController < ApplicationController
 		@listaFotos = $lista
 		idFoto = params[:i]
 		multimedia = Multimedia.new()
-		multimedia.agregarMultimedia(@listaFotos[idFoto.to_i].images.low_resolution.url,$idAlbum,"Instagram")
+		multimedia.agregarMultimedia(@listaFotos[idFoto.to_i].images.low_resolution.url,$idAlbum,"Instagram","Foto")
 		render "/instagram/mostrarFotos"
 	end
 

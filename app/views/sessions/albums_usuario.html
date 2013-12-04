@@ -101,7 +101,7 @@
     <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
-          <div class="cuadro<%=c%> home_box1 color2"><h3> <%= albumUsuario.nombre %>    </h3>
+          <div class="cuadro<%=c%> home_box1 color2"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
             
           <% c=c+1 %>
           <% dondeQuede = i %>
@@ -120,7 +120,7 @@
   <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
       <% if (albumUsuario != "no") %>  
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
-          <div class="cuadro<%=c%> home_box1 color4"><h3> <%= albumUsuario.nombre %>    </h3>
+          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
           <% c=c+1 %>
           </div>
         </a>

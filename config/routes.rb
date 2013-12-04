@@ -64,6 +64,9 @@ Project::Application.routes.draw do
   #guardar foto instagram
   get 'instagram/guardarFoto/:i' => 'instagram#guardarFoto'
 
+  #poner imagen como imagen del album
+  get '/manejoalbum/ponerComoCover/:i' => 'manejoalbum#ponerComoCover'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
