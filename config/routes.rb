@@ -61,6 +61,9 @@ Project::Application.routes.draw do
   #eliminar un multimedia
   get '/manejoalbum/desactivarMultimedia/:i' => 'manejoalbum#desactivarMultimedia'
 
+  #guardar foto instagram
+  get 'instagram/guardarFoto/:i' => 'instagram#guardarFoto'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -127,5 +130,6 @@ match '/instagram/mostrarFotos', to: 'instagram#retornarFotos', via: [:get]
 #Agregar al album
 match '/instagram/guardarDatos', to: 'instagram#guardarFoto', via: [:get]
 
-
+#INSTAGRAM desde el album
+match '/instagram/mostrarFotos', to: 'instagram#retornarFotos', via:[:get]
 end

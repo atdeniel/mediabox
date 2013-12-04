@@ -64,7 +64,7 @@
       <% if @listaFotos[i] %>
       <div class="box home_box1">
         <a class="imagen_tamano"><%= image_tag @listaFotos[i].images.low_resolution.url, :size => "250x250"%> </a>
-        <a href="/instagram/guardarFoto/<%=i%>" class="addFoto"> <%= image_tag "white/add.png" %> </a>
+        <a href="/instagram/verFoto/<%=i%>" class="addFoto"> <%= image_tag "white/add.png" %> </a>
       </div>
       <%end%>
     <%end%>    

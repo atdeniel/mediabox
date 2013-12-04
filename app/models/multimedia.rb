@@ -1,5 +1,14 @@
 class Multimedia < ActiveRecord::Base
 
+	
+	def agregarMultimedia(nombre,idAlbum, api)
+
+		nuevoMultimedia = Multimedia.new nombre:nombre, api:api, fk_album:idAlbum
+		nuevoMultimedia.new_record?
+		nuevoMultimedia.save
+
+	end
+
 	def cantidadMultimedia
 
 		cantidad = Multimedia.count

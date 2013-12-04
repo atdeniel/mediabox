@@ -1,18 +1,19 @@
 class InstagramController < ApplicationController
 
     $lista
-
+    $idAlbum
 
 	def retornarFotos
 		@hashtag = params[:hashtag]
-
-		fotos = Instagram.tag_recent_media(@hashtag,options = {:count => 1000}) #los primeros 10
+		$idAlbum = params[:idAlbum]
+		fotos = Instagram.tag_recent_media(@hashtag,options = {:count => 1000}) #los primeros 1000
         @listaFotos = fotos.sort_by {|hash| hash.likes["count"]}.uniq.reverse!
 		$lista = @listaFotos
 
 		render "/instagram/mostrarFotos"
 
 	end
+
 
 	def paginacion
 
@@ -28,10 +29,11 @@ class InstagramController < ApplicationController
 	end
 
 	def guardarFoto
-		id = params[:i]
-		debugger
-		ida = id
-
+		@listaFotos = $lista
+		idFoto = params[:i]
+		multimedia = Multimedia.new()
+		multimedia.agregarMultimedia(@listaFotos[idFoto.to_i].images.low_resolution.url,$idAlbum,"Instagram")
+		render "/instagram/mostrarFotos"
 	end
 
 end

@@ -171,6 +171,7 @@
       <div class="panel-heading">View album</div>
   
      </div>
+
       <br><br><br><br> 
 
       <% multimedia = Multimedia.new() %>
@@ -182,14 +183,26 @@
                         <% for i in 1..Multimedia.count %>
                         <% if multimedia.albumQuePertenece(i) == params[:id].to_i %>
                         <% if multimedia.verActivoMultimedia(i) != "no" %>
-                        <li><a href=/manejoalbum/verMultimedia/<%= i %>><img src="<%= multimedia.nombreMultimedia(i) %>" /></a></li>
+                        <li><a href=/manejoalbum/verMultimedia/<%= i %>><img src="<%= multimedia.nombreMultimedia(i) %>" WIDTH=152 HEIGHT=152></img></a></li>
                         <%end;end;end%>
                     </ul>
                </div>
                 <a href="#" class="carrousel_right right_inactive"></a>
+
+
+    <div id="">
+      <%= form_tag('/instagram/mostrarFotos', method: 'get') do %>
+      <%= hidden_field_tag(:idAlbum,params[:id]) %>
+      <%= text_field_tag(:hashtag, "Search for tags") %>
+      <button type="submit" >Instapic!!</button>
+      <%end%>
+    </div>     
+
           </div>
 
+
     </div>
+ 
 
 </div>
 

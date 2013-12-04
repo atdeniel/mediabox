@@ -2,13 +2,13 @@
     float:left;
     list-style: none;
     margin: 0;
-    width:230px;
-    height:400px
+    width:152px;
+    height:152px
 }
 .carrousel_inner ul{
     margin:0;
     padding:0;
-    height:400px;
+    height:200px;
     width: 10000px;
     overflow:hidden;
 }
@@ -16,7 +16,7 @@
     /* border:1px solid red; */
     float:left;
     width:740px;
-    height:400px;
+    height:200px;
     overflow: hidden;
 }
 .carrousel_left, .carrousel_right{
@@ -45,7 +45,7 @@
 
 .carrousel{
     float:left;
-    height: 400px;
+    height: 200px;
     width: 800px;
 }
 
