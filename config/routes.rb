@@ -12,14 +12,14 @@ Project::Application.routes.draw do
 
   get "sessions/crear_album"
   
-  get "sessions/albums_usuario"
+  get "sessions/albums_usuario" => 'manejoalbum#verAlbumes'
   get "sessions/perfil_usuario"
   
   get "sessions/perfil_privado"
   get "sessions/perfil_publico"
   get "sessions/perfil_noexiste"
   
-  get "sessions/amigos_usuario"
+  get "sessions/amigos_usuario" => 'manejoamigo#verAmigos'
   get "sessions/notificador"
 
   get "sessions/modificar_album"
@@ -66,6 +66,13 @@ Project::Application.routes.draw do
 
   #poner imagen como imagen del album
   get '/manejoalbum/ponerComoCover/:i' => 'manejoalbum#ponerComoCover'
+
+  #paginacion de albums
+  get '/sessions/cargarAlbums/:p' => 'manejoalbum#siguientePagina'
+  get '/sessions/cargarAlbumsAmigo/:p' => 'manejoalbum#siguientePaginaAmigo'
+
+  #paginacion de amigos
+  get '/sessions/cargarAmigos/:p' => 'manejoamigo#siguientePagina'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

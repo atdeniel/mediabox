@@ -66,9 +66,9 @@
           <p> &nbsp;</p>
           <a><img><%= image_tag current_user.image %></a></img>
           <div class="list-group">
-            <a href= "../sessions/perfil_modificar" class="list-group-item">About</a>
-            <a href= "../sessions/albums_usuario" class="list-group-item">Albums</a>
-            <a href= "../sessions/amigos_usuario" class="list-group-item active">Friends</a>
+            <a href= "/sessions/perfil_modificar" class="list-group-item">About</a>
+            <a href= "/sessions/albums_usuario" class="list-group-item">Albums</a>
+            <a href= "/sessions/amigos_usuario" class="list-group-item active">Friends</a>
             <a href= "#"  class="list-group-item">Private Settings</a>
           </div>
         </div>
@@ -83,20 +83,23 @@
 
 <!------------------- -->
 <% dondeQuede = 0 %>
-<% c=1 %>
+<% c=1 ; p=0 %>
   <div id="cuadro_up">
   <% for i in(1..current_user.cantidadAmigos) %>
   <% if c == 5 %>
   <% break %>
   <% end %>
   <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
-      <% if ( esAmigo != "no") %>  
+      <% if ( esAmigo != "no") %>
+      <% p=p+1%>
+        <% if p >= @paginacion %> 
          <a href="/sessions/perfil_publico/<%=esAmigo%>">
           <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.imagenUsuario(esAmigo)%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
           <% c=c+1 %>
           <% dondeQuede = i %>
           </div>
         </a>
+        <%end%>
       <% end %>
       <% end %>
   
@@ -104,22 +107,41 @@
 <% c=1; dondeQuede = dondeQuede + 1 %>
       <div id="cuadro_down">
   <% for i in(dondeQuede..current_user.cantidadAmigos) %>
-    <% if c == 5 %>
-  <% break %>
-  <% end %>
+   
+
   <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
-    <% if ( esAmigo != "no") %>  
+    <% if ( esAmigo != "no") %>
+    <% p = p + 1%>  
+    <% if p>= @paginacion %>
+    <%if c==5; c=c+1; break;end%> 
          <a href="/sessions/perfil_publico/<%=esAmigo%>">
             <a href="/sessions/perfil_publico/<%=esAmigo%>">
-          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.image%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
+          <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= current_user.imagenUsuario(esAmigo)%>"> <%= current_user.nombreUsuario(esAmigo)%> </a> 
           <% c=c+1 %>
           </div>
         </a>
       <% end %>
        <% end %>
+    <%end%>
       </div>   
-
+<% @paginacion = @paginacion+8 %>
 <!------------------- -->
+</div>
+ <% for i in 1..20 %>
+    </br>
+  <%end%>
+
+  <%if !(@paginacion-9 == 0) %>
+           <a href="/sessions/cargarAmigos/<%= @paginacion-16 %>">
+        <%= image_tag "black/back.png"%>
+      </a>
+  <%end%>
+
+  <% if c > 5 %>     
+      <a href="/sessions/cargarAmigos/<%= @paginacion %> ">
+        <%= image_tag "black/next.png"%>
+      </a>
+  <%end%> 
 
   </div>
 </div>

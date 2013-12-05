@@ -22,5 +22,15 @@ class ManejoamigoController < ApplicationController
   	end
   end
 
+  def siguientePagina
+
+    @paginacion = params[:p].to_i
+    render '/sessions/amigos_usuario'
+  end
+
+  def verAmigos
+    redirect_to '/sessions/cargarAmigos/1'
+  end
+
 
 end

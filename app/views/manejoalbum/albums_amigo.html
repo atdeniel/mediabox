@@ -57,14 +57,14 @@
     <div class="panel2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title"><%= current_user.nombreUsuario(@idAmigo) %></h3>
+          <h3 class="panel-title"><%= current_user.nombreUsuario($idAmigo) %></h3>
         </div>
         <div class="panel-body">
           <p>&nbsp;</p>
           <p> &nbsp;</p>
           <p> &nbsp;</p>
           <p> &nbsp;</p>
-          <a><img><%= image_tag current_user.imagenUsuario(@idAmigo) %></a></img>
+          <a><img><%= image_tag current_user.imagenUsuario($idAmigo) %></a></img>
           <div class="list-group">
             <!-- <a href= "/sessions/perfil_modificar" class="list-group-item">About</a> -->
             <a class="list-group-item active">Albums</a>
@@ -80,11 +80,11 @@
  
     <div class="panel panel-default">
     <!-- Default panel contents -->
-      <div class="panel-heading"><%=current_user.nombreUsuario(@idAmigo) %> albums</div>
+      <div class="panel-heading"><%=current_user.nombreUsuario($idAmigo) %> albums</div>
 <!------------------- -->
     <% album = Album.new() %>
     <% totalAlbums = album.cantidadAlbumsTotal() %>
-    <% c=1 %>
+    <% c=1; p=0 %>
     <% dondeQuede = 0 %>
 
   <div id="cuadro_up">
@@ -92,8 +92,10 @@
     <% if c == 5 %>
   <% break %>
   <% end %>
-    <% albumUsuario = album.regresarAlbumUsuario(@idAmigo,i) %>
-      <% if (albumUsuario != "no" && albumUsuario.privacidad == "no") %>  
+    <% albumUsuario = album.regresarAlbumUsuario($idAmigo,i) %>
+      <% if (albumUsuario != "no" && albumUsuario.privacidad == "no") %> 
+      <%p = p + 1%>
+      <% if p >= @paginacion %>
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
           <div class="cuadro<%=c%> home_box1 color2"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
             
@@ -102,7 +104,7 @@
           </div>
         </a>
       <% end %>
-  
+     <%end%> 
   <% end %>
       </div>
 <% c=1; dondeQuede = dondeQuede + 1 %>
@@ -111,19 +113,37 @@
     <% if c == 5 %>
   <% break %>
   <% end %>
-  <% albumUsuario = album.regresarAlbumUsuario(@idAmigo,i) %>
-      <% if (albumUsuario != "no"  && albumUsuario.privacidad == "no") %>  
+  <% albumUsuario = album.regresarAlbumUsuario($idAmigo,i) %>
+      <% if (albumUsuario != "no"  && albumUsuario.privacidad == "no") %> 
+      <% p = p + 1%> 
+      <%if p >= @paginacion %>
+        <%if c==5; c=c+1; break;end%>
          <a href="#">
           <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
           <% c=c+1 %>
           </div>
         </a>
+        <%end%>
       <% end %>
   <% end %> 
       </div>   
-
+<% @paginacion = @paginacion+8 %>
 <!------------------- -->
     </div>
+ <% for i in 1..20 %>
+    </br>
+  <%end%>
+   <%if !(@paginacion-9 == 0) %>
+           <a href="/sessions/cargarAlbumsAmigo/<%= @paginacion-16 %>">
+        <%= image_tag "black/back.png"%>
+      </a>
+  <%end%>
+
+  <% if c >= 5 %>     
+      <a href="/sessions/cargarAlbumsAmigo/<%= @paginacion %> ">
+        <%= image_tag "black/next.png"%>
+      </a>
+  <%end%>       
   </div>
 
 </div>

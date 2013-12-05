@@ -79,7 +79,7 @@
   <div id="account">
     
     <div class="panel_box1">
-      <a href="../sessions/crear_album">
+      <a href="/sessions/crear_album">
         <%= image_tag "black/add.png"%>
       </a>
     </div>
@@ -90,7 +90,7 @@
 <!------------------- -->
     <% album = Album.new() %>
     <% totalAlbums = album.cantidadAlbumsTotal() %>
-    <% c=1 %>
+    <% c=1 ; p=0 %>
     <% dondeQuede = 0 %>
 
   <div id="cuadro_up">
@@ -100,38 +100,57 @@
   <% end %>
     <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
       <% if (albumUsuario != "no") %>  
-         <a href="/sessions/ver_album/<%= albumUsuario.id %>">
-          <div class="cuadro<%=c%> home_box1 color2"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
-            
-          <% c=c+1 %>
-          <% dondeQuede = i %>
-          </div>
-        </a>
+      <%p = p + 1%>
+          <% if p >= @paginacion %>
+            <a href="/sessions/ver_album/<%= albumUsuario.id %>">
+            <div class="cuadro<%=c%> home_box1 color2"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
+            <% c=c+1 %>
+            <% dondeQuede = i %>
+            </div>
+            </a>
+          <%end%> 
       <% end %>
   
   <% end %>
       </div>
-<% c=1; dondeQuede = dondeQuede + 1 %>
+<% c=1;  dondeQuede = dondeQuede + 1 %>
       <div id="cuadro_down">
   <% for i in(dondeQuede..totalAlbums) %>
-    <% if c == 5 %>
-  <% break %>
-  <% end %>
+
+
   <% albumUsuario = album.regresarAlbumUsuario(current_user.id,i) %>
-      <% if (albumUsuario != "no") %>  
+      <% if (albumUsuario != "no") %>
+      <% p = p + 1%>
+        <%if p >= @paginacion %>
+        <%if c==5; c=c+1; break;end%>
          <a href="/sessions/ver_album/<%= albumUsuario.id %>">
           <div class="cuadro<%=c%> home_box1 color4"><img id="amigofoto" src="<%= album.imagenAlbum(i) %>"> <h3> <%= albumUsuario.nombre %>    </h3>
-          <% c=c+1 %>
+        <% c=c+1 %>  
           </div>
         </a>
+        <%end%>  
       <% end %>
   <% end %> 
       </div>   
-
+<% @paginacion = @paginacion+8 %>
 <!------------------- -->
     </div>
-  </div>
+ <% for i in 1..20 %>
+    </br>
+  <%end%>
 
+  <%if !(@paginacion-9 == 0) %>
+           <a href="/sessions/cargarAlbums/<%= @paginacion-16 %>">
+        <%= image_tag "black/back.png"%>
+      </a>
+  <%end%>
+
+  <% if c > 5 %>     
+      <a href="/sessions/cargarAlbums/<%= @paginacion %> ">
+        <%= image_tag "black/next.png"%>
+      </a>
+  <%end%>    
+  </div>
 </div>
 
 <div id="templatemo_footer">

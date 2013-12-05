@@ -26,7 +26,7 @@ class GuardardatosController < ApplicationController
 
         nuevoAlbum = Album.new.crearNuevoAlbum(params[:nombre],"12-12-12",params[:descripcion],params[:lugar],params[:imagen],"si",current_user.id)
 
-        redirect_to '/sessions/albums_usuario'
+        redirect_to :back
   end
 
   def modificarAlbum
@@ -38,7 +38,7 @@ class GuardardatosController < ApplicationController
       albumEditar.modificarPrivacidadAlbum(params[:privacidad],params[:id])
 
 
-      redirect_to '/sessions/albums_usuario/'
+      redirect_to :back
     
   end
 	

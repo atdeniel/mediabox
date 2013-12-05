@@ -1,5 +1,6 @@
 class ManejoalbumController < ApplicationController
 
+    $idAlbum
 
 	def irAlbum
 
@@ -20,7 +21,8 @@ class ManejoalbumController < ApplicationController
 
 	def mostrarAlbumAmigo
 
-		@idAmigo = params[:id]
+		@paginacion = 1
+		$idAmigo = params[:id]
 		render '/manejoalbum/albums_amigo'
 
 	end
@@ -60,6 +62,23 @@ class ManejoalbumController < ApplicationController
 		album = Album.new()
 		album.ponerImagenAlbum(idAlbum,url)
 		redirect_to '/manejoalbum/verMultimedia/'+params[:i]
+
+	end
+
+	def siguientePagina
+
+		@paginacion = params[:p].to_i
+		render '/sessions/albums_usuario'
+
+	end
+
+	def verAlbumes
+		redirect_to '/sessions/cargarAlbums/1'
+	end
+
+	def siguientePaginaAmigo
+		@paginacion = params[:p].to_i
+		render '/manejoalbum/albums_amigo'
 
 	end
 
