@@ -27,7 +27,7 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li><a href="/sessions/entrar">Home</a></li>
+      <li class="active"><a href="/sessions/home">Home</a></li>
       <li><a href="/sessions/perfil_usuario">Profile</a></li>
       <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li class="active"><a href="/sessions/notificador">News feed</a></li>
@@ -35,9 +35,8 @@
 <%end%> 
     <div id="search">
       <%= form_tag('/buscaramigo/privadoauxiliar', method: 'get') do %>
-   
-         <%= text_field_tag(:email, "Search for people") %>
-      <button type="submit" >Go!</button>
+      <%= text_field_tag(:email, "Search for people", style: 'height: 1.9em; width: 15em;') %>
+      <button type="submit" class="btn btn-default btn-xs" >Go!</button>
     <%end%>
     </div>
 
