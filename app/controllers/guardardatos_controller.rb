@@ -36,10 +36,11 @@ class GuardardatosController < ApplicationController
       albumEditar.modificarDescripcionAlbum(params[:descripcion],params[:id])
       albumEditar.modificarLugarAlbum(params[:lugar],params[:id])
       albumEditar.modificarPrivacidadAlbum(params[:privacidad],params[:id])
-
-
-      redirect_to :back
-    
+      if (params[:privacidad] != "si")
+          params[:privacidad] = "no"
+          albumEditar.modificarPrivacidadAlbum(params[:privacidad],params[:id])
+      end
+      redirect_to '/sessions/albums_usuarios' 
+        
   end
-	
 end

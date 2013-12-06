@@ -91,20 +91,21 @@
         <table >
           <tr>
             <td>Name</td>
-            <td> <%= text_field_tag(:nombre, albumEditar.nombreAlbum) %>  </td>
+            <td> <%= text_field_tag(:nombre, albumEditar.nombreAlbum,style: 'height: 2.7em; width: 42.8em') %>  </td>
             <% id =albumEditar.idAlbum %> 
           </tr>
           <tr>
             <td>Description</td>
-            <td><%= text_area_tag(:descripcion, albumEditar.descripcionAlbum ) %> </td>
+            <td><%= text_area_tag(:descripcion, albumEditar.descripcionAlbum,style: 'height: 5em; width: 42.8em; resize:none') %>
+            </td>
           </tr>
           <tr>
             <td>Location</td>
-            <td><%= text_area_tag(:lugar, albumEditar.lugarAlbum ) %> </td>
+            <td><%= text_area_tag(:lugar, albumEditar.lugarAlbum,style: 'height: 5em; width: 42.8em; resize:none') %> </td>
           </tr>
           <tr>
             <td>Privacity</td>
-            <td><%= text_field_tag(:privacidad, albumEditar.privacidadAlbum) %> </td>
+            <td><%= check_box_tag(:privacidad,albumEditar.privacidadAlbum) %>
           </tr>
           <%= hidden_field_tag(:id, albumEditar.idAlbum) %>
           <tr>
