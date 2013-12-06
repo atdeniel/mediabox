@@ -14,24 +14,7 @@
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
 
-<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
-<script type='text/javascript'>
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
 
-</script>
-<!--     -->
 
 </head>
 
@@ -83,8 +66,12 @@
   <div class="accountTable" >
     <table >
       <tr>
-<!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm                      -->
-<% for i in(1..current_user.cantidadNotificacion())  %>
+<!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm              -->
+
+
+<% comentario = Comentario.new() %>
+
+<% for i in((current_user.cantidadNotificacion() + comentario.cantidadComentarioTotal() ).downto(1) )%>
 
 <% if current_user.idUsuarioQueMeNotifica(i,current_user.id) != "no" %>
 
@@ -94,6 +81,22 @@
           <td> </td>
           </tr>
 <%end%>
+<%begin%><!-- try catch -->
+
+<% if comentario.paraQuienEsElComentario(i) == current_user.id && comentario.obtenerComentario(i).fk_usuario != current_user.id  %>
+
+        <td><a href="/sessions/perfil_publico/<%=comentario.quienHaceElComentario(i)%>"><%= current_user.nombreUsuario(comentario.quienHaceElComentario(i)) %></a> said: 
+        <%= comentario.obtenerComentario(i).coment %> <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(i)%>">See the comemnt! </a></td>
+        <td> </td>
+        <td> </td>
+        </tr>
+
+<%end%>
+
+<%rescue%>
+<%ensure%>
+<%end%><!-- try catch -->
+
 <%end %>
       </tr>
 

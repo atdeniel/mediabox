@@ -146,4 +146,12 @@ class Album < ActiveRecord::Base
 
 	end
 
+	def deQuienEsElAlbum(idAlbum)
+
+		album = Album.find_by(id: idAlbum)
+		idUsuario = album.fk_usuario
+		return idUsuario
+
+	end
+
 end

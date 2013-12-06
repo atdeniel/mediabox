@@ -24,4 +24,29 @@ class Comentario < ActiveRecord::Base
 		end
 	end
 
+	def paraQuienEsElComentario(idComentario)
+
+		idAlbum = obtenerAlbum(idComentario)
+		
+     	album = Album.new()
+		idUsuario = album.deQuienEsElAlbum(idAlbum)
+		return idUsuario
+
+	end
+
+	def obtenerAlbum(idComentario)
+
+		comentario = Comentario.find_by(id: idComentario)
+		idAlbum = comentario.fk_album
+		return idAlbum
+
+	end
+
+	def quienHaceElComentario(idComentario)
+
+		comentario = Comentario.find_by(id: idComentario)
+		return comentario.fk_usuario	
+
+	end
+
 end
