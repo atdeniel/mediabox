@@ -291,14 +291,12 @@ img { margin: 0; padding: 0; border: none }
 }
 
 #edit
-{
-	position: absolute;
-	top: 80%;
-	left: 41%;
-	width: 640px;
+{	
+	position: relative;
+	top: 30.5em;
+	left: 25em;
 	margin: 0 auto;
 	padding: 20px 0;
-
 }
 
 #account
@@ -325,10 +323,10 @@ img { margin: 0; padding: 0; border: none }
 {
 	position: absolute;
 	width:96%;
-	top: 45px;
+	top: 2em;
 	left: 15px;
 }.accountTable table{
-	width:100%;
+	width:86%;
 	height:100%;
 	color: #484848  ;
 }.accountTable td:first-child{
@@ -613,4 +611,12 @@ img { margin: 0; padding: 0; border: none }
 }
 #basic1 img {
 	position: relative;
+}
+
+#panelCarrousel {
+	position: relative;
+	width: 68em;
+	left: 20em;
+	top: 0em;
+	background-color: #FFFFFF ;
 }

@@ -13,15 +13,14 @@
     overflow:hidden;
 }
 .carrousel_inner{
-    /* border:1px solid red; */
     float:left;
     width:740px;
-    height:200px;
+    height:152px;
     overflow: hidden;
 }
 .carrousel_left, .carrousel_right{
-    height: 137px;
-    width:30px;
+    height: 152px;
+    width:25px;
     float:left;
 }
 .carrousel_left{
@@ -45,7 +44,7 @@
 
 .carrousel{
     float:left;
-    height: 200px;
+    height: 152px;
     width: 800px;
 }
 
@@ -61,8 +60,4 @@
      box-shadow:0 0 3px;
      border-radius:5px;
      text-decoration: none;
-}
-h1{
-    margin-bottom:100px;
-    font-family: Volkhov tahoma;
 }

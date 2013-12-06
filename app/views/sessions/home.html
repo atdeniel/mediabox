@@ -89,7 +89,7 @@
        <!-- agregar el id del album  -->
         <% if (comentario.obtenerComentario(k).fk_album == i ) %>
            <div class="second">
-              <img src="<%= current_user.imagenUsuario(idUsuario) %>" width="25" height="25">
+              <img src="<%= current_user.imagenUsuario(comentario.quienHaceElComentario(k)) %>" width="25" height="25">
               <%= current_user.nombreUsuario(comentario.obtenerComentario(k).fk_usuario) + ":" %>
               <%= comentario.obtenerComentario(k).coment %> 
            </div>

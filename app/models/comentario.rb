@@ -49,4 +49,9 @@ class Comentario < ActiveRecord::Base
 
 	end
 
+	def devolverFechaComentario(idComentario)
+
+		comentario = Comentario.find_by(id: idComentario)
+		return comentario.created_at	
+	end
 end

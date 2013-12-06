@@ -43,13 +43,13 @@
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
-            <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
-            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-          <% else %>
-            <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
-            <li><a href="/auth/google_oauth2">Login</a></li>
-          <% end%>
+        <% if current_user %>
+          <li><a>Welcome <strong><%= current_user.name %></strong>!</a></li>
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        <% else %>
+          <li><div class="eg"><img><a href="/auth/google_oauth2"><%= image_tag "google.png"%></a></img></div></li>
+          <li><a href="/auth/google_oauth2">Login</a></li>
+        <% end%>
       </ul>
      </div>
    </nav>
@@ -57,54 +57,44 @@
 </div>
 
 
-<div id="templatemo_main" class="pos">
-  <div id="content"> 
-      <div id="home" class="section">
 
-<h2>Feed</h2>  <!-- Table -->
-
-  <div class="accountTable" >
-    <table >
-      <tr>
-<!--                           dfdsgdjfkgndfvnzsd,mvnzcmvnz,mvbzcx,mbvzm              -->
-
-
-<% comentario = Comentario.new() %>
-
-<% for i in((current_user.cantidadNotificacion() + comentario.cantidadComentarioTotal() ).downto(1) )%>
-
-<% if current_user.idUsuarioQueMeNotifica(i,current_user.id) != "no" %>
-
-          <td><a href="perfil_<%=current_user.verPrivacidad(current_user.idUsuarioQueMeNotifica(i,current_user.id))%>/<%= current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> <%= current_user.nombreUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %></a> asked you to be your friend 
-          <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> Accept?</a></td>
-          <td> </td>
-          <td> </td>
-          </tr>
-<%end%>
-<%begin%><!-- try catch -->
-
-<% if comentario.paraQuienEsElComentario(i) == current_user.id && comentario.obtenerComentario(i).fk_usuario != current_user.id  %>
-
-        <td><a href="/sessions/perfil_publico/<%=comentario.quienHaceElComentario(i)%>"><%= current_user.nombreUsuario(comentario.quienHaceElComentario(i)) %></a> said: 
-        <%= comentario.obtenerComentario(i).coment %> <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(i)%>">See the comemnt! </a></td>
-        <td> </td>
-        <td> </td>
-        </tr>
-
-<%end%>
-
-<%rescue%>
-<%ensure%>
-<%end%><!-- try catch -->
-
-<%end %>
-      </tr>
-
-  
-        </div>        
-    </div> 
+<div id="mayor">
+  <div id="panelCentral" class="pos">
+    <div id="showHomeAlbum">
+      <div id="comments">
+        <% comentario = Comentario.new() %>
+          <% for i in((current_user.cantidadNotificacion() + comentario.cantidadComentarioTotal() ).downto(1) )%>
+          <% if current_user.idUsuarioQueMeNotifica(i,current_user.id) != "no" %>
+            <div class="second">
+              <img src="<%= current_user.imagenUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %>" width="25" height="25">
+              <a href="perfil_<%=current_user.verPrivacidad(current_user.idUsuarioQueMeNotifica(i,current_user.id))%>/<%= current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> 
+                <%= current_user.nombreUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %></a> 
+                asked you to be your friend
+              <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> Accept?</a>
+            </div>
+          <%end%>
+              
+          <%begin%><!-- try catch -->
+          
+            <% if comentario.paraQuienEsElComentario(i) == current_user.id && comentario.obtenerComentario(i).fk_usuario != current_user.id  %>
+            <div class="second">
+              <img src="<%= current_user.imagenUsuario(comentario.quienHaceElComentario(i)) %>" width="25" height="25">
+              <a href="/sessions/perfil_publico/<%=comentario.quienHaceElComentario(i)%>">
+                <%= current_user.nombreUsuario(comentario.quienHaceElComentario(i)) %>
+              </a> said: 
+             <%= comentario.obtenerComentario(i).coment %>
+             <%= comentario.devolverFechaComentario(i) %>
+              <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(i)%>">See the comment! </a>
+            </div>
+        <%end%>
+        <%rescue%>
+        <%ensure%>
+        <%end%><!-- try catch -->
+        <%end %>
+      </div>
+    </div>  
+  </div> 
 </div>
 
-</section>
-
+</body>
 </html>
