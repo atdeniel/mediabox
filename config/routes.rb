@@ -74,6 +74,13 @@ Project::Application.routes.draw do
   #paginacion de amigos
   get '/sessions/cargarAmigos/:p' => 'manejoamigo#siguientePagina'
 
+  #like a comentario
+  get '/comentario/like/:i' => 'manejomegusta#darLike'
+  get '/comentario/dislike/:i' => 'manejomegusta#darDislike'
+  get '/comentario/unlike/:i' => 'manejomegusta#darUnlike'
+
+
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

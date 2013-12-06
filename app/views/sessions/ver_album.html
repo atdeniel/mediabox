@@ -100,7 +100,7 @@
               <a href="#"><%= image_tag "black/add.png"%></a>
             </div>    
             <div class="panel_box4">
-              <a href="#"><%= image_tag "black/check.png"%></a>
+              <a href="/manejoalbum/likeAlbum/#"><%= image_tag "black/check.png"%></a>
             </div> 
             <div class="panel_box5">
               <a href="javascript:history.back()"><%= image_tag "black/back.png"%></a>
@@ -139,7 +139,30 @@
              <div class="second">
               <img src="<%= current_user.imagenUsuario(comentario.quienHaceElComentario(i)) %>" width="25" height="25">
                 <%= current_user.nombreUsuario(comentario.obtenerComentario(i).fk_usuario) + ":" %>
-                <%= comentario.obtenerComentario(i).coment %> 
+                <%= comentario.obtenerComentario(i).coment %> &nbsp&nbsp
+                </br>
+                <font size="1"><%= comentario.obtenerComentario(i).updated_at %></font>&nbsp&nbsp
+
+<!--parte del like-->
+                <% megusta = Megusta.new() %>
+
+                <% if megusta.siUsuarioDioLike(i,current_user.id) == "si" %>
+
+                  <% if megusta.tipoDeLikeDelUsuario(i,current_user.id) == "like" %>
+                    <a href="/comentario/dislike/<%=i%>">I don't Like :(</a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested..</a>
+                  <%end%>
+                  <% if megusta.tipoDeLikeDelUsuario(i,current_user.id) == "dislike" %>
+                    <a href="/comentario/like/<%=i%>">Like</a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested...</a>
+                  <%end%>
+
+                <%else%>
+
+                  <a href="/comentario/like/<%=i%>">Like</a>&nbsp-&nbsp<a href="/comentario/dislike/<%=i%>">I don't Like :(</a>
+
+                <%end%>
+
+
+<!--  -->
               </div>
               <%end%>
            <%end%> 
