@@ -37,6 +37,16 @@ class ManejoalbumController < ApplicationController
 
 	end
 
+	def nuevoComentarioHome
+
+		comentario = params[:comentario]
+		idAlbum = params[:idAlbum]
+		album = Album.new()
+		album.nuevoComentario(comentario,current_user.id,idAlbum,"1")
+		redirect_to '/sessions/home';
+
+	end
+
 	def verUnMultimediaDelAlbum
 
 		contenidos = Multimedia.new()

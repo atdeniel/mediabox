@@ -133,6 +133,7 @@ match '/buscaramigo/privadoauxiliar' , to:  'buscaramigo#buscarAmigo', via: [:ge
 match '/buscaramigo/eliminaramigo', to: 'eliminaramigo#eliminaramistad', via: [:get,:post]
 
 match '/manejoalbum/agregarComentario', to: 'manejoalbum#nuevoComentario', via: [:get]
+match '/manejoalbum/agregarComentarioHome', to: 'manejoalbum#nuevoComentarioHome', via: [:get]
 
 #INSTAGRAM
 match '/instagram/mostrarFotos', to: 'instagram#retornarFotos', via: [:get]

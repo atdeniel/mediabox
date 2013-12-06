@@ -53,7 +53,7 @@ class Album < ActiveRecord::Base
 		album.save
 	end
 
-	def nombreAlbum
+	def nombreAlbum(idAlbum)
 		nombre = Album.find(idAlbum).nombre
 		return nombre 
 	end

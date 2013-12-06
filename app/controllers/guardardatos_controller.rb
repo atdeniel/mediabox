@@ -26,7 +26,7 @@ class GuardardatosController < ApplicationController
 
         nuevoAlbum = Album.new.crearNuevoAlbum(params[:nombre],"12-12-12",params[:descripcion],params[:lugar],params[:imagen],"si",current_user.id)
 
-        redirect_to :back
+        redirect_to '/sessions/cargarAlbums/1'
   end
 
   def modificarAlbum

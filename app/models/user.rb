@@ -205,9 +205,9 @@ class User < ActiveRecord::Base
 	end
 
 	def verSiEsAmigo (idAmigo,idUsuario)
-		
-		amigo1 = Amigo.find_by(id: idAmigo,fk_usuario1: idUsuario, status: "amigo")
-		amigo2 = Amigo.find_by(id: idAmigo,fk_usuario2: idUsuario, status: "amigo")
+
+		amigo1 = Amigo.find_by(fk_usuario2: idAmigo,fk_usuario1: idUsuario, status: "amigo")
+		amigo2 = Amigo.find_by(fk_usuario1: idAmigo,fk_usuario2: idUsuario, status: "amigo")
 
 		if (amigo1)
 		return amigo1.fk_usuario2

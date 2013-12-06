@@ -51,24 +51,69 @@
    </nav>
   </div>
 </div>
+<div id="mayor">
+  <div id="panelCentral" class="pos">
+    <% album = Album.new() %>
+    
+    <% for i in 1..album.cantidadAlbumsTotal %>  
 
-<div id="general">
-<div id= "panel">
-  <div class="panel2">
-    <div class="panel panel-default">
-       
-        <%= form_tag('/instagram/mostrarFotos', method: 'get') do %>
- 
-        <%= text_field_tag(:hashtag, "Search photos") %>
-        <button type="submit" >Go!</button>
-        <%end%> 
-      
+    <% if  "no" != current_user.verSiEsAmigo(album.deQuienEsElAlbum(i),current_user.id) ||  album.deQuienEsElAlbum(i) == current_user.id %>
+    <% idUsuario = album.deQuienEsElAlbum(i) %>
+
+    <div id="showHomeAlbum">
+      <div id="comments">
+        <div><a class="imagen_tamano">
+          <a><img src="<%= current_user.imagenUsuario(idUsuario) %>" width="30" height="30">
+           <%= current_user.nombreUsuario(idUsuario) %>.</a></img> 
+          <a href="">- <%=album.nombreAlbum(i)%></a></a>
+        </div>
+         <div id="homeFotos">
+          <% multimedia = Multimedia.new(); c=0 %>
+           <% for j in multimedia.cantidadMultimedia.downto(1) %>
+           <!-- agregar el id del album  -->
+
+              <% if multimedia.albumQuePertenece(j) == i %>
+              <% if multimedia.verActivoMultimedia(j) != "no" %>
+                <div id="basic1" class="box color2 ">
+                  <a><img id="amigofoto" src="<%= multimedia.nombreMultimedia(j)%>" width="152"></img></a>
+                </div>
+                <%c=c+1%>
+                <%if c==4;break;end;%>
+           <%end;end;end%>
+        </div>
+        
+       <% comentario = Comentario.new(); o=0 %>
+       <% totalComentarios = comentario.cantidadComentarioTotal() %>
+       <% for k in totalComentarios.downto(1) %>
+
+       <!-- agregar el id del album  -->
+        <% if (comentario.obtenerComentario(k).fk_album == i ) %>
+           <div class="second">
+              <img src="<%= current_user.imagenUsuario(idUsuario) %>" width="25" height="25">
+              <%= current_user.nombreUsuario(comentario.obtenerComentario(k).fk_usuario) + ":" %>
+              <%= comentario.obtenerComentario(k).coment %> 
+           </div>
+           <%o=o+1%>
+           <%if o==4;break;end;%>
+         <%end%>
+       <%end%> 
+
+        <div class="send">
+          <%= form_tag('/manejoalbum/agregarComentarioHome', method: 'get') do %>
+          <img src="<%= current_user.image %>" WIDTH=25 HEIGHT=25> </img> 
+          <%= text_field_tag(:comentario, "",style: 'height: 2.7em; width: 42.8em;') %>  
+          <%= hidden_field_tag(:idAlbum,i) %>  
+          <button type="submit" class="btn btn-default" >Comment!</button>
+         <%end%>
+        </div>
+      </div>
+
     </div>
+   <%end; end;%> 
   </div>
 </div>
+  
 </div>
-
-
 
 <div id="templatemo_footer">
   Copyright © 2013 <a href="../sessions/entrar">mediabox</a> | Designed by <a href="http://www.ucab.edu.ve">UCAB Style</a>

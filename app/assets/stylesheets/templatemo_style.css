@@ -563,3 +563,54 @@ img { margin: 0; padding: 0; border: none }
 	position: relative;
 	left: 3em;
 } 
+
+#panelCentral {
+	position: relative;
+	width: 55.5em;
+	left: 35em;
+	top: 0em;
+	background-color: #FFFFFF ;
+}
+
+#panelIzq{
+	position: relative;
+	left: -7.5em;
+	width: 20em;
+}
+#mayor{
+	top: 10em;
+	height: 40em;
+	width: 90em;
+}
+#showHomeAlbum {
+	position: relative;
+	top: 0em;
+	padding: 0.5em;
+}
+#comments {
+	background-color: #DCDCDC ;
+	border: 1.5px double #E8E8E8 ;
+	padding: 0.15em;
+	display: block;
+}
+.second {
+	background-color: #0066CC;
+	border: 0.1em solid #B8B8B8;
+	margin: 0.15em;
+	padding: 0.25em;
+	top: 1em;
+}
+.send {
+	margin: 0.1em;
+	padding: 0.1em;
+}
+
+#homeFotos{
+	position: relative;
+	top: 1em;
+	left: 0.3em;
+	height: 14em;
+}
+#basic1 img {
+	position: relative;
+}
