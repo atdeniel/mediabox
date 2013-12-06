@@ -84,4 +84,11 @@ class Amigo < ActiveRecord::Base
 		end
 	end
 
+	def verAmistad (idAmistad)
+
+		amistad = Amigo.find_by(id: idAmistad)
+		return amistad
+
+	end
+
 end

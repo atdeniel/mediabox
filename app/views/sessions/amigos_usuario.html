@@ -82,6 +82,7 @@
     <div class="panel-heading">Your friends</div>
 
 <!------------------- -->
+<% amigo = Amigo.new() %>
 <% dondeQuede = 0 %>
 <% c=1 ; p=0 %>
   <div id="cuadro_up">
@@ -89,7 +90,14 @@
   <% if c == 5 %>
   <% break %>
   <% end %>
-  <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
+  <% esAmigo1 = current_user.verSiEsAmigo(amigo.verAmistad(i).fk_usuario1, current_user.id)%>
+  <% esAmigo2 = current_user.verSiEsAmigo(amigo.verAmistad(i).fk_usuario2, current_user.id)%>
+
+  <%esAmigo = ""%>
+  <% if (esAmigo1 == "no" && esAmigo2 != "no") ; esAmigo = esAmigo2; end %> 
+  <% if (esAmigo1 != "no" && esAmigo2 == "no") ; esAmigo = esAmigo1; end %> 
+  <% if (esAmigo1 == "no" && esAmigo2 == "no") ; esAmigo = "no"; end %> 
+
       <% if ( esAmigo != "no") %>
       <% p=p+1%>
         <% if p >= @paginacion %> 
@@ -108,8 +116,14 @@
       <div id="cuadro_down">
   <% for i in(dondeQuede..current_user.cantidadAmigos) %>
    
+  <% esAmigo1 = current_user.verSiEsAmigo(amigo.verAmistad(i).fk_usuario1, current_user.id)%>
+  <% esAmigo2 = current_user.verSiEsAmigo(amigo.verAmistad(i).fk_usuario2, current_user.id)%>
 
-  <% esAmigo = current_user.verSiEsAmigo(i, current_user.id)%> 
+  <%esAmigo = ""%>
+  <% if (esAmigo1 == "no" && esAmigo2 != "no") ; esAmigo = esAmigo2; end %> 
+  <% if (esAmigo1 != "no" && esAmigo2 == "no") ; esAmigo = esAmigo1; end %> 
+  <% if (esAmigo1 == "no" && esAmigo2 == "no") ; esAmigo = "no"; end %> 
+
     <% if ( esAmigo != "no") %>
     <% p = p + 1%>  
     <% if p>= @paginacion %>

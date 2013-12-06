@@ -91,7 +91,7 @@
         <table >
           <tr>
             <td>Name</td>
-            <td> <%= text_field_tag(:nombre, albumEditar.nombreAlbum,style: 'height: 2.7em; width: 42.8em') %>  </td>
+            <td> <%= text_field_tag(:nombre, albumEditar.nombreAlbum(params[:id]),style: 'height: 2.7em; width: 42.8em') %>  </td>
             <% id =albumEditar.idAlbum %> 
           </tr>
           <tr>
@@ -105,7 +105,7 @@
           </tr>
           <tr>
             <td>Privacity</td>
-            <td><%= check_box_tag(:privacidad,albumEditar.privacidadAlbum) %>
+            <td><%= check_box_tag(:privacidad,"si") %>
           </tr>
           <%= hidden_field_tag(:id, albumEditar.idAlbum) %>
           <tr>
@@ -116,8 +116,7 @@
         <p> &nbsp;</p>
         <p> &nbsp;</p>
         <p> &nbsp;</p>
-        <p> &nbsp;</p>
-        <p> &nbsp;</p>
+
         <div id="edit">
           <button type="submit" class="btn btn-default">Edit</button>
           <%end%>
