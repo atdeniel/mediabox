@@ -16,6 +16,29 @@
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
 
+<%= javascript_include_tag "modernizr.custom.17475.js" %>
+
+<%= stylesheet_link_tag "elastislide.css" %>
+
+<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
+<script type='text/javascript'>
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+<!--     -->
+
 
 </head>
 
@@ -91,24 +114,24 @@
               <a href="#"><%= image_tag "black/check.png"%></a>
             </div>
           <%end%>  
-          <div id="homeFotos">
-           <% multimedia = Multimedia.new() %>
-
-          <div class="carrousel">
-           <a href="#" class="carrousel_left"></a>
-            <div class="carrousel_inner">
-              <ul>
-                <% for i in 1..Multimedia.count %>
-                <% if multimedia.albumQuePertenece(i) == params[:id].to_i %>
-                <% if multimedia.verActivoMultimedia(i) != "no" %>
-                <li><a href=/manejoalbum/verMultimedia/<%= i %>><img src="<%= multimedia.nombreMultimedia(i) %>" WIDTH=152 HEIGHT=152></img></a></li>
+          
+          <div id="carFotos">
+             <% multimedia = Multimedia.new() %>
+              <ul id="carousel" class="elastislide-list">
+                      <% for i in 1..Multimedia.count %>
+                      <% if multimedia.albumQuePertenece(i) == params[:id].to_i %>
+                      <% if multimedia.verActivoMultimedia(i) != "no" %>
+                <li><a href="/manejoalbum/verMultimedia/<%= i %>"><img src="<%= multimedia.nombreMultimedia(i) %>" WIDTH=152 HEIGHT=152 alt="image01" /></a></li>
                 <%end;end;end%>
               </ul>
-            </div>
-            <a href="#" class="carrousel_right right_inactive"></a>
+
+              <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" %>
+              <%= javascript_include_tag "jquery.elastislide.js" %>
+
+            <script type="text/javascript">
+              $( '#carousel' ).elastislide();
+            </script>
           </div>
-          </div>
-          
            <% comentario = Comentario.new() %>
            <% totalComentarios = comentario.cantidadComentarioTotal() %>
            <% for i in(1..totalComentarios) %>
