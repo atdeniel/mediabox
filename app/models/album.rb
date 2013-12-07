@@ -154,4 +154,11 @@ class Album < ActiveRecord::Base
 
 	end
 
+	def playAlbumIs(idAlbum)
+
+		album = Album.find_by(id: idAlbum)
+		return album.playalbum
+
+	end
+
 end

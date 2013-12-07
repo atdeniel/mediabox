@@ -27,7 +27,7 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/sessions/home">Home</a></li>
+      <li><a href="/sessions/home">Home</a></li>
       <li><a href="/sessions/perfil_usuario">Profile</a></li>
       <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li class="active"><a href="/sessions/notificador">News feed</a></li>
@@ -55,21 +55,23 @@
   </div>
 </div>
 
-
+<center><h5 style=" font-size:25px;">Your Feeds</h5></center>
 
 <div id="mayor">
   <div id="panelCentral" class="pos">
     <div id="showHomeAlbum">
       <div id="comments">
         <% comentario = Comentario.new() %>
+        
+        <% megusta = Megusta.new() %>
           <% for i in((current_user.cantidadNotificacion() + comentario.cantidadComentarioTotal() ).downto(1) )%>
           <% if current_user.idUsuarioQueMeNotifica(i,current_user.id) != "no" %>
             <div class="second">
-              <img src="<%= current_user.imagenUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %>" width="25" height="25">
+              <img src="<%= current_user.imagenUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %>" width="35" height="35">  <h7 style=" font-size:15px;">
               <a href="perfil_<%=current_user.verPrivacidad(current_user.idUsuarioQueMeNotifica(i,current_user.id))%>/<%= current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> 
                 <%= current_user.nombreUsuario(current_user.idUsuarioQueMeNotifica(i,current_user.id)) %></a> 
-                asked you to be your friend
-              <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> Accept?</a>
+                asked you to be your friend 
+              <a href="/sessions/notificador/<%=current_user.idUsuarioQueMeNotifica(i,current_user.id) %>"> Accept?</a> </h7>
             </div>
           <%end%>
               
@@ -77,19 +79,42 @@
           
             <% if comentario.paraQuienEsElComentario(i) == current_user.id && comentario.obtenerComentario(i).fk_usuario != current_user.id  %>
             <div class="second">
-              <img src="<%= current_user.imagenUsuario(comentario.quienHaceElComentario(i)) %>" width="25" height="25">
+              <img src="<%= current_user.imagenUsuario(comentario.quienHaceElComentario(i)) %>" width="35" height="35"> <h7 style=" font-size:15px;">
               <a href="/sessions/perfil_publico/<%=comentario.quienHaceElComentario(i)%>">
                 <%= current_user.nombreUsuario(comentario.quienHaceElComentario(i)) %>
-              </a> said: 
+              </a> said:
              <%= comentario.obtenerComentario(i).coment %>
-             <%= comentario.devolverFechaComentario(i) %>
-              <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(i)%>">See the comment! </a>
+            <!-- <font size="0.1"><%= comentario.devolverFechaComentario(i) %></font> -->
+            <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(i)%>">See the comment! </a></h7>
             </div>
         <%end%>
         <%rescue%>
         <%ensure%>
         <%end%><!-- try catch -->
-        <%end %>
+
+          <%begin%><!-- try catch -->
+
+           <% if ( megusta.paraQuienEsElLike(i) == current_user.id && megusta.regresarMegusta(i).fk_usuario != current_user.id && megusta.regresarTipoMegusta(i) != "no") %>
+
+            <div class="second">
+              <img src="<%= current_user.imagenUsuario(megusta.quienDaElLike(i)) %>" width="35" height="35"><h8 style=" font-size:15px;">
+              <a href="/sessions/perfil_publico/<%=megusta.quienDaElLike(i)%>">
+                <%= current_user.nombreUsuario(megusta.quienDaElLike(i)) %></a> 
+
+               <% if (megusta.regresarTipoMegusta(i) != "no") %>
+               <%= megusta.regresarTipoMegusta(i) + " your comment" %>
+               <%end %>
+
+              <a href="/sessions/ver_album/<%=comentario.obtenerAlbum(megusta.regresarComentarioDelLike(i))%>">See it! </a></h8>
+              </div>
+ 
+         <%end%>
+        <%rescue%>
+        <%ensure%>
+        <%end%><!-- try catch -->           
+
+
+        <%end %></font>
       </div>
     </div>  
   </div> 

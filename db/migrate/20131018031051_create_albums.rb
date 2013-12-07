@@ -9,6 +9,7 @@ class CreateAlbums < ActiveRecord::Migration
 		t.string  :privacidad
 		t.integer :fk_usuario
 		t.string  :activo
+		t.string  :playalbum
       t.timestamps
     end
   end

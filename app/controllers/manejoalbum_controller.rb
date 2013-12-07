@@ -92,4 +92,18 @@ class ManejoalbumController < ApplicationController
 
 	end
 
+
+ 	 def eliminarComentario
+
+      comentarios = Comentario.new()
+      comentario = comentarios.obtenerComentario(params[:i])
+      albumQuePertenecio = comentario.fk_album
+      comentario.fk_album = 0
+      comentario.fk_usuario = 0
+      comentario.save
+
+      redirect_to '/sessions/ver_album/'+albumQuePertenecio.to_s
+
+  	end
+
 end

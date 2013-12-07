@@ -79,6 +79,9 @@ Project::Application.routes.draw do
   get '/comentario/dislike/:i' => 'manejomegusta#darDislike'
   get '/comentario/unlike/:i' => 'manejomegusta#darUnlike'
 
+  #eliminar un comentario
+  get '/comentario/eliminar/:i' => 'manejoalbum#eliminarComentario'
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -323,7 +323,7 @@ img { margin: 0; padding: 0; border: none }
 {
 	position: absolute;
 	width:96%;
-	top: 2em;
+	top: 5em;
 	left: 15px;
 }.accountTable table{
 	width:86%;
@@ -564,8 +564,8 @@ img { margin: 0; padding: 0; border: none }
 
 #panelCentral {
 	position: relative;
-	width: 55.5em;
-	left: 35em;
+	width: 60em;
+	left: 27em;
 	top: 0em;
 	background-color: #FFFFFF ;
 }
@@ -596,8 +596,11 @@ img { margin: 0; padding: 0; border: none }
 	border: 0.1em solid #B8B8B8;
 	margin: 0.15em;
 	padding: 0.25em;
+	height: 3.8em;
 	top: 1em;
+
 }
+
 .send {
 	margin: 0.1em;
 	padding: 0.1em;

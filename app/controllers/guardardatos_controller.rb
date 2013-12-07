@@ -40,7 +40,7 @@ class GuardardatosController < ApplicationController
           params[:privacidad] = "no"
           albumEditar.modificarPrivacidadAlbum(params[:privacidad],params[:id])
       end
-      redirect_to '/sessions/albums_usuarios' 
+      redirect_to '/sessions/albums_usuario' 
         
   end
 end

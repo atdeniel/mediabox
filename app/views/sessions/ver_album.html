@@ -51,7 +51,7 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/sessions/home">Home</a></li>
+      <li><a href="/sessions/home">Home</a></li>
       <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
       <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li><a href="/sessions/notificador">News feed</a></li>
@@ -83,11 +83,17 @@
   <div id="panelCarrousel" class="pos">
     <div id="showHomeAlbum">
       <div id="">
+
+<% album = Album.new(); if (current_user.id == album.deQuienEsElAlbum(params[:id]) || album.playAlbumIs(params[:id])=="on") %>      
             <%= form_tag('/instagram/mostrarFotos', method: 'get') do %>
             <%= hidden_field_tag(:idAlbum,params[:id]) %>
+
             <%= text_field_tag(:hashtag, "",style: 'height: 2.8em; width: 13em;') %>
             <button type="submit" class="btn btn-default" >Instapic!</button>
             <%end%>
+<%else%>
+</br>
+<%end%>
             <% album = Album.new() %>
            <% if album.usuarioAlbum(params[:id])==current_user.id %>
            <div class="panel_box1">
@@ -97,12 +103,6 @@
               <a href="/sessions/modificar_album/<%= params[:id] %>"><%= image_tag "black/edit.png"%></a>
             </div>
             <div class="panel_box3">
-              <a href="#"><%= image_tag "black/add.png"%></a>
-            </div>    
-            <div class="panel_box4">
-              <a href="/manejoalbum/likeAlbum/#"><%= image_tag "black/check.png"%></a>
-            </div> 
-            <div class="panel_box5">
               <a href="javascript:history.back()"><%= image_tag "black/back.png"%></a>
             </div>
           <%else%>
@@ -141,6 +141,7 @@
                 <%= current_user.nombreUsuario(comentario.obtenerComentario(i).fk_usuario) + ":" %>
                 <%= comentario.obtenerComentario(i).coment %> &nbsp&nbsp
                 </br>
+                <% if album.usuarioAlbum(params[:id])==current_user.id %><a href="/comentario/eliminar/<%=i%>"><img src="/assets/white/cancel.png" width="12" height="12"></a>&nbsp <%end%>
                 <font size="1"><%= comentario.obtenerComentario(i).updated_at %></font>&nbsp&nbsp
 
 <!--parte del like-->
@@ -149,15 +150,16 @@
                 <% if megusta.siUsuarioDioLike(i,current_user.id) == "si" %>
 
                   <% if megusta.tipoDeLikeDelUsuario(i,current_user.id) == "like" %>
-                    <a href="/comentario/dislike/<%=i%>">I don't Like :(</a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested..</a>
+                    <a href="/comentario/dislike/<%=i%>">I don't Like<%= if(megusta.cantidadDislike(i)>0);"("+megusta.cantidadDislike(i).to_s+")";end %> </a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested..</a>&nbsp-&nbspYou <%=if(megusta.cantidadLike(i)>1);"and "+(megusta.cantidadLike(i)-1).to_s+" people";end %> like this.
                   <%end%>
                   <% if megusta.tipoDeLikeDelUsuario(i,current_user.id) == "dislike" %>
-                    <a href="/comentario/like/<%=i%>">Like</a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested...</a>
+                    <a href="/comentario/like/<%=i%>">Like<%= if(megusta.cantidadLike(i)>0);"("+megusta.cantidadLike(i).to_s+")";end %></a>&nbsp-&nbsp<a href="/comentario/unlike/<%=i%>">Not interested...</a>
+                    &nbsp-&nbspYou <%= if(megusta.cantidadDislike(i)>1);"and "+(megusta.cantidadDislike(i)-1).to_s+" people";end %> dislike this.
                   <%end%>
 
                 <%else%>
 
-                  <a href="/comentario/like/<%=i%>">Like</a>&nbsp-&nbsp<a href="/comentario/dislike/<%=i%>">I don't Like :(</a>
+                  <a href="/comentario/like/<%=i%>">Like<%= if(megusta.cantidadLike(i)>0);"("+megusta.cantidadLike(i).to_s+")";end %> </a>&nbsp-&nbsp<a href="/comentario/dislike/<%=i%>">I don't Like<%= if(megusta.cantidadDislike(i)>0);"("+megusta.cantidadDislike(i).to_s+")";end %> </a>
 
                 <%end%>
 

@@ -23,8 +23,8 @@
     </div>
 <% if current_user %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/sessions/home">Home</a></li>
-      <li><a href="/sessions/perfil_usuario">Profile</a></li>
+      <li><a href="/sessions/home">Home</a></li>
+      <li class="active"><a href="/sessions/perfil_usuario">Profile</a></li>
       <li><a href="/sessions/amigos_usuario">Friends</a></li>
       <li><a href="/sessions/notificador">News feed</a></li>
     </ul>
@@ -73,7 +73,6 @@
 </div>
 
  <div id="next">
-   
   <div class="backleft">
   <%if !((i-12)==0) %>
     <a href="javascript:history.back()"><%= image_tag "white/back.png"%> </a>
