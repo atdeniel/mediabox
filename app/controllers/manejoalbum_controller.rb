@@ -3,8 +3,8 @@ class ManejoalbumController < ApplicationController
     $idAlbum
 
 	def irAlbum
-
-		render "sessions/ver_album/"
+		$idAlbum = params[:id]
+		render "/sessions/ver_album/"
 	end
 
 	def irEditarAlbum
@@ -97,12 +97,17 @@ class ManejoalbumController < ApplicationController
 
       comentarios = Comentario.new()
       comentario = comentarios.obtenerComentario(params[:i])
+
+     if (comentario.fk_album != 0)
+
       albumQuePertenecio = comentario.fk_album
       comentario.fk_album = 0
       comentario.fk_usuario = 0
       comentario.save
 
-      redirect_to '/sessions/ver_album/'+albumQuePertenecio.to_s
+     end
+
+      render'/sessions/ver_album/'
 
   	end
 

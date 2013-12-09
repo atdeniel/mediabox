@@ -75,8 +75,11 @@
  <div id="next">
   <div class="backleft">
   <%if !((i-12)==0) %>
-    <a href="javascript:history.back()"><%= image_tag "white/back.png"%> </a>
+    <a href="javascript:history.back()"><%= image_tag "white/back.png"%> </a> <%for h in 1..31%> &nbsp <%end%>
+  <%else%>
+  <%for h in 1..37%> &nbsp <%end%>
   <%end%>
+  <a href="/sessions/ver_album/<%=$idAlbum%>"><%= image_tag "white/check.png"%> <%for h in 1..30%> &nbsp <%end%>
   <%if @listaFotos[i+1] %>
     <a href="/instagram/mostrarFotos/<%=i%>"><%= image_tag "white/next.png"%> </a>
   <%end%>  

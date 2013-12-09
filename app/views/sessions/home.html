@@ -54,7 +54,7 @@
   <div id="panelCentral" class="pos">
     <% album = Album.new() %>
     
-    <% for i in 1..album.cantidadAlbumsTotal %>  
+    <% for i in album.cantidadAlbumsTotal.downto(1)  %>  
 
     <% if  "no" != current_user.verSiEsAmigo(album.deQuienEsElAlbum(i),current_user.id) ||  album.deQuienEsElAlbum(i) == current_user.id %>
     <% idUsuario = album.deQuienEsElAlbum(i) %>
@@ -64,7 +64,7 @@
         <div><a class="imagen_tamano">
           <a><img src="<%= current_user.imagenUsuario(idUsuario) %>" width="30" height="30">
            <%= current_user.nombreUsuario(idUsuario) %>.</a></img> 
-          <a href="">- <%=album.nombreAlbum(i)%></a></a>
+          <a href="/sessions/ver_album/<%=i%>">- <%=album.nombreAlbum(i)%></a></a>
         </div>
          <div id="homeFotos">
           <% multimedia = Multimedia.new(); c=0 %>
@@ -80,6 +80,10 @@
                 <%if c==4;break;end;%>
            <%end;end;end%>
         </div>
+
+<%if c==0 %>
+      <font size="6" color="black"> No photos yet...</font>
+<%end%>
         
        <% comentario = Comentario.new(); o=0 %>
        <% totalComentarios = comentario.cantidadComentarioTotal() %>

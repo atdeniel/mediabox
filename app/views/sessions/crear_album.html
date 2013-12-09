@@ -12,6 +12,27 @@
 <%= javascript_include_tag "jquery.localscroll-min.js" %>
 <%= javascript_include_tag "init.js" %>
 <%= javascript_include_tag "slimbox2.js" %>
+
+<!-- ESTO ES PARA QUE FUNCIONE EL BOTON ACTUALIZAR DATOS -->
+<script type='text/javascript'>
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+<!--     -->
+
+
 </head>
 
 <body> 
