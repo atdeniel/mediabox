@@ -2,6 +2,7 @@ class GuardardatosController < ApplicationController
 
   def guardarDatosUsuario
 
+
   	    nombreNuevo = params[:names]
         lugarNuevo = params[:location]
         emailNuevo = params[:email]

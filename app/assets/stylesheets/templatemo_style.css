@@ -309,6 +309,13 @@ img { margin: 0; padding: 0; border: none }
   height: 450px; 
 }
 
+.accountTableCA
+{
+	position: absolute;
+	width:96%;
+	top: -1em;
+	left: 15px;
+}
 
 .panel-heading
 {

@@ -106,36 +106,36 @@
     <%= form_tag('guardarDatos', method: 'get') do %>
 
       <div class="accountTable" >
-        <div class="accountTable" >
+        <div class="accountTableCA" >
         <table >
           <tr>
             <td>Name</td>
-            <td><%= text_field_tag(:comentario,current_user.name,style: 'height: 2.7em; width: 42.8em;') %></td>       
+            <td><%= text_field_tag(:names,current_user.name,style: 'height: 2.7em; width: 42.8em;') %></td>       
          </tr>
           <tr>
             <td>Email</td>
-            <td><%= text_field_tag(:comentario, current_user.email,style: 'height: 2.7em; width: 42.8em;') %></td>            
+            <td><%= text_field_tag(:location, current_user.email,style: 'height: 2.7em; width: 42.8em;') %></td>            
           </tr>
           <tr>
             <td>Phone</td>
-            <td><%= text_field_tag(:comentario, current_user.phone,style: 'height: 2.7em; width: 42.8em;') %></td>
+            <td><%= text_field_tag(:email, current_user.phone,style: 'height: 2.7em; width: 42.8em;') %></td>
           </tr>
           <tr>
             <td>Location</td>
-            <td><%= text_area_tag(:comentario,current_user.location,style: 'height: 5em; width: 42.8em; resize:none') %></td>
+            <td><%= text_area_tag(:phone,current_user.location,style: 'height: 5em; width: 42.8em; resize:none') %></td>
           </tr>
           <tr>
             <td>Description</td>
-            <td><%= text_area_tag(:comentario, current_user.description,style: 'height: 5em; width: 42.8em; resize:none') %></td>
+            <td><%= text_area_tag(:description, current_user.description,style: 'height: 5em; width: 42.8em; resize:none') %></td>
           </tr>
           <tr>
             <td>Favorite stuff</td>
-            <td><%= text_area_tag(:comentario,current_user.favorite,style: 'height: 5em; width: 42.8em; resize:none') %></td>         
+            <td><%= text_area_tag(:favorite,current_user.favorite,style: 'height: 5em; width: 42.8em; resize:none') %></td>         
           </tr>
         </table>
       </div>
-    <div id="edit">
-      <button type="submit" class="btn btn-default">Apply Changes</button>
+    <div> <%for k in 1..21 %></br><%end%>
+      <center><button type="submit" class="btn btn-default">Apply Changes</button></center>
     </div>
     <%end%>
   </div>

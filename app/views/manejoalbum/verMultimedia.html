@@ -92,13 +92,12 @@
 
       </div> <!-- la division rara -->
 
-      Descripcion:
       </br>
-sfdgdsfgdfsgsdfg
+
       </br>
-      API:
+
       </br>
-sdfgsdfggd
+
   <% multimedia = Multimedia.new() %>
   <% if multimedia.usuarioQuePertenece(@multimedia.id) == current_user.id %>
 </br></br></br></br></br>
@@ -137,7 +136,7 @@ sdfgsdfggd
  <!-- -->      
     <div class="panel panel-default">
     <!-- Default panel contents -->
-      <div class="panel-heading"><%= @multimedia.tipo %></div>
+      <div class="panel-heading"><% if( @multimedia.tipo == 'Foto' )%> Photo <%end%></div>
  
     </div>
      </br>
