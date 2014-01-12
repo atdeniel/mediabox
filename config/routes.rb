@@ -82,6 +82,9 @@ Project::Application.routes.draw do
   #eliminar un comentario
   get '/comentario/eliminar/:i' => 'manejoalbum#eliminarComentario'
 
+  #ver un video de youtube o sonido de souncloud desde el buscador
+  get '/instagram/verYoutube/:i' => 'instagram#verYoutube'
+  get '/instagram/verSoundcloud/:i' => 'instagram#verSouncloud'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

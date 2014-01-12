@@ -55,6 +55,7 @@
   <div id="content"> 
     <div id="home" class="section">
     <% numeroElemento = @siguientePagina %>
+
     <%if !(numeroElemento); numeroElemento=0; end;%>
     <%c=0%>
     <% for i in numeroElemento.to_i..100 %> 
@@ -62,10 +63,43 @@
     <%if c==13; break; end%>
       <% if @listaFotos[i] %>
       <div class="box home_box1">
-        <a class="imagen_tamano"><%= image_tag @listaFotos[i].images.low_resolution.url, :size => "250x250"%> </a>
+
+        <a class="imagen_tamano"><%= image_tag @listaFotos[i].images.low_resolution.url, :size => "250x250" %> </a>
+        <a class="addIcon"><%= image_tag "http://www.sierranevada.ca.gov/images/instagram.gif"%></a>
+
         <a href="/instagram/guardarFoto/<%=i%>" class="addFoto"> <%= image_tag "white/add.png" %> </a>
       </div>
       <%end%>
+
+      <% if $listaYoutube.videos[i] %>
+      <div class="box home_box1">
+
+        <a href="/instagram/verYoutube/<%= $listaYoutube.videos[i].unique_id %>" class="imagen_tamano"><%= image_tag "http://img.youtube.com/vi/"+$listaYoutube.videos[i].unique_id+"/0.jpg", :size => "250x250"%> </a>
+        <a class="addIcon"><%= image_tag "http://www.aitalmac.com/cmsimages/template/icons/youtube.gif"%></a>
+
+        <a href="#" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
+        <%c=c+1%>  
+      </div>
+      <%end%>
+
+      <% if $listaSoundcloud[i] %>
+      <div class="box home_box1">
+
+        <%if $listaSoundcloud[i].artwork_url %>
+
+        <% img = $listaSoundcloud[i].artwork_url %>
+        <a href="/instagram/verSoundcloud/<%= $listaSoundcloud[i].id %>" class="imagen_tamano"><%= image_tag img, :size => "250x250"%> </a>
+        <%else%>
+        <a href="/instagram/verSoundcloud/<%= $listaSoundcloud[i].id %>" class="imagen_tamano"><%= image_tag "http://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png", :size => "250x250"%> </a>
+        <%end%>
+        <a class="addIcon"><%= image_tag "http://djbriand.files.wordpress.com/2012/09/soundcloud.gif"%></a>
+
+        <a href="#" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
+        <%c=c+1%>  
+      </div>
+      <%end%>
+
+
     <%end%>    
     </div>
   </div>
@@ -74,7 +108,7 @@
 
  <div id="next">
   <div class="backleft">
-  <%if !((i-12)==0) %>
+  <%if !((i*3-12)==0) %>
     <a href="javascript:history.back()"><%= image_tag "white/back.png"%> </a> <%for h in 1..31%> &nbsp <%end%>
   <%else%>
   <%for h in 1..37%> &nbsp <%end%>

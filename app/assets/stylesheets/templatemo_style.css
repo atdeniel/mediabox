@@ -556,10 +556,21 @@ img { margin: 0; padding: 0; border: none }
 .addFoto{
 	position:relative;
 	top: -12.5em;
-	right: -10.7em;
+	right: -8.9em;
 }
 
 .addFoto img{
+	width: 20px;
+	height: 20px;
+}
+
+.addIcon{
+	position:relative;
+	top: -12.7em;
+	right: 0em;
+}
+
+.addIcon img{
 	width: 20px;
 	height: 20px;
 }
