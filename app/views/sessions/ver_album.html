@@ -121,7 +121,19 @@
                       <% for i in 1..Multimedia.count %>
                       <% if multimedia.albumQuePertenece(i) == $idAlbum.to_i %>
                       <% if multimedia.verActivoMultimedia(i) != "no" %>
-                <li><a href="/manejoalbum/verMultimedia/<%= i %>"><img src="<%= multimedia.nombreMultimedia(i) %>" WIDTH=152 HEIGHT=152 alt="image01" /></a></li>
+                <li><a href="/manejoalbum/verMultimedia/<%= i %>"><img src="
+                <% if multimedia.multimedia(i).tipo == "Foto" %>
+                <%= multimedia.nombreMultimedia(i) %>
+                <%end%>
+                <% if multimedia.multimedia(i).tipo == "Video" %>
+                http://img.youtube.com/vi/<%=multimedia.nombreMultimedia(i)%>/0.jpg
+                <%end%>
+                <% if multimedia.multimedia(i).tipo == "Sonido" %>
+                http://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png
+                <%end%>
+
+
+                "WIDTH=152 HEIGHT=152 alt="image01" /></a></li>
                 <%end;end;end%>
               </ul>
 

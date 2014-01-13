@@ -77,7 +77,7 @@
         <a href="/instagram/verYoutube/<%= $listaYoutube.videos[i].unique_id %>" class="imagen_tamano"><%= image_tag "http://img.youtube.com/vi/"+$listaYoutube.videos[i].unique_id+"/0.jpg", :size => "250x250"%> </a>
         <a class="addIcon"><%= image_tag "http://www.aitalmac.com/cmsimages/template/icons/youtube.gif"%></a>
 
-        <a href="#" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
+        <a href="/instagram/guardarVideo/<%=$listaYoutube.videos[i].unique_id %>" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
         <%c=c+1%>  
       </div>
       <%end%>
@@ -94,7 +94,7 @@
         <%end%>
         <a class="addIcon"><%= image_tag "http://djbriand.files.wordpress.com/2012/09/soundcloud.gif"%></a>
 
-        <a href="#" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
+        <a href="/instagram/guardarSonido/<%= $listaSoundcloud[i].id %>" class="addFoto"> <%= image_tag "white/add.png" %> </a> 
         <%c=c+1%>  
       </div>
       <%end%>

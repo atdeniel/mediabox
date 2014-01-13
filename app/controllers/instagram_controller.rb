@@ -15,7 +15,6 @@ class InstagramController < ApplicationController
 
 		#youtube
 		clientYoutube = YouTubeIt::Client.new(:dev_key => "AI39si4H7fYAofMrUCw4FH44Kbr6vBESMPQjrjaYiVhTa7M5qY8i068TlTWpa0dDc7T1jassdrt9UN6KZzn0tTiLcIUXBkyyRw")
-		
 		$listaYoutube = clientYoutube.videos_by(:query =>  @hashtag )
 
 		#soundcloud
@@ -48,6 +47,24 @@ class InstagramController < ApplicationController
 		multimedia.agregarMultimedia(@listaFotos[idFoto.to_i].images.low_resolution.url,$idAlbum,"Instagram","Foto")
 		render "/instagram/mostrarFotos"
 	end
+
+	def guardarVideo
+		@listaFotos = $lista
+		idVideo = params[:i]
+		multimedia = Multimedia.new()
+		multimedia.agregarMultimedia(idVideo,$idAlbum,"Youtube","Video")
+		render "/instagram/mostrarFotos"
+
+	end
+
+	def guardarSonido
+		@listaFotos = $lista
+		idSonido = params[:i]
+		multimedia = Multimedia.new()
+		multimedia.agregarMultimedia(idSonido,$idAlbum,"Soundcloud","Sonido")
+		render "/instagram/mostrarFotos"
+	end
+
 
 	def verYoutube
 

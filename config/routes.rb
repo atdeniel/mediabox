@@ -86,6 +86,9 @@ Project::Application.routes.draw do
   get '/instagram/verYoutube/:i' => 'instagram#verYoutube'
   get '/instagram/verSoundcloud/:i' => 'instagram#verSouncloud'
 
+  #guardar video de youtube y sonido de soundcloud
+  get '/instagram/guardarVideo/:i'  => 'instagram#guardarVideo'
+  get '/instagram/guardarSonido/:i'  => 'instagram#guardarSonido'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

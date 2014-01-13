@@ -56,7 +56,7 @@
     
     <% for i in album.cantidadAlbumsTotal.downto(1)  %>  
 
-    <% if  "no" != current_user.verSiEsAmigo(album.deQuienEsElAlbum(i),current_user.id) ||  album.deQuienEsElAlbum(i) == current_user.id %>
+    <% if  ("no" != current_user.verSiEsAmigo(album.deQuienEsElAlbum(i),current_user.id) && album.regresarAlbumUsuario( album.deQuienEsElAlbum(i),i).privacidad == "no") ||  album.deQuienEsElAlbum(i) == current_user.id  %>
     <% idUsuario = album.deQuienEsElAlbum(i) %>
 
     <div id="showHomeAlbum">
@@ -74,7 +74,17 @@
               <% if multimedia.albumQuePertenece(j) == i %>
               <% if multimedia.verActivoMultimedia(j) != "no" %>
                 <div id="basic1" class="box color2 ">
-                  <a><img id="amigofoto" src="<%= multimedia.nombreMultimedia(j)%>" width="152"></img></a>
+                  <a><img id="amigofoto" src="
+                <% if multimedia.multimedia(j).tipo == "Foto" %>
+                <%= multimedia.nombreMultimedia(j) %>
+                <%end%>
+                <% if multimedia.multimedia(j).tipo == "Video" %>
+                http://img.youtube.com/vi/<%=multimedia.nombreMultimedia(j)%>/0.jpg
+                <%end%>
+                <% if multimedia.multimedia(j).tipo == "Sonido" %>
+                http://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png
+                <%end%>
+                "width="152"></img></a>
                 </div>
                 <%c=c+1%>
                 <%if c==4;break;end;%>
