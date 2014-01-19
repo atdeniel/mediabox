@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   provider: MyString
   uid: MyString
   name: MyString
@@ -8,6 +9,7 @@ one:
   oauth_expires_at: 2013-10-16 16:20:01
 
 two:
+  id: 2
   provider: MyString
   uid: MyString
   name: MyString

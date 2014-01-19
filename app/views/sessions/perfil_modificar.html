@@ -114,15 +114,15 @@
          </tr>
           <tr>
             <td>Email</td>
-            <td><%= text_field_tag(:location, current_user.email,style: 'height: 2.7em; width: 42.8em;') %></td>            
+            <td><%= text_field_tag(:email, current_user.email,style: 'height: 2.7em; width: 42.8em;') %></td>            
           </tr>
           <tr>
             <td>Phone</td>
-            <td><%= text_field_tag(:email, current_user.phone,style: 'height: 2.7em; width: 42.8em;') %></td>
+            <td><%= text_field_tag(:phone, current_user.phone,style: 'height: 2.7em; width: 42.8em;') %></td>
           </tr>
           <tr>
             <td>Location</td>
-            <td><%= text_area_tag(:phone,current_user.location,style: 'height: 5em; width: 42.8em; resize:none') %></td>
+            <td><%= text_area_tag(:location,current_user.location,style: 'height: 5em; width: 42.8em; resize:none') %></td>
           </tr>
           <tr>
             <td>Description</td>
