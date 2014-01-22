@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131018031139) do
     t.string   "privacidad"
     t.integer  "fk_usuario"
     t.string   "activo"
+    t.string   "playalbum"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

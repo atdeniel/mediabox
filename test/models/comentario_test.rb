@@ -24,18 +24,18 @@ class ComentarioTest < ActiveSupport::TestCase
     cantidad_comentario = Comentario.new()
     cantidad = cantidad_comentario.cantidadComentarioTotal()
 
-    assert_not_nil(cantidad)
+    assert_equal(Comentario.count,cantidad)
 
    end
 
-  # test "paraQuienEsElComentario" do
+   test "paraQuienEsElComentario" do
 
-   # user_comentario = Comentario.new()
-   # id_amigo_comentario = user_comentario.paraQuienEsElComentario(1)
+    user_comentario = Comentario.new()
+    id_amigo_comentario = user_comentario.paraQuienEsElComentario(2)
 
-   # assert_not_nil(id_amigo_comentario)
+    assert_equal(2,id_amigo_comentario)
 
-  #  end
+    end
 
   test "obtenerAlbum" do
     album_comentario = Comentario.new()
@@ -48,15 +48,15 @@ class ComentarioTest < ActiveSupport::TestCase
 
     persona_comentario = Comentario.new()
     id_persona_comentario = persona_comentario.quienHaceElComentario(1)
-    assert_not_nil(id_persona_comentario)
+    assert_equal(1,id_persona_comentario)
 
   end
 
   test "devolverFechaComentario" do
 
     fecha_comentario = Comentario.new()
-    fecha_comentario = fecha_comentario.devolverFechaComentario(1)
-    assert_not_nil(fecha_comentario)
+    fecha_comentario = fecha_comentario.devolverFechaComentario(2)
+    assert_equal(Comentario.find(2).created_at,fecha_comentario)
   end
 
 end

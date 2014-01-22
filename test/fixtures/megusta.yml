@@ -6,12 +6,18 @@
 #
  one:
   id: 1
-  tipo: cool
+  tipo: like
   fk_usuario: 1
   fk_comentario: 1
-  
+
  two: 
   id: 2
-  tipo: cool
+  tipo: dislike
   fk_usuario: 2
   fk_comentario: 1 
+
+ tree: 
+  id: 3
+  tipo: unlike
+  fk_usuario: 3
+  fk_comentario: 1

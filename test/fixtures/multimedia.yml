@@ -23,3 +23,14 @@
   tipo: foto
   fk_album: 1
   activo: si
+
+ tree:
+  id: 3
+  nombre: foto3
+  fecha: 2013-10-16 16:20:01
+  descripcion: fotoD
+  lugar: fotoL
+  api: instagram
+  tipo: foto
+  fk_album: 1
+  activo: si

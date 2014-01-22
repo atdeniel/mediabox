@@ -6,14 +6,14 @@
 #
 one:  
   id: 1
-  coment: MyString
+  coment: "Comentario1"
   fk_album: 1
   fk_usuario: 1 
   fk_comentario: 1
 
 two: 
   id: 2
-  coment: MyString
-  fk_album: 1	
-  fk_usuario: 1
+  coment: "Comentario2"
+  fk_album: 2	
+  fk_usuario: 2
   fk_comentario: 1

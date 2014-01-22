@@ -4,10 +4,26 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
+one:
+  id: 1 
   fk_usuario1: 1
   fk_usuario2: 2
+  fecha: "12-12-12"  
+  status: "amigo"
+  leido: "si"
 
 two: 
+  id: 2
+  fk_usuario1: 3
+  fk_usuario2: 4
+  fecha: "12-12-12"  
+  status: "amigo"
+  leido: "si"
+
+three:
+  id: 3
   fk_usuario1: 1
-  fk_usuario2: 2
+  fk_usuario2: 3
+  fecha: "12-12-12"
+  status: "pendiente"
+  leido: "no"
