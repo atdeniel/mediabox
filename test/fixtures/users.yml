@@ -15,3 +15,37 @@ two:
   name: MyString
   oauth_token: MyString
   oauth_expires_at: 2013-10-16 16:20:01
+
+three:
+  id: 3
+  provider: google
+  uid: 1234567
+  name: Daniel Moros
+  first_name: Daniel
+  last_name: Moros
+  location: Caracas
+  description: no volveran
+  image: urlImagen
+  phone: +4129592307
+  email: jdanielm90@hotmail.com
+  privacity: no
+  favorite: comer y domir
+  oauth_token: token
+  oauth_expires_at: 2013-10-16 16:20:01
+
+four:
+  id: 4
+  provider: google
+  uid: 1234567
+  name: Daniel Luz Eljuri
+  first_name: Luz
+  last_name: Eljuri
+  location: Caracas
+  description: no volveran 2.0
+  image: urlImagen
+  phone: +4129592307
+  email: luz@hotmail.com
+  privacity: no
+  favorite: comer y domir
+  oauth_token: token
+  oauth_expires_at: 2013-10-16 16:20:01
